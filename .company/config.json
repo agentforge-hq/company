@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "organization": "agentforge-hq",
+  "founder": "pierrebrunelle",
+  "timezone": "America/Los_Angeles",
+  "public_repository": "agentforge-hq/agentforge",
+  "private_repository": "agentforge-hq/company",
+  "runtime": {
+    "enabled": false,
+    "provider": "xai",
+    "approved_monthly_usd": 0,
+    "approved_context_paths": [],
+    "max_input_bytes": 30000,
+    "max_output_tokens": 2000,
+    "max_response_bytes": 1048576,
+    "max_changed_files": 3,
+    "max_proposal_bytes": 16000,
+    "max_context_documents": 8
+  },
+  "common_context": ["AGENTS.md", "vision.md", ".company/work-items.json", "evidence/claims.json"],
+  "roles": {
+    "product": {
+      "mandate": "product/README.md",
+      "context": ["product/roadmap.md", "product/v0.1-contract-gaps.md"],
+      "write_roots": ["product"]
+    },
+    "engineering": {
+      "mandate": "engineering/README.md",
+      "context": ["engineering/company-workers.md", "product/v0.1-contract-gaps.md"],
+      "write_roots": ["engineering"]
+    },
+    "design": {
+      "mandate": "design/README.md",
+      "context": ["product/roadmap.md"],
+      "write_roots": ["design"]
+    },
+    "marketing": {
+      "mandate": "marketing/README.md",
+      "context": ["product/roadmap.md"],
+      "write_roots": ["marketing"]
+    },
+    "operations": {
+      "mandate": "operations/README.md",
+      "context": ["product/roadmap.md", "evidence/sources.md"],
+      "write_roots": ["operations"]
+    }
+  }
+}
