@@ -31,3 +31,22 @@ Run the company checks with `python3.11 -S -m unittest discover -s tests -v`.
 Keep repository history, CI logs and review artifacts free of credentials,
 personal data and confidential third-party material. Before a live provider
 pilot, review data scope and cost limits with the founder.
+
+## Audit reliability and cleanup pilot
+
+The first dogfood audit exposed problems in AgentForge's measurements. The
+[reliability patch](https://github.com/agentforge-hq/agentforge/pull/1) corrects
+Codex built-in coverage, false dependency errors and weak lexical matches. Its
+local activation and verification are recorded in
+[release verification](../evidence/release-verification.json). The pull request
+remains open for review. Passing structural checks does not establish better
+model routing or completed tasks.
+
+Next, capture a fresh Codex baseline, then test disabling one duplicate
+`humanizer` entry for Codex while retaining the universal copy and all files.
+Back up the setting, restart the harness and verify the new catalog. Compare
+the same rewrite, skill-creation, audit and unrelated arithmetic tasks with
+fixed inputs and model settings. Record selected skill paths, fact preservation
+and task completion; restore the setting if outcomes regress. Keep plugin
+caches and eager project rules intact during this first pilot. No configuration
+change or fresh-session performance improvement has been verified yet.

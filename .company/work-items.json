@@ -124,6 +124,34 @@
         "decisions/0002-build-in-public.md",
         "engineering/company-workers.md"
       ]
+    },
+    {
+      "id": "AF-010",
+      "owner": "engineering",
+      "status": "done",
+      "depends_on": [
+        "AF-001"
+      ],
+      "task": "Implement and locally activate verified fixes for the first audit's measurement failures.",
+      "acceptance": "Built-ins are covered, illustrative paths no longer fail dependency checks, unrelated lexical controls abstain, and the patch is tested and available for review.",
+      "evidence": [
+        "engineering/README.md",
+        "evidence/release-verification.json"
+      ],
+      "result": "60 regression tests pass locally and in Python 3.11-3.13 CI; saved lexical cases improve from 10/12 to 12/12. Local installation has a backup. Skill PR 1 remains open; no model-routing or task-performance gain is claimed."
+    },
+    {
+      "id": "AF-011",
+      "owner": "engineering",
+      "status": "planned",
+      "depends_on": [
+        "AF-010"
+      ],
+      "task": "Compare fresh Codex baseline tasks with one reversible duplicate-disable pilot.",
+      "acceptance": "Verify one fewer duplicate catalog entry and compare the same tasks, input facts and model settings before and after. Record selected paths and completed outcomes; retain or restore the saved configuration from evidence.",
+      "evidence": [
+        "engineering/README.md"
+      ]
     }
   ]
 }
