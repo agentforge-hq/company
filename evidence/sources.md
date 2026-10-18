@@ -26,4 +26,5 @@ installed harness/version before changing a path or isolation mapping.
 Local test results establish the tested invariants in their fixtures. They do
 not establish every external harness behavior, commercial demand or benchmark
 lift. Public reports should provide a reproduction and redact machine-specific
-inventories, private paths and company information.
+inventories, private paths, credentials, personal information and confidential
+third-party material. Company operating documents are public by founder decision.

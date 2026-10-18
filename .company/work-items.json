@@ -94,6 +94,36 @@
       "evidence": [
         "engineering/company-workers.md"
       ]
+    },
+    {
+      "id": "AF-008",
+      "owner": "operations",
+      "status": "done",
+      "depends_on": [
+        "AF-001"
+      ],
+      "task": "Make the company public and align its operating documents with building in public.",
+      "acceptance": "GitHub visibility is public; the decision, roadmap and publishing boundaries reflect the founder's direction.",
+      "evidence": [
+        "decisions/0002-build-in-public.md",
+        "evidence/release-verification.json"
+      ],
+      "result": "History and workflow outputs reviewed; GitHub public visibility verified on 2026-10-18. Existing company license retained."
+    },
+    {
+      "id": "AF-009",
+      "owner": "marketing",
+      "status": "planned",
+      "depends_on": [
+        "AF-008"
+      ],
+      "task": "Draft a public walkthrough of how we design roles, maintain living documents and review agent proposals.",
+      "acceptance": "Use actual repository evidence, distinguish the offline prototype from live workers, and identify one organizational experiment to evaluate next. Posting to other channels remains a separate founder decision.",
+      "evidence": [
+        "marketing/README.md",
+        "decisions/0002-build-in-public.md",
+        "engineering/company-workers.md"
+      ]
     }
   ]
 }

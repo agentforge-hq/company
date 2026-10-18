@@ -25,6 +25,13 @@ short walkthrough of one accepted drift repair. Publish only redacted, reviewed
 artifacts. A proposed post should include its audience, source links, claim IDs,
 call to action and the result that will determine whether to repeat it.
 
+The [public company workspace](https://github.com/agentforge-hq/company) is also
+a distribution source. Show how we design roles, simplify handoffs, maintain
+living documents and evaluate worker proposals. Link to the actual decision or
+verification result, explain what changed and include an unresolved question
+when one remains. The operating design itself can be useful to readers while
+the product develops.
+
 The marketing worker drafts inside `marketing/`. It cannot publish, contact
 people, spend advertising money or treat an unreviewed draft as an announcement.
 Handoff requests can ask product for audience evidence or engineering for a

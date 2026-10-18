@@ -178,7 +178,7 @@ def request_xai(package: dict[str, Any], config: dict[str, Any]) -> dict[str, An
         raise ValueError('The exact context paths have not been approved for provider transmission')
     key, model = os.environ.get('XAI_API_KEY'), os.environ.get('XAI_MODEL')
     if not key or not model:
-        raise ValueError('Set XAI_API_KEY and XAI_MODEL in the private runtime environment')
+        raise ValueError('Set XAI_API_KEY and XAI_MODEL in the runtime environment')
     if SECRET.search(json.dumps(package)):
         raise ValueError('Possible credential material in context; review before provider transmission')
     system = (

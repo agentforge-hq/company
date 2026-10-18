@@ -21,9 +21,12 @@ Documents under the function folders and `vision.md` carry `owner`, `status`,
 `reviewed` and `review_after` frontmatter. Update dates only after checking the
 document's substance. A review date does not make a statement true.
 
-The public skill and this private company are separate repositories. Export
-only deliberately selected product artifacts. Never publish company documents,
-private research, credentials or worker inputs through the public repository.
+Both the skill and company repositories are public. Write company documents and
+operating experiments so people can follow and learn from the work. Keep claims
+grounded in evidence. Credentials, personal information, customer data and
+confidential third-party material must stay outside Git history, logs and
+artifacts. Check worker inputs and outputs before publishing them. The existing
+company license remains in place; do not imply a broader reuse license.
 
 Workers produce proposals within their role's declared write roots. They may
 request another role's review through structured handoffs. A handoff is a new

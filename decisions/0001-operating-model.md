@@ -1,10 +1,14 @@
 ---
 owner: founder
-status: active
+status: superseded
 reviewed: 2026-10-18
 review_after: 2026-11-01
 ---
 # 0001: Separate the public skill from private company operations
+
+The visibility boundary in this initial decision is superseded by
+[0002: Build the company in public](0002-build-in-public.md). The new decision
+retains the separate repositories, function roles and bounded worker model.
 
 ## Context
 

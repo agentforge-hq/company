@@ -18,14 +18,16 @@
   },
   "company": {
     "url": "https://github.com/agentforge-hq/company",
-    "private": true,
+    "private": false,
+    "visibility_checked_on": "2026-10-18",
+    "visibility_decision": "decisions/0002-build-in-public.md",
     "license": "Proprietary",
     "tests": 21,
     "initial_commit": "776428bfea151ac7ff7fccb8ded03d17086f9874",
     "ci": "https://github.com/agentforge-hq/company/actions/runs/39155177774",
     "conclusion": "success",
-    "latest_checked_commit": "7123ee7b3df6b0c176ec803ec921f24b7e3272f6",
-    "latest_checked_ci": "https://github.com/agentforge-hq/company/actions/runs/39155279847"
+    "latest_checked_commit": "b15e5ba5579fbbb75598ed6187c8c94f3c01e8fc",
+    "latest_checked_ci": "https://github.com/agentforge-hq/company/actions/runs/39155401787"
   },
   "workers": {
     "live_enabled": false,

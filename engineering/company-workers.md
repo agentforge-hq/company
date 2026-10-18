@@ -34,11 +34,11 @@ data terms before sending company content.
 
 ## Activation requires an explicit operating decision
 
-1. Approve the exact private documents that may be sent to xAI and select a
+1. Approve the exact company documents that may be sent to xAI and select a
    supported model; set `XAI_MODEL` in the runtime environment.
 2. Approve a provider budget and configure provider-side spend controls.
    The prototype bounds input, output and request count, not dollars billed.
-3. Configure `XAI_API_KEY` as a private Actions secret or local environment
+3. Configure `XAI_API_KEY` as an Actions secret or local environment
    variable. Do not put it in a file committed to Git.
 4. Change `runtime.enabled` to `true` and set a positive
    `approved_monthly_usd` through a founder-reviewed change.
@@ -49,7 +49,9 @@ data terms before sending company content.
 
 No recurring schedule, self-merging, email, social publishing or customer access
 is enabled. The manual workflow has read-only repository permissions and uploads
-review artifacts. A later PR-writing service needs a separately reviewed
+review artifacts. This repository and its workflow logs are public; keep
+credentials, personal data and confidential material out of requests and outputs.
+A later PR-writing service needs a separately reviewed
 permission model and evidence that it improves this workflow.
 
 ## Stop and observe

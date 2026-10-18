@@ -40,10 +40,15 @@ can inspect evidence and propose revisions; humans keep control of consequential
 decisions. The company can evolve its strategy through versioned proposals
 supported by new evidence, with a recorded explanation of what changed.
 
-## Open and proprietary boundaries
+## Building in public
 
 The local skill and its deterministic checks are public under Apache-2.0.
-This company workspace and future commercial service code remain private.
+This company workspace is also public so people can see our organizational
+design, workflow experiments, roadmap and verified results. We want the way we
+work to become a useful part of how people discover and understand AgentForge.
+Public visibility preserves the company's existing license. Confidential
+material and credentials stay outside the public operating record.
+
 The precise paid offering is still a hypothesis. We will test demand for team
 maintenance, verified updates and recurring evaluation before building a
 registry or hosted service merely because those are plausible extensions.

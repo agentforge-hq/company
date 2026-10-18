@@ -11,7 +11,7 @@ not a release promise. The detailed queue is in [work-items.json](../.company/wo
 
 | Milestone | State | Outcome | Exit evidence |
 | --- | --- | --- | --- |
-| M0: publish and establish ownership | Complete | Public Apache-2.0 skill and private company repository under the chosen organization | Both repositories exist with verified visibility; tests pass; owners and links are correct |
+| M0: publish and establish ownership | Complete | Public Apache-2.0 skill and public company workspace under the chosen organization | Both repositories exist with verified visibility; tests pass; owners and links are correct |
 | M1: reconcile the v0.1 contract | Planned | Decide and close gaps between the current implementation and supplied brief | Each gap is implemented with a test, explicitly rejected with rationale, or moved to a named later milestone |
 | M2: prove useful maintenance | Planned | Dogfood audit, selected deduplication and one real drift repair | Redacted before/after reports, explicit authorization for file moves, regression checks and user acceptance from distinct tasks |
 | M3: test task outcomes | Planned | Compare maintained skills with baselines on representative jobs | Reproducible cases, actual task results, failure analysis and a clear distinction between structural scores and skill lift |
@@ -33,6 +33,10 @@ A registry, command-line installer, read-only cloud bridge and GitHub App
 (working name: Friday Skill Healer) remain options from the source brief.
 Choose among them after M2–M4 evidence. Hosted benchmarks and model-change
 regressions may become useful when a verified task suite exists.
+
+The company workspace is also a public record of our organizational design and
+operating experiments. Share accepted changes and evidence-backed lessons from
+the work as part of product distribution; track this in the marketing queue.
 
 ## Worker pilot
 

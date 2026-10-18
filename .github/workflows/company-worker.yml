@@ -13,7 +13,7 @@ on:
         required: true
       send_to_xai:
         type: boolean
-        description: Send approved private context to xAI (runtime policy must also be enabled)
+        description: Send approved company context to xAI (runtime policy must also be enabled)
         default: false
 permissions:
   contents: read
@@ -43,7 +43,7 @@ jobs:
           else
             python -S scripts/company.py brief --role "$COMPANY_ROLE" --task "$COMPANY_TASK" > .company/runs/offline-brief.json
           fi
-      - name: Upload private review artifacts
+      - name: Upload review artifacts
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: company-worker-${{ inputs.role }}-${{ github.run_id }}

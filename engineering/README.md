@@ -10,7 +10,7 @@ Engineering owns correctness, reproducibility, compatibility evidence and the
 cost of maintaining the system.
 
 The [public skill](https://github.com/agentforge-hq/agentforge) contains the
-local deterministic core. This private repository contains the company worker
+local deterministic core. This public repository contains the company worker
 prototype in `scripts/company.py`, its tests, operating configuration and
 commercial planning. A hosted commercial service has not been built.
 
@@ -27,7 +27,7 @@ It may describe a code change and its tests as a handoff; this prototype does
 not grant model output direct write access to executable code or CI policy.
 Implementation follows a reviewed engineering task in a separate branch.
 
-Run the private checks with `python3.11 -S -m unittest discover -s tests -v`.
-Keep public release artifacts free of private company context and test fixtures
-containing personal data. Before a live provider pilot, review data scope and
-cost limits with the founder.
+Run the company checks with `python3.11 -S -m unittest discover -s tests -v`.
+Keep repository history, CI logs and review artifacts free of credentials,
+personal data and confidential third-party material. Before a live provider
+pilot, review data scope and cost limits with the founder.

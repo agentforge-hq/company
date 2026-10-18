@@ -4,7 +4,7 @@
   "founder": "pierrebrunelle",
   "timezone": "America/Los_Angeles",
   "public_repository": "agentforge-hq/agentforge",
-  "private_repository": "agentforge-hq/company",
+  "company_repository": "agentforge-hq/company",
   "runtime": {
     "enabled": false,
     "provider": "xai",
