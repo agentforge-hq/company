@@ -23,7 +23,9 @@
     "tests": 21,
     "initial_commit": "776428bfea151ac7ff7fccb8ded03d17086f9874",
     "ci": "https://github.com/agentforge-hq/company/actions/runs/39155177774",
-    "conclusion": "success"
+    "conclusion": "success",
+    "latest_checked_commit": "7123ee7b3df6b0c176ec803ec921f24b7e3272f6",
+    "latest_checked_ci": "https://github.com/agentforge-hq/company/actions/runs/39155279847"
   },
   "workers": {
     "live_enabled": false,
@@ -35,7 +37,15 @@
       "design",
       "marketing",
       "operations"
-    ]
+    ],
+    "offline_workflow": {
+      "url": "https://github.com/agentforge-hq/company/actions/runs/39155321459",
+      "conclusion": "success",
+      "role": "product",
+      "documents": 7,
+      "input_bytes": 17689,
+      "xai_call_made": false
+    }
   },
   "boundary": "Local fixtures and CI do not establish task lift, full harness compatibility, a live xAI integration or commercial demand."
 }
