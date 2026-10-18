@@ -25,8 +25,13 @@ Both the skill and company repositories are public. Write company documents and
 operating experiments so people can follow and learn from the work. Keep claims
 grounded in evidence. Credentials, personal information, customer data and
 confidential third-party material must stay outside Git history, logs and
-artifacts. Check worker inputs and outputs before publishing them. The existing
-company license remains in place; do not imply a broader reuse license.
+artifacts. Check worker inputs and outputs before publishing them.
+
+All original company code, scripts, tests and documents are proprietary, with
+all rights reserved under [LICENSE](LICENSE). Apache-2.0 applies only to the
+separate skill repository. Keep this distinction explicit in public copy. Do
+not add an open-source license, Apache headers or broader reuse permissions to
+company material without explicit founder authorization to change its license.
 
 Workers produce proposals within their role's declared write roots. They may
 request another role's review through structured handoffs. A handoff is a new

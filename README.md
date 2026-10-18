@@ -6,6 +6,9 @@ review_after: 2026-11-01
 ---
 # AgentForge company workspace
 
+**License: proprietary, all rights reserved.** The company code and documents
+are public to read; they are not licensed under Apache-2.0. See [LICENSE](LICENSE).
+
 We are building AgentForge in public. This repository contains our company
 strategy, operating documents, organizational design and worker prototype.
 The public skill lives separately in
@@ -76,5 +79,7 @@ personal information, customer data and confidential third-party material belong
 outside this repository and its review artifacts. Provider transmission and
 paid work still follow the configured approval and budget controls.
 
-Public visibility does not change the existing [company license](LICENSE).
-The separate skill is licensed under Apache-2.0.
+The [company license](LICENSE) covers all original code, scripts, tests and
+documents here. Reuse requires separate permission except for rights provided
+by applicable law or GitHub's Terms of Service. The Apache-2.0 license applies
+only to the separate [AgentForge skill](https://github.com/agentforge-hq/agentforge).

@@ -1,8 +1,14 @@
 Copyright 2026 Pierre Brunelle. All rights reserved.
 
+This notice covers all original source code, scripts, tests, documentation and
+other company material in agentforge-hq/company. This repository is proprietary;
+it is not licensed under Apache-2.0 or another open-source license.
+
 This repository contains proprietary company material. No license to use,
 copy, distribute, sublicense or publish this material is granted by possession
 of or access to the repository. Any permission must be separately authorized
-by the rights holder.
+by the rights holder, except for rights required by applicable law or provided
+under GitHub's Terms of Service while this repository is hosted on GitHub.
 
-The separate public AgentForge skill repository is licensed under Apache-2.0.
+The Apache-2.0 license in the separate agentforge-hq/agentforge skill repository
+does not apply to this company repository.
