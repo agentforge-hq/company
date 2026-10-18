@@ -1,0 +1,41 @@
+{
+  "checked_on": "2026-10-18",
+  "organization": {
+    "url": "https://github.com/agentforge-hq",
+    "owner_account": "pierrebrunelle",
+    "membership_role": "admin",
+    "plan": "free"
+  },
+  "public_skill": {
+    "url": "https://github.com/agentforge-hq/agentforge",
+    "private": false,
+    "license": "Apache-2.0",
+    "tests": 52,
+    "structural_sdqs": 100,
+    "commit": "9c74d4334ac66bdc60992adccfdacad1e0e3a004",
+    "ci": "https://github.com/agentforge-hq/agentforge/actions/runs/39155168682",
+    "conclusion": "success"
+  },
+  "company": {
+    "url": "https://github.com/agentforge-hq/company",
+    "private": true,
+    "license": "Proprietary",
+    "tests": 21,
+    "initial_commit": "776428bfea151ac7ff7fccb8ded03d17086f9874",
+    "ci": "https://github.com/agentforge-hq/company/actions/runs/39155177774",
+    "conclusion": "success"
+  },
+  "workers": {
+    "live_enabled": false,
+    "recurring_schedule_enabled": false,
+    "paid_calls_made": 0,
+    "roles": [
+      "product",
+      "engineering",
+      "design",
+      "marketing",
+      "operations"
+    ]
+  },
+  "boundary": "Local fixtures and CI do not establish task lift, full harness compatibility, a live xAI integration or commercial demand."
+}

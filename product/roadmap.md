@@ -11,7 +11,7 @@ not a release promise. The detailed queue is in [work-items.json](../.company/wo
 
 | Milestone | State | Outcome | Exit evidence |
 | --- | --- | --- | --- |
-| M0: publish and establish ownership | In progress | Public Apache-2.0 skill and private company repository under the chosen organization | Both repositories exist with verified visibility; tests pass; owners and links are correct |
+| M0: publish and establish ownership | Complete | Public Apache-2.0 skill and private company repository under the chosen organization | Both repositories exist with verified visibility; tests pass; owners and links are correct |
 | M1: reconcile the v0.1 contract | Planned | Decide and close gaps between the current implementation and supplied brief | Each gap is implemented with a test, explicitly rejected with rationale, or moved to a named later milestone |
 | M2: prove useful maintenance | Planned | Dogfood audit, selected deduplication and one real drift repair | Redacted before/after reports, explicit authorization for file moves, regression checks and user acceptance from distinct tasks |
 | M3: test task outcomes | Planned | Compare maintained skills with baselines on representative jobs | Reproducible cases, actual task results, failure analysis and a clear distinction between structural scores and skill lift |
@@ -21,8 +21,7 @@ not a release promise. The detailed queue is in [work-items.json](../.company/wo
 
 ## Next work
 
-1. Finish M0: complete GitHub organization setup, create the repositories, push
-   the reviewed packages and verify repository visibility.
+1. M0 is complete; [release verification](../evidence/release-verification.json) records repository visibility and passing CI.
 2. Reconcile [the v0.1 gaps](v0.1-contract-gaps.md). Do not rename an internal
    heuristic to imply a published benchmark, or encode unverified harness flags.
 3. Run one real maintenance job and preserve the minimal evidence needed to

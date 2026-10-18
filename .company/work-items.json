@@ -1,47 +1,99 @@
 {
   "items": [
     {
-      "id": "AF-001", "owner": "operations", "status": "in-progress", "depends_on": [],
+      "id": "AF-001",
+      "owner": "operations",
+      "status": "done",
+      "depends_on": [],
       "task": "Finish organization signup and publish the separate public and private repositories.",
       "acceptance": "Organization ownership and both repository visibility settings are verified after push.",
-      "evidence": ["decisions/0001-operating-model.md"]
+      "evidence": [
+        "evidence/release-verification.json"
+      ],
+      "result": "Organization membership, public/private visibility, default branches, Apache-2.0 license and both initial CI runs verified on 2026-10-18."
     },
     {
-      "id": "AF-002", "owner": "product", "status": "planned", "depends_on": ["AF-001"],
+      "id": "AF-002",
+      "owner": "product",
+      "status": "planned",
+      "depends_on": [
+        "AF-001"
+      ],
       "task": "Decide the v0.1 compatibility contract for the newly supplied brief.",
       "acceptance": "Each contract gap has an explicit implement, reject or defer decision and owner.",
-      "evidence": ["product/v0.1-contract-gaps.md", "product/source-brief.md"]
+      "evidence": [
+        "product/v0.1-contract-gaps.md",
+        "product/source-brief.md"
+      ]
     },
     {
-      "id": "AF-003", "owner": "engineering", "status": "planned", "depends_on": ["AF-002"],
+      "id": "AF-003",
+      "owner": "engineering",
+      "status": "planned",
+      "depends_on": [
+        "AF-002"
+      ],
       "task": "Demonstrate one real skill maintenance repair with reproducible before/after evidence.",
       "acceptance": "A focused approved repair passes a regression case and records its budget change.",
-      "evidence": ["product/roadmap.md"]
+      "evidence": [
+        "product/roadmap.md"
+      ]
     },
     {
-      "id": "AF-004", "owner": "design", "status": "planned", "depends_on": ["AF-003"],
+      "id": "AF-004",
+      "owner": "design",
+      "status": "planned",
+      "depends_on": [
+        "AF-003"
+      ],
       "task": "Walk the maintenance review and recovery experience using the actual product.",
       "acceptance": "One documented journey quotes observed output, identifies a concrete breakdown and tests a focused improvement.",
-      "evidence": ["design/README.md"]
+      "evidence": [
+        "design/README.md"
+      ]
     },
     {
-      "id": "AF-005", "owner": "marketing", "status": "planned", "depends_on": ["AF-003"],
+      "id": "AF-005",
+      "owner": "marketing",
+      "status": "planned",
+      "depends_on": [
+        "AF-003"
+      ],
       "task": "Draft a source-backed launch walkthrough for the first developer audience.",
       "acceptance": "Every product claim has evidence; sensitive paths are redacted; publication remains a separate founder decision.",
-      "evidence": ["marketing/README.md", "evidence/claims.json"]
+      "evidence": [
+        "marketing/README.md",
+        "evidence/claims.json"
+      ]
     },
     {
-      "id": "AF-006", "owner": "product", "status": "planned", "depends_on": ["AF-004", "AF-005"],
+      "id": "AF-006",
+      "owner": "product",
+      "status": "planned",
+      "depends_on": [
+        "AF-004",
+        "AF-005"
+      ],
       "task": "Test demand for one recurring team maintenance job before choosing a hosted product.",
       "acceptance": "Record customer evidence, a falsifiable paid-use hypothesis and a continue/change/stop decision.",
-      "evidence": ["vision.md", "product/roadmap.md"]
+      "evidence": [
+        "vision.md",
+        "product/roadmap.md"
+      ]
     },
     {
-      "id": "AF-007", "owner": "engineering", "status": "blocked", "depends_on": ["AF-001"],
+      "id": "AF-007",
+      "owner": "engineering",
+      "status": "blocked",
+      "depends_on": [
+        "AF-001"
+      ],
       "task": "Run a manual xAI function-worker pilot.",
       "acceptance": "Founder approves provider data scope and budget, credentials are configured, and a bounded proposal is reviewed.",
       "blocker": "Live API policy is disabled; no API key, model or spending authorization is configured.",
-      "evidence": ["engineering/company-workers.md"]
+      "evidence": [
+        "engineering/company-workers.md"
+      ]
     }
   ]
 }

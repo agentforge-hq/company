@@ -1,32 +1,65 @@
 {
   "claims": [
     {
-      "id": "C-001", "statement": "The initial local AgentForge implementation passed 52 regression tests.",
-      "kind": "measured", "status": "verified-local", "checked_on": "2026-10-18",
-      "sources": ["../engineering/README.md"],
-      "boundary": "Local fixtures establish tested invariants, not complete harness compatibility or task lift. Re-run public CI before release."
+      "id": "C-001",
+      "statement": "The initial local AgentForge implementation passed 52 regression tests.",
+      "kind": "measured",
+      "status": "verified-local",
+      "checked_on": "2026-10-18",
+      "sources": [
+        "release-verification.json",
+        "https://github.com/agentforge-hq/agentforge/actions/runs/39155168682"
+      ],
+      "boundary": "Local fixtures establish tested invariants, not complete harness compatibility or task lift. Re-run public CI before release.",
+      "review_after": "2026-11-01"
     },
     {
-      "id": "C-002", "statement": "A local maintenance product may be valuable to developers who use multiple agent harnesses.",
-      "kind": "inferred", "status": "hypothesis", "checked_on": "2026-10-18",
-      "sources": ["../vision.md"], "boundary": "Needs customer and dogfood evidence."
+      "id": "C-002",
+      "statement": "A local maintenance product may be valuable to developers who use multiple agent harnesses.",
+      "kind": "inferred",
+      "status": "hypothesis",
+      "checked_on": "2026-10-18",
+      "sources": [
+        "../vision.md"
+      ],
+      "boundary": "Needs customer and dogfood evidence.",
+      "review_after": "2026-11-01"
     },
     {
-      "id": "C-003", "statement": "A structurally higher-scoring skill improves actual task results.",
-      "kind": "inferred", "status": "unverified", "checked_on": "2026-10-18",
-      "sources": ["../product/source-brief.md"], "boundary": "SDQS is not a task benchmark; controlled outcome tests are required."
+      "id": "C-003",
+      "statement": "A structurally higher-scoring skill improves actual task results.",
+      "kind": "inferred",
+      "status": "unverified",
+      "checked_on": "2026-10-18",
+      "sources": [
+        "../product/source-brief.md"
+      ],
+      "boundary": "SDQS is not a task benchmark; controlled outcome tests are required.",
+      "review_after": "2026-11-01"
     },
     {
-      "id": "C-004", "statement": "xAI provides a documented Responses API usable by a manually controlled worker.",
-      "kind": "documented", "status": "source-checked", "checked_on": "2026-10-18",
-      "sources": ["https://docs.x.ai/developers/rest-api-reference/inference/responses"],
-      "boundary": "This does not establish automation access to a consumer Grok desktop session or a tested live integration."
+      "id": "C-004",
+      "statement": "xAI provides a documented Responses API usable by a manually controlled worker.",
+      "kind": "documented",
+      "status": "source-checked",
+      "checked_on": "2026-10-18",
+      "sources": [
+        "https://docs.x.ai/developers/rest-api-reference/inference/responses"
+      ],
+      "boundary": "This does not establish automation access to a consumer Grok desktop session or a tested live integration.",
+      "review_after": "2026-11-01"
     },
     {
-      "id": "C-005", "statement": "Function workers can keep the company useful with less human maintenance effort.",
-      "kind": "inferred", "status": "hypothesis", "checked_on": "2026-10-18",
-      "sources": ["../engineering/company-workers.md"],
-      "boundary": "Requires accepted proposals, measured review effort and provider cost from a bounded pilot."
+      "id": "C-005",
+      "statement": "Function workers can keep the company useful with less human maintenance effort.",
+      "kind": "inferred",
+      "status": "hypothesis",
+      "checked_on": "2026-10-18",
+      "sources": [
+        "../engineering/company-workers.md"
+      ],
+      "boundary": "Requires accepted proposals, measured review effort and provider cost from a bounded pilot.",
+      "review_after": "2026-11-01"
     }
   ]
 }
