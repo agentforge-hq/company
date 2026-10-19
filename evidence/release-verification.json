@@ -10,11 +10,27 @@
     "url": "https://github.com/agentforge-hq/agentforge",
     "private": false,
     "license": "Apache-2.0",
-    "tests": 52,
+    "tests": 86,
     "structural_sdqs": 100,
-    "commit": "9c74d4334ac66bdc60992adccfdacad1e0e3a004",
-    "ci": "https://github.com/agentforge-hq/agentforge/actions/runs/39155168682",
-    "conclusion": "success"
+    "commit": "bfa31f4bc82ce0a70b9380bc0cbc64e90ad76dd1",
+    "ci": "https://github.com/agentforge-hq/agentforge/actions/runs/39161034567",
+    "conclusion": "success",
+    "runtime": "Go native executable; standard library only",
+    "source_commit": "d0d26bd03f08d2e63dc27a793fec89d87b7387ee",
+    "pull_request": "https://github.com/agentforge-hq/agentforge/pull/2",
+    "merge_status": "merged",
+    "initial_python_release": {
+      "url": "https://github.com/agentforge-hq/agentforge",
+      "private": false,
+      "license": "Apache-2.0",
+      "tests": 52,
+      "structural_sdqs": 100,
+      "commit": "9c74d4334ac66bdc60992adccfdacad1e0e3a004",
+      "ci": "https://github.com/agentforge-hq/agentforge/actions/runs/39155168682",
+      "conclusion": "success"
+    },
+    "main_ci": "https://github.com/agentforge-hq/agentforge/actions/runs/39166133554",
+    "main_ci_conclusion": "success"
   },
   "company": {
     "url": "https://github.com/agentforge-hq/company",
@@ -33,17 +49,29 @@
     "checked_on": "2026-10-18",
     "pull_request": "https://github.com/agentforge-hq/agentforge/pull/1",
     "commit": "6661f27f1f71410cb95b2e91e54909fd3c9e938a",
-    "merge_status": "open",
+    "merge_status": "merged",
     "installed_locally_with_backup": true,
     "regression_tests": 60,
-    "python_ci_versions": ["3.11", "3.12", "3.13"],
+    "python_ci_versions": [
+      "3.11",
+      "3.12",
+      "3.13"
+    ],
     "ci": "https://github.com/agentforge-hq/agentforge/actions/runs/39157335938",
     "conclusion": "success",
-    "lexical_smoke_cases": {"total": 12, "before_passed": 10, "after_passed": 12},
-    "verified_false_missing_reference_errors": {"before": 12, "after": 0},
+    "lexical_smoke_cases": {
+      "total": 12,
+      "before_passed": 10,
+      "after_passed": 12
+    },
+    "verified_false_missing_reference_errors": {
+      "before": 12,
+      "after": 0
+    },
     "actual_model_routing_measured": false,
     "duplicate_cleanup_applied": false,
-    "eager_rules_pruned": false
+    "eager_rules_pruned": false,
+    "merge_commit": "f473017adb6f8b9fb84bd2adaadc87ac17b6c4a8"
   },
   "workers": {
     "live_enabled": false,
@@ -65,5 +93,77 @@
       "xai_call_made": false
     }
   },
-  "boundary": "Local fixtures and CI do not establish task lift, full harness compatibility, a live xAI integration or commercial demand."
+  "boundary": "Local fixtures and CI do not establish task lift, full harness compatibility, a live xAI integration or commercial demand.",
+  "go_migration": {
+    "checked_on": "2026-10-18",
+    "decision": "decisions/0003-native-go-runtime.md",
+    "native_regression_tests": 86,
+    "local_go_vet": "pass",
+    "local_race_checks": "pass",
+    "ci_os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "ci_go_versions": [
+      "1.23",
+      "1.27"
+    ],
+    "ci_jobs_passed": 7,
+    "bundle_build_targets": [
+      "darwin/amd64",
+      "darwin/arm64",
+      "linux/amd64",
+      "linux/arm64",
+      "windows/amd64",
+      "windows/arm64"
+    ],
+    "package_smoke": {
+      "os": "darwin",
+      "arch": "arm64",
+      "empty_executable_search_path": true,
+      "checks": [
+        "version",
+        "audit",
+        "self-lint"
+      ],
+      "result": "pass",
+      "python_sources": 0
+    },
+    "independent_forward_check": {
+      "isolated_fixtures": true,
+      "flows": [
+        "audit",
+        "lint and fixture repair",
+        "dedupe preview/apply/restore",
+        "divergent-copy rejection",
+        "portable export"
+      ],
+      "findings_fixed": [
+        "mixed duplicate relationships",
+        "repeated unverified-command findings"
+      ]
+    },
+    "installed_locally_with_full_backup": true,
+    "installed_root_token_proxy": 696,
+    "codex_default_scan": {
+      "filesystem_candidates": 124,
+      "index_token_proxy": 12188,
+      "eager_rule_token_proxy": 3253,
+      "read_errors": 0
+    },
+    "saved_session_check": {
+      "entries": 41,
+      "lexical_cases": 12,
+      "passed": 12,
+      "operational_errors": 0,
+      "remaining_review_findings": 4
+    },
+    "python_syntax_boundary": "Literal flags and balanced tokens only; full Python syntax unverified. Inspected scripts are never executed.",
+    "actual_model_routing_measured": false,
+    "duplicate_cleanup_applied": false,
+    "eager_rules_pruned": false,
+    "company_license_changed": false,
+    "duplicate_pilot_packet": "engineering/duplicate-pilot.md"
+  }
 }

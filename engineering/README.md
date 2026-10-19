@@ -10,7 +10,8 @@ Engineering owns correctness, reproducibility, compatibility evidence and the
 cost of maintaining the system.
 
 The [public skill](https://github.com/agentforge-hq/agentforge) contains the
-local deterministic core. This public repository contains the company worker
+local deterministic core as a native Go executable; see the
+[runtime decision](../decisions/0003-native-go-runtime.md). This public repository contains the company worker
 prototype in `scripts/company.py`, its tests, operating configuration and
 commercial planning. A hosted commercial service has not been built.
 
@@ -38,15 +39,22 @@ The first dogfood audit exposed problems in AgentForge's measurements. The
 [reliability patch](https://github.com/agentforge-hq/agentforge/pull/1) corrects
 Codex built-in coverage, false dependency errors and weak lexical matches. Its
 local activation and verification are recorded in
-[release verification](../evidence/release-verification.json). The pull request
-remains open for review. Passing structural checks does not establish better
+[release verification](../evidence/release-verification.json). The patch and
+subsequent Go rewrite are merged. The initial Go port passed 86 native
+regression tests, cross-platform CI and all 12 saved lexical smoke cases.
+Passing structural checks does not establish better
 model routing or completed tasks.
 
-Next, capture a fresh Codex baseline, then test disabling one duplicate
-`humanizer` entry for Codex while retaining the universal copy and all files.
-Back up the setting, restart the harness and verify the new catalog. Compare
-the same rewrite, skill-creation, audit and unrelated arithmetic tasks with
-fixed inputs and model settings. Record selected skill paths, fact preservation
-and task completion; restore the setting if outcomes regress. Keep plugin
-caches and eager project rules intact during this first pilot. No configuration
-change or fresh-session performance improvement has been verified yet.
+Next, run AF-011's controlled duplicate-disable comparison in fresh Codex chats.
+The [pilot packet](duplicate-pilot.md) owns the raw cases, catalog checks,
+evaluator rubric and recovery steps. Keep the rubric outside evaluated prompts.
+Leave task outcomes unmeasured until that comparison runs. No Codex setting has
+been changed by this pilot.
+
+Review the [v0.1 contract](../product/v0.1-contract-gaps.md) before adding commands.
+Treat portability and instruction-pattern findings as review candidates.
+Do not edit plugin caches or weaken checks to make a report pass.
+
+The [Devin field follow-up](devin-field-feedback.md) verifies a real filesystem
+cleanup and records the resulting batch-storage, root-discovery and help fixes.
+Its saved audit counts and restore previews do not establish routing or task lift.

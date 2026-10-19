@@ -12,8 +12,8 @@ not a release promise. The detailed queue is in [work-items.json](../.company/wo
 | Milestone | State | Outcome | Exit evidence |
 | --- | --- | --- | --- |
 | M0: publish and establish ownership | Complete | Public Apache-2.0 skill and public company workspace under the chosen organization | Both repositories exist with verified visibility; tests pass; owners and links are correct |
-| M1: reconcile the v0.1 contract | Planned | Decide and close gaps between the current implementation and supplied brief | Each gap is implemented with a test, explicitly rejected with rationale, or moved to a named later milestone |
-| M2: prove useful maintenance | Planned | Dogfood audit, selected deduplication and one real drift repair | Redacted before/after reports, explicit authorization for file moves, regression checks and user acceptance from distinct tasks |
+| M1: reconcile the v0.1 contract | In review | Review the proposed smaller contract alongside the merged native Go implementation | Each gap has an owner and an implement, reject or milestone-specific defer decision accepted in review |
+| M2: prove useful maintenance | In progress | Devin field cleanup is verified at the filesystem level; controlled outcomes and a drift repair remain | Redacted before/after reports, explicit authorization for file moves, regression checks and user acceptance from distinct tasks |
 | M3: test task outcomes | Planned | Compare maintained skills with baselines on representative jobs | Reproducible cases, actual task results, failure analysis and a clear distinction between structural scores and skill lift |
 | M4: validate a team offering | Planned | Learn which recurring maintenance job teams will adopt or pay for | Customer evidence, selected job, willingness-to-pay test and a bounded service specification |
 | M5: pilot function workers | Prototype prepared | Product, engineering, design, marketing and operations produce useful proposals | Approved provider budget and data scope; manual runs accepted by reviewers; no unexplained or unauthorized edits |
@@ -22,10 +22,15 @@ not a release promise. The detailed queue is in [work-items.json](../.company/wo
 ## Next work
 
 1. M0 is complete; [release verification](../evidence/release-verification.json) records repository visibility and passing CI.
-2. Reconcile [the v0.1 gaps](v0.1-contract-gaps.md). Do not rename an internal
+2. Review [the v0.1 contract](v0.1-contract-gaps.md). The
+   [native Go rewrite](../decisions/0003-native-go-runtime.md) is merged and
+   installed locally, with a full backup and passing platform checks. Do not rename an internal
    heuristic to imply a published benchmark, or encode unverified harness flags.
-3. Run one real maintenance job and preserve the minimal evidence needed to
-   assess it. Avoid publishing machine inventories that expose private paths.
+3. Run AF-011's fresh-session duplicate-disable comparison, then one demonstrated
+   drift repair under AF-003. Preserve the minimal evidence needed to assess
+   outcomes. Avoid publishing machine inventories that expose private paths.
+   The [Devin follow-up](../engineering/devin-field-feedback.md) supplies the
+   first verified cleanup counts and prioritizes narrow usability fixes.
 
 ## Candidate later products
 

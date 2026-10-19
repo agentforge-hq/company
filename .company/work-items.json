@@ -10,12 +10,12 @@
       "evidence": [
         "evidence/release-verification.json"
       ],
-      "result": "Organization membership, public/private visibility, default branches, Apache-2.0 license and both initial CI runs verified on 2026-10-18."
+      "result": "Organization ownership, initial repository visibility, default branches, skill license and initial CI verified on 2026-10-18."
     },
     {
       "id": "AF-002",
       "owner": "product",
-      "status": "planned",
+      "status": "in-review",
       "depends_on": [
         "AF-001"
       ],
@@ -24,7 +24,8 @@
       "evidence": [
         "product/v0.1-contract-gaps.md",
         "product/source-brief.md"
-      ]
+      ],
+      "result": "Scope choices are proposed in product/v0.1-contract-gaps.md. The founder-authorized Go runtime is merged."
     },
     {
       "id": "AF-003",
@@ -108,7 +109,7 @@
         "decisions/0002-build-in-public.md",
         "evidence/release-verification.json"
       ],
-      "result": "History and workflow outputs reviewed; GitHub public visibility verified on 2026-10-18. Existing company license retained."
+      "result": "Company visibility verified public on 2026-10-18; proprietary license retained."
     },
     {
       "id": "AF-009",
@@ -138,7 +139,7 @@
         "engineering/README.md",
         "evidence/release-verification.json"
       ],
-      "result": "60 regression tests pass locally and in Python 3.11-3.13 CI; saved lexical cases improve from 10/12 to 12/12. Local installation has a backup. Skill PR 1 remains open; no model-routing or task-performance gain is claimed."
+      "result": "Skill PR 1 merged. All 60 Python regressions and Python 3.11-3.13 CI passed; saved lexical cases improved from 10/12 to 12/12."
     },
     {
       "id": "AF-011",
@@ -150,8 +151,41 @@
       "task": "Compare fresh Codex baseline tasks with one reversible duplicate-disable pilot.",
       "acceptance": "Verify one fewer duplicate catalog entry and compare the same tasks, input facts and model settings before and after. Record selected paths and completed outcomes; retain or restore the saved configuration from evidence.",
       "evidence": [
+        "engineering/duplicate-pilot.md",
+        "evidence/duplicate-pilot/cases.json",
         "engineering/README.md"
-      ]
+      ],
+      "result": "Raw cases, separate rubric and recovery steps are ready. No setting changed or fresh-session outcome measured."
+    },
+    {
+      "id": "AF-012",
+      "owner": "engineering",
+      "status": "done",
+      "depends_on": [
+        "AF-010"
+      ],
+      "task": "Replace the public skill Python runtime with a portable native Go CLI.",
+      "acceptance": "All five command domains run in Go; native tests, recovery compatibility, OS CI, six bundles and an interpreter-free installed smoke check pass. Preserve the company proprietary license.",
+      "evidence": [
+        "decisions/0003-native-go-runtime.md",
+        "evidence/release-verification.json"
+      ],
+      "result": "Skill PR 2 merged and installed with backup. All 86 native tests and seven CI jobs pass. Company worker code and proprietary license are unchanged."
+    },
+    {
+      "id": "AF-013",
+      "owner": "engineering",
+      "status": "in-review",
+      "depends_on": [
+        "AF-012"
+      ],
+      "task": "Address verified Devin cleanup friction in batch storage, default roots and report interpretation.",
+      "acceptance": "Selected skills preview, archive and restore in one transaction; invalid inputs move nothing. Default discovery finds Devin CLI globals; help and JSON fields match behavior.",
+      "evidence": [
+        "engineering/devin-field-feedback.md",
+        "evidence/devin-cleanup.json"
+      ],
+      "result": "All 45 archive restore previews pass. Skill PR 3 adds batch storage and native roots; 89 native tests pass."
     }
   ]
 }
