@@ -73,6 +73,19 @@
       ],
       "boundary": "Six bundles were built; not every target architecture was executed. Tests and lexical checks do not establish faster execution, actual routing improvement or task lift.",
       "review_after": "2026-11-01"
+    },
+    {
+      "id": "C-007",
+      "statement": "Saved Devin cleanup audits contain 81 then 38 filesystem occurrences, with index estimates of 8,556 then 5,260. All 45 recorded archive transactions pass restore previews.",
+      "kind": "measured",
+      "status": "verified-local",
+      "checked_on": "2026-10-18",
+      "sources": [
+        "devin-cleanup.json",
+        "../engineering/devin-field-feedback.md"
+      ],
+      "boundary": "No actual field restore, fresh startup catalog, prompt-token measurement or held-out task comparison was performed.",
+      "review_after": "2026-11-01"
     }
   ]
 }

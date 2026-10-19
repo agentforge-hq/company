@@ -40,30 +40,21 @@ The first dogfood audit exposed problems in AgentForge's measurements. The
 Codex built-in coverage, false dependency errors and weak lexical matches. Its
 local activation and verification are recorded in
 [release verification](../evidence/release-verification.json). The patch and
-subsequent Go rewrite are merged. The installed Go skill passes 86 native
+subsequent Go rewrite are merged. The initial Go port passed 86 native
 regression tests, cross-platform CI and all 12 saved lexical smoke cases.
 Passing structural checks does not establish better
 model routing or completed tasks.
 
-Next, capture a fresh Codex baseline, then test disabling one duplicate
-`humanizer` entry for Codex while retaining the universal copy and all files.
-Back up the setting, restart the harness and verify the new catalog. Compare
-the same rewrite, skill-creation, audit and unrelated arithmetic tasks with
-fixed inputs and model settings. Record selected skill paths, fact preservation
-and task completion; restore the setting if outcomes regress. Keep plugin
-caches and eager project rules intact during this first pilot. No configuration
-change or fresh-session performance improvement has been verified yet.
+Next, run AF-011's controlled duplicate-disable comparison in fresh Codex chats.
+The [pilot packet](duplicate-pilot.md) owns the raw cases, catalog checks,
+evaluator rubric and recovery steps. Keep the rubric outside evaluated prompts.
+Leave task outcomes unmeasured until that comparison runs. No Codex setting has
+been changed by this pilot.
 
-The native audit reproduces 124 filesystem candidates, a 12,188-token index
-proxy and a 3,253-token eager-rule proxy. The saved 41-entry session catalog
-still has four review findings: two uppercase plugin names, one plugin directory
-name mismatch and one remote-execution pattern. These are review candidates,
-not proof that those skills fail or are malicious. Do not edit plugin caches or
-weaken checks simply to make this report pass.
+Review the [v0.1 contract](../product/v0.1-contract-gaps.md) before adding commands.
+Treat portability and instruction-pattern findings as review candidates.
+Do not edit plugin caches or weaken checks to make a report pass.
 
-Resolve the [v0.1 contract](../product/v0.1-contract-gaps.md) before expanding
-the command surface. The next behavioral priority is AF-011's controlled
-duplicate-disable pilot. If a fresh-session comparison is unavailable, prepare
-its raw cases and recovery steps; leave its outcome unmeasured.
-The [pilot packet](duplicate-pilot.md) contains those cases, evaluator checks and
-recovery steps. Keep the rubric separate from evaluated prompts.
+The [Devin field follow-up](devin-field-feedback.md) verifies a real filesystem
+cleanup and records the resulting batch-storage, root-discovery and help fixes.
+Its saved audit counts and restore previews do not establish routing or task lift.

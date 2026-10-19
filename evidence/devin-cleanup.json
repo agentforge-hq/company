@@ -1,0 +1,78 @@
+{
+  "checked_on": "2026-10-18",
+  "evidence_kind": "locally inspected saved audit JSON, current filesystem scan, transaction manifests and read-only restore previews",
+  "source_artifacts": {
+    "audit.json": {
+      "sha256": "0a5f14af31f9daccd2be4cda2e59147ce066de23bde730e75dc60743b47e6d47"
+    },
+    "audit2.json": {
+      "sha256": "4e5bb586fddb8e4fa001f0350f2342c9164e5639338a5749f6a50e0afec865c8"
+    }
+  },
+  "before": {
+    "skill_occurrences": 81,
+    "unique_physical_skills": 76,
+    "index_token_estimate": 8556,
+    "duplicate_name_groups": 4,
+    "audit_errors": 0
+  },
+  "after": {
+    "skill_occurrences": 38,
+    "unique_physical_skills": 36,
+    "index_token_estimate": 5260,
+    "duplicate_name_groups": 3,
+    "audit_errors": 0
+  },
+  "current_four_root_scan_matches_saved_after": true,
+  "transactions": {
+    "total": 45,
+    "operations": {
+      "cold": 42,
+      "dedupe": 3
+    },
+    "statuses": {
+      "stored": 45
+    },
+    "items": 45
+  },
+  "restore_previews": {
+    "total": 45,
+    "passed": 45,
+    "actual_restores_applied": 0
+  },
+  "output_field_check": {
+    "all_entries_have_description": true,
+    "all_body_estimates_nonzero": true,
+    "tokens_field_exists": false,
+    "body_field": "tokens_estimate",
+    "index_field": "index_tokens_estimate"
+  },
+  "boundaries": [
+    "Custom-root inventory, not observed Devin startup catalog",
+    "No eager-rule profile was collected in these custom-root scans",
+    "Index estimates are byte proxies, not observed prompt tokens",
+    "No held-out routing or task outcomes measured",
+    "Principle merge fidelity and warm/cold judgments remain unverified",
+    "Restore previews validate fingerprints and destinations; no actual field restore was performed"
+  ],
+  "public_skill_fix": {
+    "source_commit": "7aabbf7b0076e3805275fa5729cc343f52526407",
+    "status": "proposed in skill PR",
+    "local_regression_tests": 89,
+    "changes": [
+      "Batch cold-storage CLI using one transaction",
+      "Documented Devin CLI global root included by default",
+      "Help and JSON field reference"
+    ],
+    "strict_fingerprints_unchanged": true,
+    "pull_request": "https://github.com/agentforge-hq/agentforge/pull/3",
+    "ci": "https://github.com/agentforge-hq/agentforge/actions/runs/39196906489",
+    "ci_conclusion": "success",
+    "ci_jobs": 7,
+    "bundle_targets_built": 6,
+    "native_package_checks": 8,
+    "empty_executable_search_path": true,
+    "installed_locally_with_full_backup": true,
+    "company_license_changed": false
+  }
+}
