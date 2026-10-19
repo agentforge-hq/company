@@ -1,0 +1,25 @@
+{
+  "purpose": "Synthetic raw inputs for fresh baseline and treatment chats. Keep the evaluator rubric outside evaluated chats.",
+  "cases": [
+    {
+      "id": "rewrite",
+      "prompt": "Rewrite this paragraph so it sounds less like AI. Keep every fact and qualification unchanged. Return the revised paragraph.",
+      "input": "It is important to note that the Northstar pilot is scheduled for Tuesday, November 10, 2026 at 16:00 UTC. The team has invited 12 reviewers, although only 7 have confirmed. The proposed price is $19 per month, not an approved price. No customer data has been uploaded. This isn't about adding more meetings. It's about fostering a more streamlined review process."
+    },
+    {
+      "id": "audit",
+      "prompt": "Audit only ./fixture-skills for duplicate skills. Report the findings and explain what the estimates do and do not establish. Make no file or configuration changes.",
+      "input": "Use the same fixture-skills directory bytes in each run. See the pilot setup document."
+    },
+    {
+      "id": "create-skill",
+      "prompt": "Create a reusable local skill at ./case-output/weekly-digest. It should turn supplied project notes into a weekly digest with completed work, blockers and next decisions. Use supplied notes only; mark missing facts and do not send or publish anything. Keep its root instructions compact, include a clear trigger, and validate the result.",
+      "input": "The fixture directory is writable and initially contains no case-output directory."
+    },
+    {
+      "id": "arithmetic",
+      "prompt": "What is 17 multiplied by 23?",
+      "input": ""
+    }
+  ]
+}

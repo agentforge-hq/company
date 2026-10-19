@@ -15,7 +15,7 @@
     {
       "id": "AF-002",
       "owner": "product",
-      "status": "planned",
+      "status": "in-review",
       "depends_on": [
         "AF-001"
       ],
@@ -24,7 +24,8 @@
       "evidence": [
         "product/v0.1-contract-gaps.md",
         "product/source-brief.md"
-      ]
+      ],
+      "result": "Proposed smaller v0.1 contract records explicit accept, reject or milestone-specific defer decisions with owners. Native Go runtime is founder-authorized and merged; scope proposal remains for review."
     },
     {
       "id": "AF-003",
@@ -138,7 +139,7 @@
         "engineering/README.md",
         "evidence/release-verification.json"
       ],
-      "result": "60 regression tests pass locally and in Python 3.11-3.13 CI; saved lexical cases improve from 10/12 to 12/12. Local installation has a backup. Skill PR 1 remains open; no model-routing or task-performance gain is claimed."
+      "result": "60 Python regression tests passed locally and in Python 3.11-3.13 CI; saved lexical cases improved from 10/12 to 12/12. Skill PR 1 is merged. The subsequent Go port retains these checks; no model-routing or task-performance gain is claimed."
     },
     {
       "id": "AF-011",
@@ -150,8 +151,26 @@
       "task": "Compare fresh Codex baseline tasks with one reversible duplicate-disable pilot.",
       "acceptance": "Verify one fewer duplicate catalog entry and compare the same tasks, input facts and model settings before and after. Record selected paths and completed outcomes; retain or restore the saved configuration from evidence.",
       "evidence": [
+        "engineering/duplicate-pilot.md",
+        "evidence/duplicate-pilot/cases.json",
         "engineering/README.md"
-      ]
+      ],
+      "result": "Prepared synthetic raw cases, separate evaluator rubric, catalog checks and recovery steps. Fresh-session baseline and treatment outcomes are not measured; no setting change has been applied."
+    },
+    {
+      "id": "AF-012",
+      "owner": "engineering",
+      "status": "done",
+      "depends_on": [
+        "AF-010"
+      ],
+      "task": "Replace the public skill Python runtime with a portable native Go CLI.",
+      "acceptance": "All five command domains run in Go; native tests, recovery compatibility, OS CI, six bundles and an interpreter-free installed smoke check pass. Preserve the company proprietary license.",
+      "evidence": [
+        "decisions/0003-native-go-runtime.md",
+        "evidence/release-verification.json"
+      ],
+      "result": "Skill PR 2 merged. 86 native regressions, vet and race checks pass; seven OS/toolchain/bundle CI jobs pass. Native skill is active locally with its complete Python predecessor retained outside discovery roots. Company worker code and license remain proprietary."
     }
   ]
 }

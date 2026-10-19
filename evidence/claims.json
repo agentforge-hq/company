@@ -60,6 +60,19 @@
       ],
       "boundary": "Requires accepted proposals, measured review effort and provider cost from a bounded pilot.",
       "review_after": "2026-11-01"
+    },
+    {
+      "id": "C-006",
+      "statement": "The native Go AgentForge skill passes 86 regressions, seven platform/build CI jobs and an extracted macOS arm64 bundle smoke check without executables on PATH.",
+      "kind": "measured",
+      "status": "verified-local-and-ci",
+      "checked_on": "2026-10-18",
+      "sources": [
+        "release-verification.json",
+        "https://github.com/agentforge-hq/agentforge/actions/runs/39161034567"
+      ],
+      "boundary": "Six bundles were built; not every target architecture was executed. Tests and lexical checks do not establish faster execution, actual routing improvement or task lift.",
+      "review_after": "2026-11-01"
     }
   ]
 }
