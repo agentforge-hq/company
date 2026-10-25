@@ -1,13 +1,21 @@
 ---
 owner: product
 status: draft
-reviewed: 2026-10-18
-review_after: 2026-10-25
+reviewed: 2026-10-24
+review_after: 2026-10-31
 ---
 # Roadmap
 
-The sequence below is driven by evidence gates. Timing is a planning assumption,
-not a release promise. The detailed queue is in [work-items.json](../.company/work-items.json).
+The [discovery service PRD](discovery-service-prd.md) proposes the next release:
+a Pixeltable Cloud skill index, one search endpoint for the installed skill and
+website, and automatic capability recommendations. Its release sequence and
+acceptance checks replace the maintenance-first sequence below if accepted in
+founder review. No service is deployed by that proposal.
+
+The table below records the earlier local-release plan and its remaining
+experiments. It does not make drift repair or a team maintenance offering a
+prerequisite for the discovery pilot. The detailed queue is in
+[work-items.json](../.company/work-items.json).
 
 | Milestone | State | Outcome | Exit evidence |
 | --- | --- | --- | --- |

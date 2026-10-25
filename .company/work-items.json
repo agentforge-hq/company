@@ -19,13 +19,14 @@
       "depends_on": [
         "AF-001"
       ],
-      "task": "Decide the v0.1 compatibility contract for the newly supplied brief.",
-      "acceptance": "Each contract gap has an explicit implement, reject or defer decision and owner.",
+      "task": "Review the local v0.1 contract and the discovery service proposal.",
+      "acceptance": "Both releases have explicit scope decisions accepted in review.",
       "evidence": [
         "product/v0.1-contract-gaps.md",
-        "product/source-brief.md"
+        "product/source-brief.md",
+        "product/discovery-service-prd.md"
       ],
-      "result": "Scope choices are proposed in product/v0.1-contract-gaps.md. The founder-authorized Go runtime is merged."
+      "result": "Local contract proposed; Go runtime merged. Discovery PRD records the founder's October 24 direction."
     },
     {
       "id": "AF-003",
