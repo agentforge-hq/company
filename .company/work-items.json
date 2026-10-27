@@ -24,14 +24,15 @@
       "evidence": [
         "product/v0.1-contract-gaps.md",
         "product/source-brief.md",
-        "product/discovery-service-prd.md"
+        "product/discovery-service-prd.md",
+        "product/competitive-landscape.md"
       ],
-      "result": "Local contract proposed; Go runtime merged. Discovery PRD records the founder's October 24 direction."
+      "result": "Local contract remains in review. The founder accepted discovery-first coverage, relevance evaluation, and harness-adoption priorities on 2026-10-27. A deployed preview does not establish full PRD acceptance."
     },
     {
       "id": "AF-003",
       "owner": "engineering",
-      "status": "planned",
+      "status": "deferred",
       "depends_on": [
         "AF-002"
       ],
@@ -39,12 +40,13 @@
       "acceptance": "A focused approved repair passes a regression case and records its budget change.",
       "evidence": [
         "product/roadmap.md"
-      ]
+      ],
+      "defer_reason": "Discovery validation takes priority under the founder direction accepted on 2026-10-27."
     },
     {
       "id": "AF-004",
       "owner": "design",
-      "status": "planned",
+      "status": "deferred",
       "depends_on": [
         "AF-003"
       ],
@@ -52,16 +54,17 @@
       "acceptance": "One documented journey quotes observed output, identifies a concrete breakdown and tests a focused improvement.",
       "evidence": [
         "design/README.md"
-      ]
+      ],
+      "defer_reason": "Discovery validation takes priority under the founder direction accepted on 2026-10-27."
     },
     {
       "id": "AF-005",
       "owner": "marketing",
       "status": "planned",
       "depends_on": [
-        "AF-003"
+        "AF-017"
       ],
-      "task": "Draft a source-backed launch walkthrough for the first developer audience.",
+      "task": "Draft a source-backed discovery pilot walkthrough with measured coverage, relevance, and harness behavior.",
       "acceptance": "Every product claim has evidence; sensitive paths are redacted; publication remains a separate founder decision.",
       "evidence": [
         "marketing/README.md",
@@ -71,7 +74,7 @@
     {
       "id": "AF-006",
       "owner": "product",
-      "status": "planned",
+      "status": "deferred",
       "depends_on": [
         "AF-004",
         "AF-005"
@@ -81,7 +84,8 @@
       "evidence": [
         "vision.md",
         "product/roadmap.md"
-      ]
+      ],
+      "defer_reason": "Discovery validation takes priority under the founder direction accepted on 2026-10-27."
     },
     {
       "id": "AF-007",
@@ -145,7 +149,7 @@
     {
       "id": "AF-011",
       "owner": "engineering",
-      "status": "planned",
+      "status": "deferred",
       "depends_on": [
         "AF-010"
       ],
@@ -156,7 +160,8 @@
         "evidence/duplicate-pilot/cases.json",
         "engineering/README.md"
       ],
-      "result": "Raw cases, separate rubric and recovery steps are ready. No setting changed or fresh-session outcome measured."
+      "result": "Raw cases, separate rubric and recovery steps are ready. No setting changed or fresh-session outcome measured.",
+      "defer_reason": "Discovery validation takes priority under the founder direction accepted on 2026-10-27."
     },
     {
       "id": "AF-012",
@@ -187,6 +192,66 @@
         "evidence/devin-cleanup.json"
       ],
       "result": "All 45 archive restore previews pass. Skill PR 3 adds batch storage and native roots; 89 native tests pass."
+    },
+    {
+      "id": "AF-014",
+      "owner": "engineering",
+      "status": "planned",
+      "depends_on": [],
+      "task": "Expand canonical discovery coverage with a documented registry connector and upstream revision mapping.",
+      "acceptance": "PRD stage B passes at 500 distinct directories across two source kinds. Record changes, removals, repeated ingestion, extraction failure, fork handling, freshness, and task-family coverage.",
+      "evidence": [
+        "product/roadmap.md",
+        "product/discovery-service-prd.md",
+        "product/competitive-landscape.md"
+      ]
+    },
+    {
+      "id": "AF-015",
+      "owner": "product",
+      "status": "planned",
+      "depends_on": [
+        "AF-014"
+      ],
+      "task": "Freeze and run a representative relevance evaluation against lexical retrieval and accessible competing discovery paths.",
+      "acceptance": "Freeze 100 human-reviewed prompts before final tuning. At least 40 of 50 relevant prompts have an approved top-three match. Report no-match behavior, catalog differences, latency, and limitations without inferring general superiority from a single query.",
+      "evidence": [
+        "product/roadmap.md",
+        "product/discovery-service-prd.md",
+        "product/competitive-landscape.md"
+      ]
+    },
+    {
+      "id": "AF-016",
+      "owner": "engineering",
+      "status": "planned",
+      "depends_on": [
+        "AF-014",
+        "AF-015"
+      ],
+      "task": "Demonstrate automatic discovery and accepted adoption in fresh Codex sessions, then repeat in a second harness.",
+      "acceptance": "PRD AC-04, AC-05, and AC-06 pass with harness and model versions recorded. Search calls, suggestions, rejection, pinned loading, and matched original-task outcomes have separate evidence.",
+      "evidence": [
+        "product/roadmap.md",
+        "product/discovery-service-prd.md",
+        "product/competitive-landscape.md"
+      ]
+    },
+    {
+      "id": "AF-017",
+      "owner": "operations",
+      "status": "planned",
+      "depends_on": [
+        "AF-015",
+        "AF-016"
+      ],
+      "task": "Complete the controlled discovery pilot and prepare a launch decision with unmet criteria visible.",
+      "acceptance": "Record the remaining PRD parity, failure, security, latency, cost, and 48-hour operating checks. Product and founder review the resulting release claims.",
+      "evidence": [
+        "product/roadmap.md",
+        "product/discovery-service-prd.md",
+        "product/competitive-landscape.md"
+      ]
     }
   ]
 }

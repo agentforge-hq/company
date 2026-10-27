@@ -1,8 +1,8 @@
 ---
 owner: product
 status: draft
-reviewed: 2026-10-24
-review_after: 2026-10-31
+reviewed: 2026-10-27
+review_after: 2026-11-03
 ---
 # AgentForge discovery service PRD
 
@@ -11,12 +11,16 @@ know existed. A small skill in the harness queries a continuously refreshed
 catalog, explains relevant capabilities, and offers to use a suitable skill.
 A single-page website searches the same catalog through the same public endpoint.
 
-This PRD specifies a proposed service release. It does not describe a deployed
-service. The founder supplied the discovery-first direction and selected
-Pixeltable Cloud for storage and serving on October 24, 2026. This proposal
-replaces the maintenance-first sequence for future product work. The existing
-local audit commands remain available. Changes to the company vision and the
-public launch still require founder review.
+This PRD specifies the target service release. A
+[deployed preview](https://agentforge-five-sandy.vercel.app/) and
+[platform implementation](https://github.com/agentforge-hq/platform) now exist.
+Their availability does not establish that all acceptance criteria below pass.
+The founder selected discovery and Pixeltable Cloud on October 24, then accepted
+the coverage, relevance, and harness-adoption priorities on October 27. The
+[roadmap](roadmap.md) replaces the earlier maintenance-first sequence. The
+[competitive review](competitive-landscape.md) records substantial overlap with
+existing products. Local audit commands remain available. Company vision changes
+and a release claim still require founder review.
 
 ## 1. Problem and outcome
 
@@ -297,7 +301,9 @@ then start HTTP with `pxt service update`. All commands target the selected
 `pxt://` database. Discover service URLs from the platform rather than guessing
 hosts. A successful schema update does not prove HTTP availability.
 [Cloud deployment](https://docs.pixeltable.com/cloud#first-deployment).
-This PRD has not deployed a database or tested a hosted route.
+The preview demonstrates a hosted route. Its current implementation and limits
+are in the [platform README](https://github.com/agentforge-hq/platform#current-limits).
+The model above describes target behavior, including work still to be verified.
 
 ## 7. Data and indexing
 
@@ -397,9 +403,10 @@ spend caps configurable, with further paid deployment requiring founder approval
 
 ## 10. Repository and release boundaries
 
-Use a proposed `agentforge-hq/platform` repository for the Cloud application,
+Use `agentforge-hq/platform` for the Cloud application,
 refresh code, shared API schema, single-page website, and small public forwarding
-handler. Its initial structure is:
+handler. The target module layout below is a proposal. See the platform
+repository for its current file structure:
 
 ```text
 platform/
@@ -461,20 +468,24 @@ Record the harness version, model, settings, installed instructions, and catalog
 revision for each evaluation. Keep the evaluator's labels outside the tested
 agent's context. Task-quality comparisons use the same inputs and model settings.
 
-## 12. Decisions still needed before deployment
+## 12. Deployment decisions and remaining checks
 
-| Decision | Proposed default or evidence needed |
+The founder authorized the existing MoS Vercel workspace within included usage
+and the AgentForge database in the Pixeltable Pro organization. This authority
+does not cover plan upgrades, paid add-ons, or unlimited spend.
+
+| Decision | Preview state and remaining evidence |
 | --- | --- |
-| Cloud organization, database, provider, and spending cap | Select deployment settings and approve a bounded pilot budget. Never put credential values in this document. |
-| Public origin and deployment provider | Serve the website and forwarding endpoint together where possible. A domain and host have not been selected. |
-| Codex invocation mechanism | Begin with the supported skill or plugin installation. The fresh-session gates determine whether a stronger integration is required. |
-| Embedding and enrichment models | Compare a small labeled sample for retrieval quality, latency, and cost. Pin the selected models and dimensions before catalog indexing. |
-| Lexical execution strategy | Demonstrate the available Pixeltable predicates and ranking cost in stage A. Full-text indexing beyond that is a separate reviewed decision. |
-| Anonymous request quota | Load-test a proposed starting limit of 10 requests per minute per caller and a global concurrency cap. Adjust for shared networks and measured pilot cost. CORS is not an abuse control. |
+| Storage and public host | The dedicated Pixeltable Cloud database and Vercel website are deployed. The current origin is linked above. |
+| Codex invocation mechanism | Discovery preview bundles exist. Fresh-session AC-04 and clean-install AC-06 remain necessary to establish automatic behavior. |
+| Embedding and enrichment models | The implementation pins FastEmbed with BAAI/bge-small-en-v1.5. Representative retrieval quality and generated enrichment remain evaluation work. |
+| Lexical execution strategy | The preview scores metadata over the bounded catalog. Demonstrate acceptable latency and cost at the stage B size before claiming scale. |
+| Anonymous request quota | The gateway uses a best-effort per-instance limit. A shared global quota and a billing guarantee are not established. Test actual behavior and cost in the pilot. |
+| Refresh and availability | A recurring refresh workflow exists. AC-12 still requires a recorded 48-hour observation of freshness, failures, availability, and spend. |
 
-These decisions do not block writing the application and contract fixtures.
-Credentials, recurring jobs, paid provider calls, and public deployment remain
-inactive until their settings are approved and the manual path is demonstrated.
+Current implementation details do not silently weaken the acceptance criteria.
+Record each gap and resolve or explicitly revise it before declaring the target
+release complete.
 
 ## 13. Evidence and limits
 
@@ -486,4 +497,7 @@ performance, complete source coverage, or automatic invocation reliability.
 The existing [v0.1 contract](v0.1-contract-gaps.md) describes the local maintenance
 release. Its structural scores and lexical checks remain engineering tools.
 The service's adoption, relevance, and task outcomes require the pilot evidence
-specified here. This PRD creates no Cloud resources and enables no recurring work.
+specified here. The [competitive review](competitive-landscape.md) is based on
+primary-source documentation and selected public interfaces. It does not prove
+AgentForge beats competing discovery paths. Record the live preview separately
+from acceptance and comparative outcome evidence.
