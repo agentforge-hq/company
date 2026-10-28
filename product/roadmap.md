@@ -1,8 +1,8 @@
 ---
 owner: product
 status: active
-reviewed: 2026-10-27
-review_after: 2026-11-03
+reviewed: 2026-10-28
+review_after: 2026-11-04
 ---
 # Roadmap
 
@@ -14,15 +14,17 @@ semantic registries, and conversational installation already exist. Our
 advantage must come from measured usefulness.
 
 The [discovery service PRD](discovery-service-prd.md) defines the pilot gates.
-The [website](https://agentforge-five-sandy.vercel.app/) and shared search service
-are deployed previews. The public catalog returned 90 entries from six
-repositories on October 27. Deployment does not establish that the coverage,
-relevance, invocation, or task-outcome gates have passed.
+The [website](https://lordoftheskill.com/) and shared search service
+are deployed previews. The complete October 28 snapshot contains 570 upstream directories from nine
+repositories, discovered directly and through a registry. The
+[implementation record](../engineering/discovery-pilot.md) separates publication,
+relevance, invocation, and task-outcome evidence. Deployment alone passes none
+of those gates.
 
-The [capability plan](capability-plan.md) specifies proposed functionality and
-implementation slices. Source-backed profiles precede broader indexing. Search
-and local-adoption improvements each have an owned work item and acceptance
-check. These additions remain planned.
+The [capability plan](capability-plan.md) specifies the approved functionality and
+implementation slices. Profiles, constrained search, source-backed fit, canonical
+browsing, and guided native adoption are implemented in the pilot. Work items
+remain in review while their behavioral and operating acceptance checks are open.
 
 ## Active priorities
 

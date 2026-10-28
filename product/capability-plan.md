@@ -1,8 +1,8 @@
 ---
 owner: product
-status: draft
-reviewed: 2026-10-27
-review_after: 2026-11-03
+status: active
+reviewed: 2026-10-28
+review_after: 2026-11-04
 ---
 # Capabilities for the discovery pilot
 
@@ -10,28 +10,24 @@ AgentForge should help someone describe a task, discover useful expertise, and
 bring a suitable skill into the agent's work. The person should not need a skill
 name or knowledge of the technique that would help.
 
-This is the proposed functional scope behind the accepted
-[roadmap priorities](roadmap.md). It does not mark these capabilities implemented
-or the full PRD accepted. The [competitive review](competitive-landscape.md)
-records existing alternatives and its limits.
+The founder authorized this functional scope on October 28. The
+[implementation record](../engineering/discovery-pilot.md) separates shipped
+mechanisms, measured smoke checks, and unestablished release gates. The
+[competitive review](competitive-landscape.md) records alternatives and its limits.
 
-## Current foundation and important gaps
+## Implementation state
 
-The deployed preview has hybrid retrieval, a shared website and Go-client API,
-revision-linked results, catalog browsing, and daily refresh of registered
-repositories. The native client has quarantine, inspection, and promotion tools.
+Source-backed profiles, canonical GitHub and registry discovery, constraints,
+grounded shortlists, evidence details, paginated browsing, and guided native
+quarantine/promotion are implemented in the preview branches. The native preview
+is available for six operating-system/CPU combinations. Broader coverage is a
+570-directory complete snapshot from nine repositories and two source kinds.
 
-At platform revision `b15f741`, the
-[collector](https://github.com/agentforge-hq/platform/blob/b15f741/ingest/catalog.py)
-derives a capability from the description's first sentence. It uses a small
-example map or a name-based fallback. Requirements come only from a compatibility
-metadata string, and exclusions are empty. The
-[search handler](https://github.com/agentforge-hq/platform/blob/b15f741/app.py)
-accepts a harness identifier but marks returned compatibility unknown. These
-fields do not yet establish detailed task fit or actual harness support.
-
-The next constraint is useful source coverage and matching evidence. More
-filters or a larger directory cannot compensate for weak capability profiles.
+The next constraint is measured relevance and task usefulness. A frozen
+machine-authored candidate set exists, but its human-review gate is pending.
+One Codex discovery smoke and one trivial-turn smoke do not establish reliable
+invocation; Claude Code authentication currently prevents the second-harness test.
+No matched task-improvement result or completed 48-hour observation is claimed.
 
 ## Required user capabilities
 

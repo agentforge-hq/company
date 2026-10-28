@@ -196,7 +196,7 @@
     {
       "id": "AF-014",
       "owner": "engineering",
-      "status": "planned",
+      "status": "in-review",
       "depends_on": [
         "AF-018"
       ],
@@ -206,13 +206,15 @@
         "product/roadmap.md",
         "product/discovery-service-prd.md",
         "product/competitive-landscape.md",
-        "product/capability-plan.md"
-      ]
+        "product/capability-plan.md",
+        "engineering/discovery-pilot.md"
+      ],
+      "result": "A complete 570-directory snapshot covers nine upstream repositories and two discovery source kinds. Canonical identity, source revisions, bounded manifests, repeat ingestion and failure refusal are implemented. Full operational coverage gate remains in review."
     },
     {
       "id": "AF-015",
       "owner": "product",
-      "status": "planned",
+      "status": "in-review",
       "depends_on": [
         "AF-014",
         "AF-019"
@@ -223,14 +225,16 @@
         "product/roadmap.md",
         "product/discovery-service-prd.md",
         "product/competitive-landscape.md",
-        "product/capability-plan.md"
+        "product/capability-plan.md",
+        "engineering/discovery-pilot.md"
       ],
-      "dependency_scope": "Dependencies gate the final evaluation run. Product starts prompt preparation and freezes the held-out set before AF-019 final tuning, in parallel with implementation."
+      "dependency_scope": "Dependencies gate the final evaluation run. Product starts prompt preparation and freezes the held-out set before AF-019 final tuning, in parallel with implementation.",
+      "result": "Machine-authored 100-case candidate corpus frozen before final ranking; ranker frozen before evaluation. Human review and accessible competitor comparisons remain pending; no relevance gate claimed."
     },
     {
       "id": "AF-016",
       "owner": "engineering",
-      "status": "planned",
+      "status": "in-review",
       "depends_on": [
         "AF-014",
         "AF-015",
@@ -242,13 +246,15 @@
         "product/roadmap.md",
         "product/discovery-service-prd.md",
         "product/competitive-landscape.md",
-        "product/capability-plan.md"
-      ]
+        "product/capability-plan.md",
+        "engineering/discovery-pilot.md"
+      ],
+      "result": "One fresh Codex ordinary-task discovery smoke and one trivial-turn smoke observed. Temporary pinned promotion/recovery passes. Model-versioned reliability, accepted activation and task lift remain unmeasured. Claude Code authentication expired before inference."
     },
     {
       "id": "AF-017",
       "owner": "operations",
-      "status": "planned",
+      "status": "in-review",
       "depends_on": [
         "AF-015",
         "AF-016"
@@ -259,26 +265,30 @@
         "product/roadmap.md",
         "product/discovery-service-prd.md",
         "product/competitive-landscape.md",
-        "product/capability-plan.md"
-      ]
+        "product/capability-plan.md",
+        "engineering/discovery-pilot.md"
+      ],
+      "result": "Evaluation and redacted operating collectors implemented. Pilot deployment/observation underway; 48 elapsed hours, private refresh/spend evidence and launch review remain open."
     },
     {
       "id": "AF-018",
       "owner": "engineering",
-      "status": "planned",
+      "status": "in-review",
       "depends_on": [],
       "task": "Build source-backed capability profiles for ordinary task discovery.",
       "acceptance": "Profiles describe outputs, suitable and unsuitable tasks, prerequisites, and ordinary-language examples with source revision and extraction provenance. Missing facts remain unknown. Review extraction across the existing task families; preserve author metadata and separate generated examples from held-out evaluation cases.",
       "evidence": [
         "product/capability-plan.md",
         "product/discovery-service-prd.md",
-        "product/roadmap.md"
-      ]
+        "product/roadmap.md",
+        "engineering/discovery-pilot.md"
+      ],
+      "result": "Source-backed bounded outputs/triggers/exclusions/tools/accounts, original author metadata, extraction revision and evidence are implemented across the 570-directory snapshot. Deterministic extraction remains incomplete where authors omit facts; unknowns are explicit."
     },
     {
       "id": "AF-019",
       "owner": "engineering",
-      "status": "planned",
+      "status": "in-review",
       "depends_on": [
         "AF-018"
       ],
@@ -287,13 +297,15 @@
       "evidence": [
         "product/capability-plan.md",
         "product/discovery-service-prd.md",
-        "product/roadmap.md"
-      ]
+        "product/roadmap.md",
+        "engineering/discovery-pilot.md"
+      ],
+      "result": "Shared endpoint and both clients support constraints, source-grounded fit, unknown/incompatible harness states and shortlists. Development settings frozen before held-out run. Calibrated relevance acceptance remains pending human review."
     },
     {
       "id": "AF-020",
       "owner": "engineering",
-      "status": "planned",
+      "status": "in-review",
       "depends_on": [
         "AF-019"
       ],
@@ -302,8 +314,10 @@
       "evidence": [
         "product/capability-plan.md",
         "product/discovery-service-prd.md",
-        "product/roadmap.md"
-      ]
+        "product/roadmap.md",
+        "engineering/discovery-pilot.md"
+      ],
+      "result": "Pinned prepare/promotion binds source, bytes, destination, harness and recovery state; preserves installs; archive/restore verified with eleven real package files in temporary storage. Actual accepted harness activation remains open."
     }
   ]
 }
