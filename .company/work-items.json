@@ -197,13 +197,16 @@
       "id": "AF-014",
       "owner": "engineering",
       "status": "planned",
-      "depends_on": [],
+      "depends_on": [
+        "AF-018"
+      ],
       "task": "Expand canonical discovery coverage with a documented registry connector and upstream revision mapping.",
       "acceptance": "PRD stage B passes at 500 distinct directories across two source kinds. Record changes, removals, repeated ingestion, extraction failure, fork handling, freshness, and task-family coverage.",
       "evidence": [
         "product/roadmap.md",
         "product/discovery-service-prd.md",
-        "product/competitive-landscape.md"
+        "product/competitive-landscape.md",
+        "product/capability-plan.md"
       ]
     },
     {
@@ -211,15 +214,18 @@
       "owner": "product",
       "status": "planned",
       "depends_on": [
-        "AF-014"
+        "AF-014",
+        "AF-019"
       ],
       "task": "Freeze and run a representative relevance evaluation against lexical retrieval and accessible competing discovery paths.",
       "acceptance": "Freeze 100 human-reviewed prompts before final tuning. At least 40 of 50 relevant prompts have an approved top-three match. Report no-match behavior, catalog differences, latency, and limitations without inferring general superiority from a single query.",
       "evidence": [
         "product/roadmap.md",
         "product/discovery-service-prd.md",
-        "product/competitive-landscape.md"
-      ]
+        "product/competitive-landscape.md",
+        "product/capability-plan.md"
+      ],
+      "dependency_scope": "Dependencies gate the final evaluation run. Product starts prompt preparation and freezes the held-out set before AF-019 final tuning, in parallel with implementation."
     },
     {
       "id": "AF-016",
@@ -227,14 +233,16 @@
       "status": "planned",
       "depends_on": [
         "AF-014",
-        "AF-015"
+        "AF-015",
+        "AF-020"
       ],
       "task": "Demonstrate automatic discovery and accepted adoption in fresh Codex sessions, then repeat in a second harness.",
       "acceptance": "PRD AC-04, AC-05, and AC-06 pass with harness and model versions recorded. Search calls, suggestions, rejection, pinned loading, and matched original-task outcomes have separate evidence.",
       "evidence": [
         "product/roadmap.md",
         "product/discovery-service-prd.md",
-        "product/competitive-landscape.md"
+        "product/competitive-landscape.md",
+        "product/capability-plan.md"
       ]
     },
     {
@@ -250,7 +258,51 @@
       "evidence": [
         "product/roadmap.md",
         "product/discovery-service-prd.md",
-        "product/competitive-landscape.md"
+        "product/competitive-landscape.md",
+        "product/capability-plan.md"
+      ]
+    },
+    {
+      "id": "AF-018",
+      "owner": "engineering",
+      "status": "planned",
+      "depends_on": [],
+      "task": "Build source-backed capability profiles for ordinary task discovery.",
+      "acceptance": "Profiles describe outputs, suitable and unsuitable tasks, prerequisites, and ordinary-language examples with source revision and extraction provenance. Missing facts remain unknown. Review extraction across the existing task families; preserve author metadata and separate generated examples from held-out evaluation cases.",
+      "evidence": [
+        "product/capability-plan.md",
+        "product/discovery-service-prd.md",
+        "product/roadmap.md"
+      ]
+    },
+    {
+      "id": "AF-019",
+      "owner": "engineering",
+      "status": "planned",
+      "depends_on": [
+        "AF-018"
+      ],
+      "task": "Return useful shortlists with grounded fit explanations, explicit requirements, and calibrated abstention.",
+      "acceptance": "Product freezes the held-out prompt set before final tuning. Use the existing shared endpoint and Pixeltable index. Separate development cases cover terminology-free requests, constraints, incompatible and unknown harness support, and weak matches. Keep fit reasons grounded in the returned source revision. Freeze ranking before held-out evaluation; update both clients and parity fixtures for contract changes.",
+      "evidence": [
+        "product/capability-plan.md",
+        "product/discovery-service-prd.md",
+        "product/roadmap.md"
+      ]
+    },
+    {
+      "id": "AF-020",
+      "owner": "engineering",
+      "status": "planned",
+      "depends_on": [
+        "AF-019"
+      ],
+      "task": "Guide discovery results through the existing native quarantine, inspection, and adoption tools.",
+      "acceptance": "An accepted result retains its revision and directory through package inspection, promotion, and harness activation. Preserve existing installs, check package fingerprints, explain activation limits, and support removal or recovery. Declining adoption continues the original task. No fetched code runs during indexing or inspection.",
+      "evidence": [
+        "product/capability-plan.md",
+        "product/discovery-service-prd.md",
+        "product/roadmap.md"
       ]
     }
   ]

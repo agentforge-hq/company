@@ -19,6 +19,11 @@ are deployed previews. The public catalog returned 90 entries from six
 repositories on October 27. Deployment does not establish that the coverage,
 relevance, invocation, or task-outcome gates have passed.
 
+The [capability plan](capability-plan.md) specifies proposed functionality and
+implementation slices. Source-backed profiles precede broader indexing. Search
+and local-adoption improvements each have an owned work item and acceptance
+check. These additions remain planned.
+
 ## Active priorities
 
 | Priority | Owner | Outcome | Exit evidence |

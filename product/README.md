@@ -15,7 +15,9 @@ the shared search endpoint, Pixeltable Cloud catalog, automatic harness journey,
 and single-page website. A deployed preview exists. The founder accepted the
 coverage, relevance, and harness-adoption priorities on October 27. The
 [competitive review](competitive-landscape.md) records existing alternatives
-and the evidence needed before claiming an advantage.
+and the evidence needed before claiming an advantage. The
+[capability plan](capability-plan.md) turns those priorities into proposed user
+behavior and bounded implementation slices.
 
 Read [the vision](../vision.md), [roadmap](roadmap.md),
 [v0.1 contract gaps](v0.1-contract-gaps.md) and [evidence register](../evidence/claims.json).
