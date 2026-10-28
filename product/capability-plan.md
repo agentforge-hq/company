@@ -10,7 +10,7 @@ AgentForge should help someone describe a task, discover useful expertise, and
 bring a suitable skill into the agent's work. The person should not need a skill
 name or knowledge of the technique that would help.
 
-The founder authorized this functional scope on October 28. The
+The founder authorized this functional scope. The
 [implementation record](../engineering/discovery-pilot.md) separates shipped
 mechanisms, measured smoke checks, and unestablished release gates. The
 [competitive review](competitive-landscape.md) records alternatives and its limits.

@@ -121,7 +121,7 @@ with the same diagnostic results: 37 of 50 relevant cases had an approved top-th
 match, 18 of 25 baseline no-match cases returned candidates, and five of 25
 trivial queries returned matches. Human review and the relevance target remain open.
 
-Native [CI at revision1211e82](https://github.com/agentforge-hq/agentforge/actions/runs/40782245598)
+Native [CI at revision 1211e82](https://github.com/agentforge-hq/agentforge/actions/runs/40782245598)
 passed six operating-system/toolchain jobs and the bundle job. The reviewed UI
 received a ship disposition; a real typed phone search revealed and focused its
 results. The replacement finish reviewer followed an earlier interrupted review.
@@ -129,5 +129,10 @@ The design documenter found no new durable rules and preserved the system files.
 
 The [native adoption PR](https://github.com/agentforge-hq/agentforge/pull/6),
 [platform PR](https://github.com/agentforge-hq/platform/pull/1), and this company
-proposal remain unmerged. The older native search PR5 had already been merged
+proposal remain unmerged. The older native search PR #5 had already been merged
 before this implementation; its historical CI is not the evidence for the new work.
+
+The earlier diagnostic probes have a long gap. A separate continuous observation
+window now starts from its actual first timestamp and requests 49 hourly samples.
+The heartbeat checks that collector, records gaps, and reports the result after
+48 elapsed hours. Earlier snapshots do not fill missing observations.

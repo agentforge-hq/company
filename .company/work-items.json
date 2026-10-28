@@ -229,7 +229,7 @@
         "engineering/discovery-pilot.md"
       ],
       "dependency_scope": "Dependencies gate the final evaluation run. Product starts prompt preparation and freezes the held-out set before AF-019 final tuning, in parallel with implementation.",
-      "result": "Final frozen ranker/catalog run completed100 local HTTP responses at2e1cd1b997b61fed:37/50 approvedtop3 below40target,18/25 baseline no-match candidates,5/25 trivial HTTP matches. Machine labels await human review; no relevance gate passed or superiority claimed."
+      "result": "The final frozen-ranker run completed 100 local HTTP cases at catalog 2e1cd1b997b61fed. Approved top-three matches were 37/50, below the target of 40. Results appeared for 18/25 baseline no-match cases and 5/25 trivial queries. Machine labels await human review; relevance and superiority are unproven."
     },
     {
       "id": "AF-016",
@@ -268,7 +268,7 @@
         "product/capability-plan.md",
         "engineering/discovery-pilot.md"
       ],
-      "result": "Pilot deployed atlordoftheskill.com. Current-branch repeatrefresh570/0new/0withdrawals and403/409 guards verified. Finalcanonicalrefresh570/317new/1withdrawal, native6OS-toolchainCIplusbundles pass. Hourlyobservationheartbeat active;48elapsedhours, privateusage and launchreview remain open."
+      "result": "The pilot is deployed at lordoftheskill.com. Current-branch repeat refresh and both private-route guards are verified. The final refresh published 570 packages, added 317 versions, and withdrew one mirror. Native CI passed six operating-system/toolchain jobs and the bundle job. The continuous observation collector and hourly follow-up are active; 48 elapsed hours, private usage review, and a launch decision remain open."
     },
     {
       "id": "AF-018",
