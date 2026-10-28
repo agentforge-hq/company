@@ -42,7 +42,7 @@ quarantine. Preparation and promotion execute no supporting scripts.
 
 ## Verification and limits
 
-The platform suite passed 76 Python checks against a populated local catalog,
+The platform suite passed 78 Python checks against a populated local catalog,
 seven gateway checks, TypeScript checking, and a production build. Native tests,
 race checking, vet, and six-platform preview builds passed. The real pinned
 systematic-debugging package retained all eleven file contents through temporary
@@ -85,6 +85,17 @@ is built from revision `1211e82`; its public macOS archive and embedded binary
 checksums were verified before the local installation was updated. The previous
 local install was archived recoverably outside skill scan roots. A new harness
 session is required to refresh its skill discovery index.
+
+The Pixeltable Cloud `app` service registers native query routes for source
+pointers, immutable version payloads, and semantic candidates. These routes
+associate with `sources` and `skill_versions` in the service specification and
+share query builders with the composed public search. The initial custom-only
+router had left these table associations empty. Actual Cloud HTTP reads now
+return 200, an unauthenticated call returns 401, and the public search key still
+receives 403 on refresh. The three captured website example searches retained
+their result order and catalog revision. The native queries require the service
+key; Vercel continues to expose only search and catalog. See the
+[route definitions](https://github.com/agentforge-hq/platform/blob/8360558/app.py).
 
 The initial 570-row Cloud publication completed before its source pointers
 changed. A [current-branch refresh](https://github.com/agentforge-hq/platform/actions/runs/40711792603)
