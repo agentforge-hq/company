@@ -229,7 +229,7 @@
         "engineering/discovery-pilot.md"
       ],
       "dependency_scope": "Dependencies gate the final evaluation run. Product starts prompt preparation and freezes the held-out set before AF-019 final tuning, in parallel with implementation.",
-      "result": "Machine-authored 100-case candidate corpus frozen before final ranking; ranker frozen before evaluation. Human review and accessible competitor comparisons remain pending; no relevance gate claimed."
+      "result": "Final frozen ranker/catalog run completed100 local HTTP responses at2e1cd1b997b61fed:37/50 approvedtop3 below40target,18/25 baseline no-match candidates,5/25 trivial HTTP matches. Machine labels await human review; no relevance gate passed or superiority claimed."
     },
     {
       "id": "AF-016",
@@ -268,7 +268,7 @@
         "product/capability-plan.md",
         "engineering/discovery-pilot.md"
       ],
-      "result": "Evaluation and redacted operating collectors implemented. Pilot deployment/observation underway; 48 elapsed hours, private refresh/spend evidence and launch review remain open."
+      "result": "Pilot deployed atlordoftheskill.com. Current-branch repeatrefresh570/0new/0withdrawals and403/409 guards verified. Finalcanonicalrefresh570/317new/1withdrawal, native6OS-toolchainCIplusbundles pass. Hourlyobservationheartbeat active;48elapsedhours, privateusage and launchreview remain open."
     },
     {
       "id": "AF-018",
