@@ -1,8 +1,8 @@
 ---
 owner: product
 status: active
-reviewed: 2026-10-28
-review_after: 2026-11-04
+reviewed: 2026-10-29
+review_after: 2026-11-05
 ---
 # Capabilities for the discovery pilot
 
@@ -25,8 +25,10 @@ is available for six operating-system/CPU combinations. Broader coverage is a
 
 The next constraint is measured relevance and task usefulness. A frozen
 machine-authored candidate set exists, but its human-review gate is pending.
-One Codex discovery smoke and one trivial-turn smoke do not establish reliable
-invocation; Claude Code authentication currently prevents the second-harness test.
+Bounded Codex diagnostics cover ordinary discovery, trivial skipping, transport
+recovery, and non-repetition after a candidate mention. They do not establish
+reliable invocation or accepted activation. Claude Code authentication currently
+prevents the second-harness test.
 No matched task-improvement result or completed 48-hour observation is claimed.
 
 ## Required user capabilities

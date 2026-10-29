@@ -1,8 +1,8 @@
 ---
 owner: engineering
 status: active
-reviewed: 2026-10-28
-review_after: 2026-11-04
+reviewed: 2026-10-29
+review_after: 2026-11-05
 ---
 # Discovery pilot implementation
 
@@ -50,12 +50,26 @@ promotion and archive/restore. This establishes byte preservation and recovery,
 not activation or a safety endorsement. One heuristic finding concerned an
 example about tracing secrets through a workflow; it was inspected explicitly.
 
-A fresh Codex CLI 0.165.0-alpha.1.2 session read AgentForge for an ordinary Go CI
-request and ran discovery without a skill-specific request. It declined
-unsuitable results and continued the original task. A separate fresh trivial
-turn made zero commands and zero network searches. These are smoke observations,
-not the 50/25/25 reliability evaluation. The CLI's default model was not captured,
-so this run cannot establish the model-versioned acceptance gate.
+A [fresh-session diagnostic](https://github.com/agentforge-hq/platform/blob/codex/polish-landing-page/evaluation/harness-smoke.md)
+records five primary Codex sessions and one same-session decline follow-up.
+An ordinary Go CI request triggered discovery without naming AgentForge and
+returned three production results. Its implementation turn timed out after
+180 seconds before final verification, so task completion remains unestablished.
+A separate trivial acknowledgment produced no command or other tool items.
+Three explicitly primed transport fixtures completed short CI plans after
+HTTP 503, no matches, or a pinned candidate. After mentioning the candidate as a
+possible future lead, the agent acknowledged a decline without repeating it.
+This does not establish rejection of an adoption proposal, accepted loading,
+activation, or task improvement. The plan already existed before the decline.
+
+Codex CLI 0.165.0-alpha.1.2 resolved `gpt-6.1-sol`, provider `openai`, and effort
+`xhigh` without overrides. This records configuration, not an independently
+attested backend model. Each primary session registered the same 55 skills,
+with 54 enabled. The redacted capture retains hashes and counts; raw traces stay
+private. An earlier trivial prototype overlapped the frozen corpus and remains
+retained but excluded from separate development evidence. Its inventory differed.
+Neither the full 50/25/25 reliability gate nor total network traffic was measured.
+The frozen ranker and installed skill were unchanged.
 
 Claude Code 2.1.283 failed authentication before a model call because its OAuth
 session could not refresh. OpenCode 1.19.3 has no stored provider credentials; Pi 1.3.0 reports no available
