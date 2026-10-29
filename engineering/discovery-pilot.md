@@ -42,7 +42,7 @@ quarantine. Preparation and promotion execute no supporting scripts.
 
 ## Verification and limits
 
-The platform suite passed 78 Python checks against a populated local catalog,
+The platform suite passed 93 Python checks against a populated local catalog,
 seven gateway checks, TypeScript checking, and a production build. Native tests,
 race checking, vet, and six-platform preview builds passed. The real pinned
 systematic-debugging package retained all eleven file contents through temporary
@@ -74,6 +74,22 @@ invocation, accepted adoption, task improvement, or superiority to competitors.
 
 The full PRD gates remain open until their own evidence is reviewed. They are
 not replaced by a successful deployment, package checksum, or unit check.
+
+### Human review workflow
+
+The platform includes a local [review worksheet](https://github.com/agentforge-hq/platform/blob/codex/polish-landing-page/evaluation/README.md#local-human-review)
+for AF-015. It presents shuffled task text and the complete pinned catalog,
+without the previous labels or retrieval outputs. A reviewer can edit wording,
+classify the task, inspect source instructions, select useful identities, and
+record a reason. Browser drafts can be exported and imported without sending
+the judgments to a service. A separate synthetic demo supports interface checks.
+
+Finalization requires complete judgments, the 50/25/25 split and ten relevant
+tasks per family. It binds the review to the exact corpus and catalog digests
+and writes only a new successor directory. The original candidate corpus,
+frozen ranker and failures remain unchanged. The exported status is a local
+reviewer attestation, not authenticated human approval or a retroactive
+pre-tuning gate. Human review and product acceptance remain pending.
 
 ## Deployed service and operating evidence
 

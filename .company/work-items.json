@@ -229,7 +229,7 @@
         "engineering/discovery-pilot.md"
       ],
       "dependency_scope": "Dependencies gate the final evaluation run. Product starts prompt preparation and freezes the held-out set before AF-019 final tuning, in parallel with implementation.",
-      "result": "The final frozen-ranker run completed 100 local HTTP cases at catalog 2e1cd1b997b61fed. Approved top-three matches were 37/50, below the target of 40. Results appeared for 18/25 baseline no-match cases and 5/25 trivial queries. Machine labels await human review; relevance and superiority are unproven."
+      "result": "The final frozen-ranker run completed 100 local HTTP cases at catalog 2e1cd1b997b61fed: 37/50 approved top-three matches, 18/25 baseline no-match cases with results, and 5/25 trivial queries with results. A local blind worksheet now supports human judgments, portable drafts and a separately attested successor bound to the pinned snapshot. Original evidence is preserved. Human review, product acceptance, relevance and superiority remain unproven."
     },
     {
       "id": "AF-016",

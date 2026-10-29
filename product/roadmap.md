@@ -40,6 +40,12 @@ coverage expands. Start P3 installation and invocation checks in Codex.
 Repeat the journey in a second harness before claiming cross-harness reliability.
 The thresholds above are targets, not achieved measurements.
 
+AF-015 now has a local blind review worksheet against the pinned 570-skill
+snapshot. It saves portable drafts and validates a separate reviewed successor
+without rewriting the original candidate freeze. The product owner still needs
+to review and accept the judgments before future final tuning. See the
+[workflow and limits](../engineering/discovery-pilot.md#human-review-workflow).
+
 ## Completed foundations and open review
 
 The public skill and company repositories exist with separate licenses. The
