@@ -1,8 +1,8 @@
 ---
 owner: engineering
 status: active
-reviewed: 2026-10-29
-review_after: 2026-11-05
+reviewed: 2026-10-30
+review_after: 2026-11-06
 ---
 # Discovery pilot implementation
 
@@ -141,18 +141,15 @@ The original capture remains unchanged, and the combined replay retains all
 initial local candidate score. These diagnostic runs precede the final source
 refresh and mirror correction; final-catalog results must name their own revision.
 
-A redacted public availability, freshness-sample and synthetic-search probe
-started October 28 at 15:01 UTC. The hourly observation heartbeat is active and
-will report gaps and meaningful failures. The collector observes a catalog
-sample, not every source. This does not establish 48 completed hours or private
-refresh and spending evidence. Reported provider costs can lag and organization
-usage must not be attributed wholly to AgentForge. No plan or capacity upgrade
-was made.
+The [completed operating observation](#completed-operating-observation) records
+the actual sample window, freshness lapse, successful current-branch refreshes,
+and expected legacy failures. Provider spending remains unavailable, so AC-12
+and the launch decision remain open. No plan or capacity upgrade was made.
 
 Pull requests remain open for human review. The proprietary company and platform
 licenses remain separate from Apache-2.0 in the native repository.
 
-## Final catalog checkpoint
+## October 28 evaluation catalog checkpoint
 
 The final Cloud refresh published 570 canonical packages, created 317 immutable
 versions for changed upstream revisions, and withdrew one redundant mirror.
@@ -173,7 +170,31 @@ The [native adoption PR](https://github.com/agentforge-hq/agentforge/pull/6),
 proposal remain unmerged. The older native search PR #5 had already been merged
 before this implementation; its historical CI is not the evidence for the new work.
 
-The earlier diagnostic probes have a long gap. A separate continuous observation
-window now starts from its actual first timestamp and requests 49 hourly samples.
-The heartbeat checks that collector, records gaps, and reports the result after
-48 elapsed hours. Earlier snapshots do not fill missing observations.
+## Completed operating observation
+
+The measured window runs from October 28 at 3:59:31 p.m. to October 30 at
+4:47:18 p.m. Pacific, 48 hours and 47 minutes. It contains the 49 planned hourly
+samples and one bounded closeout probe after the collector stopped. The final
+probe was more than 45 minutes after its predecessor. Earlier diagnostic
+snapshots have a long gap and are excluded.
+
+| Evidence | Observed result |
+| --- | --- |
+| Availability and search | All 50 page, catalog, and fixed synthetic-search probes returned HTTP 200. The 150 attempts contain no request errors or retries. This is sampled availability, not continuous uptime proof. |
+| Timestamp coverage | No duplicate timestamps or intervals over 75 minutes. The largest interval was about 60 minutes. |
+| Source-check freshness | Each observation sampled 50 of the 570 entries. In 49 observations, the oldest sampled check was at most 24 hours old. One hourly sample reached about 24 hours and three minutes; the next sample was fresh after refresh. These repeated samples do not establish freshness for every catalog entry. |
+| Refresh outcomes | The [October 29 run](https://github.com/agentforge-hq/platform/actions/runs/40906529879) and [October 30 run](https://github.com/agentforge-hq/platform/actions/runs/41090376010) succeeded on the current branch. The [October 29 legacy run](https://github.com/agentforge-hq/platform/actions/runs/40900187054) and [October 30 legacy run](https://github.com/agentforge-hq/platform/actions/runs/41077745484) failed during publication with the expected HTTP 409 rejection. Those failures remain recorded. |
+| Retrieval configuration | All 50 responses reported `profile-hybrid-v2` and hybrid retrieval. Refresh advanced the live catalog revisions; the earlier frozen relevance evidence remains tied to its original snapshot. |
+| Provider spending | Unavailable. The supported CLI captures do not identify the organization and report a future metering start. Their zero figures cannot establish AgentForge's cost or compliance with included usage. Provider reporting also lags. Raw usage and probe evidence remain private. |
+
+The elapsed observation window is complete. AC-12 remains open because actual
+attributable spending is unverified. Operations owns verification of the intended
+organization and scoped usage after reporting lag. Organization totals must not
+be presented as AgentForge-only expense. Engineering and the founder still need
+human review and merge of the current platform workflow before relying on
+default-branch refresh.
+
+The bounded observation follow-up ends with this report. Human-reviewed relevance,
+full fresh-session reliability, accepted activation, matched task improvement,
+second-harness authentication, and the human release decision remain separate
+open checks. The full PRD has not passed.

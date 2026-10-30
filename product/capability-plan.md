@@ -1,8 +1,8 @@
 ---
 owner: product
 status: active
-reviewed: 2026-10-29
-review_after: 2026-11-05
+reviewed: 2026-10-30
+review_after: 2026-11-06
 ---
 # Capabilities for the discovery pilot
 
@@ -29,7 +29,9 @@ Bounded Codex diagnostics cover ordinary discovery, trivial skipping, transport
 recovery, and non-repetition after a candidate mention. They do not establish
 reliable invocation or accepted activation. Claude Code authentication currently
 prevents the second-harness test.
-No matched task-improvement result or completed 48-hour observation is claimed.
+The elapsed [operating observation](../engineering/discovery-pilot.md#completed-operating-observation)
+is complete, with a retained freshness lapse and unavailable spending attribution.
+AC-12 and matched task improvement remain unestablished.
 
 ## Required user capabilities
 

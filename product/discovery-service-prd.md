@@ -481,7 +481,7 @@ does not cover plan upgrades, paid add-ons, or unlimited spend.
 | Embedding and enrichment models | The implementation pins FastEmbed with BAAI/bge-small-en-v1.5. Representative retrieval quality and generated enrichment remain evaluation work. |
 | Lexical execution strategy | The preview scores metadata over the bounded catalog. Demonstrate acceptable latency and cost at the stage B size before claiming scale. |
 | Anonymous request quota | The gateway uses a best-effort per-instance limit. A shared global quota and a billing guarantee are not established. Test actual behavior and cost in the pilot. |
-| Refresh and availability | A recurring refresh workflow exists. AC-12 still requires a recorded 48-hour observation of freshness, failures, availability, and spend. |
+| Refresh and availability | The elapsed 48-hour observation is recorded, including a sampled freshness lapse and expected legacy-job failures. Actual attributable provider spend is unavailable, so AC-12 remains open. The default-branch workflow still needs human review and merge. |
 
 Current implementation details do not silently weaken the acceptance criteria.
 Record each gap and resolve or explicitly revise it before declaring the target

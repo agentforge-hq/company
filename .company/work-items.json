@@ -268,7 +268,7 @@
         "product/capability-plan.md",
         "engineering/discovery-pilot.md"
       ],
-      "result": "The pilot is deployed at lordoftheskill.com. Current-branch repeat refresh and both private-route guards are verified. The final refresh published 570 packages, added 317 versions, and withdrew one mirror. Native CI passed six operating-system/toolchain jobs and the bundle job. The continuous observation collector and hourly follow-up are active; 48 elapsed hours, private usage review, and a launch decision remain open."
+      "result": "The elapsed operating observation is complete: 49 planned hourly samples plus one closeout probe span 48 hours and 47 minutes. All 150 page, catalog and search attempts returned HTTP 200; no intervals exceeded 75 minutes. One freshness sample exceeded 24 hours and recovered after refresh. Both current-branch refreshes succeeded; two expected default-branch HTTP 409 failures remain recorded. Actual attributable provider spending is unavailable, so AC-12 and the release decision remain open. The observation follow-up ends with the report. Human-reviewed relevance, full harness reliability, accepted activation, task improvement and second-harness authentication remain separate open gates."
     },
     {
       "id": "AF-018",
