@@ -1,16 +1,23 @@
 ---
 owner: product
 status: active
-reviewed: 2026-10-18
-review_after: 2026-10-25
+reviewed: 2026-10-27
+review_after: 2026-11-03
 ---
 # Product
 
 Product owns the definition of the user's job, the smallest useful scope and
 the evidence that determines whether we continue, change or stop.
 
-Current job: help a developer maintain an installed skill collection across
-agent harnesses without losing useful instructions or introducing hidden changes.
+Current direction: connect an ordinary agent request to useful skills the person
+does not know exist. The [discovery service PRD](discovery-service-prd.md) defines
+the shared search endpoint, Pixeltable Cloud catalog, automatic harness journey,
+and single-page website. A deployed preview exists. The founder accepted the
+coverage, relevance, and harness-adoption priorities on October 27. The
+[competitive review](competitive-landscape.md) records existing alternatives
+and the evidence needed before claiming an advantage. The
+[capability plan](capability-plan.md) turns those priorities into proposed user
+behavior and bounded implementation slices.
 
 Read [the vision](../vision.md), [roadmap](roadmap.md),
 [v0.1 contract gaps](v0.1-contract-gaps.md) and [evidence register](../evidence/claims.json).

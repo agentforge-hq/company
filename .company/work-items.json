@@ -19,18 +19,20 @@
       "depends_on": [
         "AF-001"
       ],
-      "task": "Decide the v0.1 compatibility contract for the newly supplied brief.",
-      "acceptance": "Each contract gap has an explicit implement, reject or defer decision and owner.",
+      "task": "Review the local v0.1 contract and the discovery service proposal.",
+      "acceptance": "Both releases have explicit scope decisions accepted in review.",
       "evidence": [
         "product/v0.1-contract-gaps.md",
-        "product/source-brief.md"
+        "product/source-brief.md",
+        "product/discovery-service-prd.md",
+        "product/competitive-landscape.md"
       ],
-      "result": "Scope choices are proposed in product/v0.1-contract-gaps.md. The founder-authorized Go runtime is merged."
+      "result": "Local contract remains in review. The founder accepted discovery-first coverage, relevance evaluation, and harness-adoption priorities on 2026-10-27. A deployed preview does not establish full PRD acceptance."
     },
     {
       "id": "AF-003",
       "owner": "engineering",
-      "status": "planned",
+      "status": "deferred",
       "depends_on": [
         "AF-002"
       ],
@@ -38,12 +40,13 @@
       "acceptance": "A focused approved repair passes a regression case and records its budget change.",
       "evidence": [
         "product/roadmap.md"
-      ]
+      ],
+      "defer_reason": "Discovery validation takes priority under the founder direction accepted on 2026-10-27."
     },
     {
       "id": "AF-004",
       "owner": "design",
-      "status": "planned",
+      "status": "deferred",
       "depends_on": [
         "AF-003"
       ],
@@ -51,16 +54,17 @@
       "acceptance": "One documented journey quotes observed output, identifies a concrete breakdown and tests a focused improvement.",
       "evidence": [
         "design/README.md"
-      ]
+      ],
+      "defer_reason": "Discovery validation takes priority under the founder direction accepted on 2026-10-27."
     },
     {
       "id": "AF-005",
       "owner": "marketing",
       "status": "planned",
       "depends_on": [
-        "AF-003"
+        "AF-017"
       ],
-      "task": "Draft a source-backed launch walkthrough for the first developer audience.",
+      "task": "Draft a source-backed discovery pilot walkthrough with measured coverage, relevance, and harness behavior.",
       "acceptance": "Every product claim has evidence; sensitive paths are redacted; publication remains a separate founder decision.",
       "evidence": [
         "marketing/README.md",
@@ -70,7 +74,7 @@
     {
       "id": "AF-006",
       "owner": "product",
-      "status": "planned",
+      "status": "deferred",
       "depends_on": [
         "AF-004",
         "AF-005"
@@ -80,7 +84,8 @@
       "evidence": [
         "vision.md",
         "product/roadmap.md"
-      ]
+      ],
+      "defer_reason": "Discovery validation takes priority under the founder direction accepted on 2026-10-27."
     },
     {
       "id": "AF-007",
@@ -144,7 +149,7 @@
     {
       "id": "AF-011",
       "owner": "engineering",
-      "status": "planned",
+      "status": "deferred",
       "depends_on": [
         "AF-010"
       ],
@@ -155,7 +160,8 @@
         "evidence/duplicate-pilot/cases.json",
         "engineering/README.md"
       ],
-      "result": "Raw cases, separate rubric and recovery steps are ready. No setting changed or fresh-session outcome measured."
+      "result": "Raw cases, separate rubric and recovery steps are ready. No setting changed or fresh-session outcome measured.",
+      "defer_reason": "Discovery validation takes priority under the founder direction accepted on 2026-10-27."
     },
     {
       "id": "AF-012",
@@ -186,6 +192,132 @@
         "evidence/devin-cleanup.json"
       ],
       "result": "All 45 archive restore previews pass. Skill PR 3 adds batch storage and native roots; 89 native tests pass."
+    },
+    {
+      "id": "AF-014",
+      "owner": "engineering",
+      "status": "in-review",
+      "depends_on": [
+        "AF-018"
+      ],
+      "task": "Expand canonical discovery coverage with a documented registry connector and upstream revision mapping.",
+      "acceptance": "PRD stage B passes at 500 distinct directories across two source kinds. Record changes, removals, repeated ingestion, extraction failure, fork handling, freshness, and task-family coverage.",
+      "evidence": [
+        "product/roadmap.md",
+        "product/discovery-service-prd.md",
+        "product/competitive-landscape.md",
+        "product/capability-plan.md",
+        "engineering/discovery-pilot.md"
+      ],
+      "result": "A complete 570-directory snapshot covers nine upstream repositories and two discovery source kinds. Canonical identity, source revisions, bounded manifests, repeat ingestion and failure refusal are implemented. Full operational coverage gate remains in review."
+    },
+    {
+      "id": "AF-015",
+      "owner": "product",
+      "status": "in-review",
+      "depends_on": [
+        "AF-014",
+        "AF-019"
+      ],
+      "task": "Freeze and run a representative relevance evaluation against lexical retrieval and accessible competing discovery paths.",
+      "acceptance": "Freeze 100 human-reviewed prompts before final tuning. At least 40 of 50 relevant prompts have an approved top-three match. Report no-match behavior, catalog differences, latency, and limitations without inferring general superiority from a single query.",
+      "evidence": [
+        "product/roadmap.md",
+        "product/discovery-service-prd.md",
+        "product/competitive-landscape.md",
+        "product/capability-plan.md",
+        "engineering/discovery-pilot.md"
+      ],
+      "dependency_scope": "Dependencies gate the final evaluation run. Product starts prompt preparation and freezes the held-out set before AF-019 final tuning, in parallel with implementation.",
+      "result": "The final frozen-ranker run completed 100 local HTTP cases at catalog 2e1cd1b997b61fed: 37/50 approved top-three matches, 18/25 baseline no-match cases with results, and 5/25 trivial queries with results. A local blind worksheet now supports human judgments, portable drafts and a separately attested successor bound to the pinned snapshot. Original evidence is preserved. Human review, product acceptance, relevance and superiority remain unproven."
+    },
+    {
+      "id": "AF-016",
+      "owner": "engineering",
+      "status": "in-review",
+      "depends_on": [
+        "AF-014",
+        "AF-015",
+        "AF-020"
+      ],
+      "task": "Demonstrate automatic discovery and accepted adoption in fresh Codex sessions, then repeat in a second harness.",
+      "acceptance": "PRD AC-04, AC-05, and AC-06 pass with harness and model versions recorded. Search calls, suggestions, rejection, pinned loading, and matched original-task outcomes have separate evidence.",
+      "evidence": [
+        "product/roadmap.md",
+        "product/discovery-service-prd.md",
+        "product/competitive-landscape.md",
+        "product/capability-plan.md",
+        "engineering/discovery-pilot.md"
+      ],
+      "result": "Five primary fresh Codex sessions and one same-session decline follow-up are recorded with resolved configuration and input digests. Ordinary production discovery succeeded, but the implementation turn timed out. A disjoint trivial turn had no tool items. Explicit transport fixtures completed plans after 503, empty results, or a candidate mention; the decline did not repeat the candidate. One earlier overlapping trivial capture is retained and excluded. These do not establish backend model attestation, full reliability, accepted activation or task lift. Temporary pinned promotion/recovery passes. Claude Code authentication expired before inference."
+    },
+    {
+      "id": "AF-017",
+      "owner": "operations",
+      "status": "in-review",
+      "depends_on": [
+        "AF-015",
+        "AF-016"
+      ],
+      "task": "Complete the controlled discovery pilot and prepare a launch decision with unmet criteria visible.",
+      "acceptance": "Record the remaining PRD parity, failure, security, latency, cost, and 48-hour operating checks. Product and founder review the resulting release claims.",
+      "evidence": [
+        "product/roadmap.md",
+        "product/discovery-service-prd.md",
+        "product/competitive-landscape.md",
+        "product/capability-plan.md",
+        "engineering/discovery-pilot.md"
+      ],
+      "result": "The elapsed operating observation is complete: 49 planned hourly samples plus one closeout probe span 48 hours and 47 minutes. All 150 page, catalog and search attempts returned HTTP 200; no intervals exceeded 75 minutes. One freshness sample exceeded 24 hours and recovered after refresh. Both current-branch refreshes succeeded; two expected default-branch HTTP 409 failures remain recorded. Actual attributable provider spending is unavailable, so AC-12 and the release decision remain open. The observation follow-up ends with the report. Human-reviewed relevance, full harness reliability, accepted activation, task improvement and second-harness authentication remain separate open gates."
+    },
+    {
+      "id": "AF-018",
+      "owner": "engineering",
+      "status": "in-review",
+      "depends_on": [],
+      "task": "Build source-backed capability profiles for ordinary task discovery.",
+      "acceptance": "Profiles describe outputs, suitable and unsuitable tasks, prerequisites, and ordinary-language examples with source revision and extraction provenance. Missing facts remain unknown. Review extraction across the existing task families; preserve author metadata and separate generated examples from held-out evaluation cases.",
+      "evidence": [
+        "product/capability-plan.md",
+        "product/discovery-service-prd.md",
+        "product/roadmap.md",
+        "engineering/discovery-pilot.md"
+      ],
+      "result": "Source-backed bounded outputs/triggers/exclusions/tools/accounts, original author metadata, extraction revision and evidence are implemented across the 570-directory snapshot. Deterministic extraction remains incomplete where authors omit facts; unknowns are explicit."
+    },
+    {
+      "id": "AF-019",
+      "owner": "engineering",
+      "status": "in-review",
+      "depends_on": [
+        "AF-018"
+      ],
+      "task": "Return useful shortlists with grounded fit explanations, explicit requirements, and calibrated abstention.",
+      "acceptance": "Product freezes the held-out prompt set before final tuning. Use the existing shared endpoint and Pixeltable index. Separate development cases cover terminology-free requests, constraints, incompatible and unknown harness support, and weak matches. Keep fit reasons grounded in the returned source revision. Freeze ranking before held-out evaluation; update both clients and parity fixtures for contract changes.",
+      "evidence": [
+        "product/capability-plan.md",
+        "product/discovery-service-prd.md",
+        "product/roadmap.md",
+        "engineering/discovery-pilot.md"
+      ],
+      "result": "Shared endpoint and both clients support constraints, source-grounded fit, unknown/incompatible harness states and shortlists. Development settings frozen before held-out run. Calibrated relevance acceptance remains pending human review."
+    },
+    {
+      "id": "AF-020",
+      "owner": "engineering",
+      "status": "in-review",
+      "depends_on": [
+        "AF-019"
+      ],
+      "task": "Guide discovery results through the existing native quarantine, inspection, and adoption tools.",
+      "acceptance": "An accepted result retains its revision and directory through package inspection, promotion, and harness activation. Preserve existing installs, check package fingerprints, explain activation limits, and support removal or recovery. Declining adoption continues the original task. No fetched code runs during indexing or inspection.",
+      "evidence": [
+        "product/capability-plan.md",
+        "product/discovery-service-prd.md",
+        "product/roadmap.md",
+        "engineering/discovery-pilot.md"
+      ],
+      "result": "Pinned prepare/promotion binds source, bytes, destination, harness and recovery state; preserves installs; archive/restore verified with eleven real package files in temporary storage. Actual accepted harness activation remains open."
     }
   ]
 }
