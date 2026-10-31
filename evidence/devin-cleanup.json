@@ -57,7 +57,7 @@
   ],
   "public_skill_fix": {
     "source_commit": "7aabbf7b0076e3805275fa5729cc343f52526407",
-    "status": "proposed in skill PR",
+    "status": "merged",
     "local_regression_tests": 89,
     "changes": [
       "Batch cold-storage CLI using one transaction",
@@ -73,6 +73,8 @@
     "native_package_checks": 8,
     "empty_executable_search_path": true,
     "installed_locally_with_full_backup": true,
-    "company_license_changed": false
+    "company_license_changed": false,
+    "merge_commit": "c36c6d99d71faa78df635c26239d0b70f9e8e0f3",
+    "main_ci": "https://github.com/agentforge-hq/agentforge/actions/runs/39197857479"
   }
 }

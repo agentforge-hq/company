@@ -175,7 +175,7 @@
     {
       "id": "AF-013",
       "owner": "engineering",
-      "status": "in-review",
+      "status": "done",
       "depends_on": [
         "AF-012"
       ],
@@ -185,7 +185,22 @@
         "engineering/devin-field-feedback.md",
         "evidence/devin-cleanup.json"
       ],
-      "result": "All 45 archive restore previews pass. Skill PR 3 adds batch storage and native roots; 89 native tests pass."
+      "result": "Skill PR 3 merged; 89 tests and cross-platform CI pass. Batch storage, native roots and help fixes are locally active."
+    },
+    {
+      "id": "AF-014",
+      "owner": "engineering",
+      "status": "in-review",
+      "depends_on": [
+        "AF-013"
+      ],
+      "task": "Explain duplicate differences and protect managed packages while fixing container linting.",
+      "acceptance": "Read-only comparison explains bytes, metadata and executable differences; normalized paths never authorize dedupe. Managed copies are protected. Container lint checks children and all codes have actions.",
+      "evidence": [
+        "engineering/comparison-feedback.md",
+        "evidence/comparison-verification.json"
+      ],
+      "result": "Skill PR 4 implements the six field requests. 105 native regressions pass; independent fixture inspection and cleanup preview preserve all source data."
     }
   ]
 }

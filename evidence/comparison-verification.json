@@ -1,0 +1,78 @@
+{
+  "checked_on": "2026-10-19",
+  "public_skill_pr": "https://github.com/agentforge-hq/agentforge/pull/4",
+  "native_tests": 105,
+  "local_vet": "pass",
+  "local_race_tests": "pass",
+  "local_self_lint": "pass",
+  "metadata_validation": "pass",
+  "container_before": {
+    "scored_skills": 0,
+    "operational_errors": 1,
+    "exit": 1
+  },
+  "container_after": {
+    "scored_skills": 9,
+    "managed_skills": 9,
+    "operational_errors": 0,
+    "skipped_containers": 1,
+    "exit": 1,
+    "exit_reason": "Genuine child findings still gate lint"
+  },
+  "independent_forward_check": {
+    "fixture_occurrences": 6,
+    "physical_skills": 5,
+    "audit_exit": 0,
+    "lint_exit": 0,
+    "cleanup_preview_exit": 0,
+    "cleanup_candidates": [
+      "exact user-owned copy",
+      "user-owned alias"
+    ],
+    "managed_and_divergent_copies_excluded": true,
+    "fixture_integrity_preserved": true,
+    "state_created": false
+  },
+  "regression_boundaries": [
+    "Exact fingerprint compatibility retained",
+    "No inspected script executed",
+    "Normalized paths cannot enable dedupe",
+    "Recognized managed layouts and resolved targets protected",
+    "Unknown managed locations require operator review"
+  ],
+  "real_skill_packages_archived_or_restored": 0,
+  "actual_model_routing_measured": false,
+  "company_license_changed": false,
+  "verified_on": "2026-10-24",
+  "source_commit": "d52c1fae1bd85e51f402becb3c2f6e2b2d9b3f0a",
+  "merge_status": "open; human review required",
+  "ci": {
+    "url": "https://github.com/agentforge-hq/agentforge/actions/runs/39320332192",
+    "jobs_passed": 7,
+    "operating_systems": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "go_versions": [
+      "1.23",
+      "1.27"
+    ],
+    "native_bundle_targets": 6
+  },
+  "native_package": {
+    "os": "darwin",
+    "arch": "arm64",
+    "checks_passed": 10,
+    "empty_executable_search_path": true,
+    "binary_sha256": "b988da20c22ec54c339d69f96c0d2636680e8c18fd768fc79a3224cc2381d503",
+    "isolated_fixture_dedupe_and_restore": "pass"
+  },
+  "local_activation": {
+    "activated_on": "2026-10-24",
+    "full_previous_package_backup": true,
+    "previous_package_integrity_preserved": true,
+    "version_compare_help_and_self_lint": "pass",
+    "structural_sdqs": 100
+  }
+}

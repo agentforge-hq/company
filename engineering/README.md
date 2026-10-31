@@ -1,8 +1,8 @@
 ---
 owner: engineering
 status: active
-reviewed: 2026-10-18
-review_after: 2026-10-25
+reviewed: 2026-10-24
+review_after: 2026-10-31
 ---
 # Engineering
 
@@ -58,3 +58,6 @@ Do not edit plugin caches or weaken checks to make a report pass.
 The [Devin field follow-up](devin-field-feedback.md) verifies a real filesystem
 cleanup and records the resulting batch-storage, root-discovery and help fixes.
 Its saved audit counts and restore previews do not establish routing or task lift.
+
+The [comparison follow-up](comparison-feedback.md) addresses unexplained
+divergence, managed-copy protection, container linting and issue actionability.
