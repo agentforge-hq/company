@@ -1,8 +1,8 @@
 ---
 owner: product
 status: active
-reviewed: 2026-11-01
-review_after: 2026-11-08
+reviewed: 2026-11-02
+review_after: 2026-11-09
 ---
 # Roadmap
 
@@ -46,13 +46,15 @@ without rewriting the original candidate freeze. The product owner still needs
 to review and accept the judgments before future final tuning. See the
 [workflow and limits](../engineering/discovery-pilot.md#human-review-workflow).
 
-The [November 1 development review](../engineering/discovery-pilot.md#november-1-task-review-and-website-handoff)
-adds ten fresh synthetic tasks with returned shortlists and agent hypotheses.
-Human ratings remain blank. Review those cases for task mismatch, weak extra
-results, and unstated platform assumptions, then complete the separate blind
+The [ten-task development review](../engineering/discovery-pilot.md#november-1-task-review-and-website-handoff)
+and [retrieval diagnosis](../engineering/discovery-pilot.md#november-2-retrieval-diagnosis)
+separate keyword-only additions from semantic task mismatches. A semantic-only
+admission candidate is rejected because it retains key mismatches and removes
+plausible alternatives. Human ratings remain blank. Review the cases for task
+fit and unstated platform assumptions, then complete the separate blind
 judgments. Keep the frozen ranker and previous failures unchanged. The website
-handoff now carries the submitted task into its copied review prompt; accepted
-skill activation and original-task improvement still need their own evidence.
+handoff carries the submitted task into its copied review prompt; accepted
+activation and original-task improvement still need their own evidence.
 
 ## Completed foundations and open review
 

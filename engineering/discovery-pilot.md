@@ -1,8 +1,8 @@
 ---
 owner: engineering
 status: active
-reviewed: 2026-11-01
-review_after: 2026-11-08
+reviewed: 2026-11-02
+review_after: 2026-11-09
 ---
 # Discovery pilot implementation
 
@@ -124,6 +124,27 @@ for the implementation and documentation commits. The PRs remain open.
 Product's next decision is to review the ten shortlists and finish the separate
 blind relevance judgments. Any retrieval experiment needs its own version and
 development evidence. The existing failures remain preserved.
+
+### November 2 retrieval diagnosis
+
+A [separate development experiment](https://github.com/agentforge-hq/platform/blob/codex/discovery-fit-experiment/lifecycle/retrieval-diagnosis.md)
+compares a semantic-only admission rule with the frozen ranker. The existing
+570-row local catalog reproduces all thirty ordered upstream identities from
+the ten-task review, although its snapshot revision differs from production.
+Eleven baseline slots are keyword-only. Semantic retrieval itself supplies the
+Azure cost tools for a pricing-page request and transcription for existing
+interview transcripts.
+
+The candidate removes keyword-only entries but retains those semantic misses.
+It also removes plausible accessibility-compliance and incident-runbook
+alternatives. The candidate is rejected for production. Empty responses are
+not scored as correct abstentions, and human usefulness judgments remain blank.
+
+A bounded diagnostic CLI retains the catalog, channel pools, scores, ordering,
+and input digests for exact offline replay. Earlier failed diagnostic attempts
+remain private. This work changes no production search, schema, index,
+publication, or held-out corpus. A useful future candidate needs to address
+the requested operation and output, with human review before any release claim.
 
 ### Human review workflow
 

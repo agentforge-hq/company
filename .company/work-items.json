@@ -300,7 +300,7 @@
         "product/roadmap.md",
         "engineering/discovery-pilot.md"
       ],
-      "result": "Shared endpoint and both clients support constraints, source-grounded fit, unknown/incompatible harness states and shortlists. Development settings frozen before held-out run. Calibrated relevance acceptance remains pending human review."
+      "result": "Shared endpoint and both clients support constraints, source-grounded fit, unknown/incompatible harness states and shortlists. A separate ten-task local replay rejects semantic-only admission: it retains key semantic mismatches and removes plausible alternatives. Captured channel pools replay exactly. The production ranker and held-out corpus remain frozen; calibrated relevance acceptance is pending human review."
     },
     {
       "id": "AF-020",
