@@ -115,6 +115,12 @@ tests, the production build, and 91 backend tests passed. Two integration tests
 were skipped. No ranker, held-out judgment, source publication, or native skill
 behavior changed.
 
+The [handoff application revision](https://github.com/agentforge-hq/platform/commit/d168166ddfd5b9cf62a40033fc4df2272788fdc8)
+is deployed in the existing MoS Vercel project. Custom-domain browser verification
+repeated the submitted-task and unsent-edit check, and the confirmation fit at
+desktop and phone widths. Both platform check runs and the company check passed
+for the implementation and documentation commits. The PRs remain open.
+
 Product's next decision is to review the ten shortlists and finish the separate
 blind relevance judgments. Any retrieval experiment needs its own version and
 development evidence. The existing failures remain preserved.
