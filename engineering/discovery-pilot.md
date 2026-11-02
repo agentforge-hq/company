@@ -1,8 +1,8 @@
 ---
 owner: engineering
 status: active
-reviewed: 2026-10-30
-review_after: 2026-11-06
+reviewed: 2026-11-01
+review_after: 2026-11-08
 ---
 # Discovery pilot implementation
 
@@ -88,6 +88,36 @@ invocation, accepted adoption, task improvement, or superiority to competitors.
 
 The full PRD gates remain open until their own evidence is reviewed. They are
 not replaced by a successful deployment, package checksum, or unit check.
+
+### November 1 task review and website handoff
+
+A [ten-task development review](https://github.com/agentforge-hq/platform/blob/codex/polish-landing-page/lifecycle/task-review.md)
+captures two fresh synthetic requests in each of writing, design, engineering,
+research, and operations. Exact-overlap checks kept them separate from the
+frozen benchmark. All ten requests returned valid responses at catalog
+`e70f4831fc1368c3` with the frozen `profile-hybrid-v2` ranker. Human ratings remain
+blank. The agent's interpretations use declared metadata and establish no
+usefulness rate, safe installation, activation, or task improvement.
+
+The review exposes task mismatches, weak extra results, and unstated platform
+assumptions. A pricing-page request returned Azure cost tools, and a request to
+analyze existing interviews led with transcription. Current catalog metadata
+contains potential alternatives for some misses. Their presence does not prove
+the best answer or complete coverage.
+
+A separate [website walkthrough](https://github.com/agentforge-hq/platform/blob/codex/polish-landing-page/lifecycle/session.md)
+reproduced a handoff defect: the copied review prompt omitted the task. The fix
+includes the successfully submitted search, even after an unsent edit to the
+input. Browsing without a search asks for missing context instead of inventing
+it. Browser copy-and-paste checks retain the pinned source, checksum, package
+review, adoption permission, and activation limits. Type checking, nine frontend
+tests, the production build, and 91 backend tests passed. Two integration tests
+were skipped. No ranker, held-out judgment, source publication, or native skill
+behavior changed.
+
+Product's next decision is to review the ten shortlists and finish the separate
+blind relevance judgments. Any retrieval experiment needs its own version and
+development evidence. The existing failures remain preserved.
 
 ### Human review workflow
 

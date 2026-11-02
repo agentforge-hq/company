@@ -1,8 +1,8 @@
 ---
 owner: product
 status: active
-reviewed: 2026-10-28
-review_after: 2026-11-04
+reviewed: 2026-11-01
+review_after: 2026-11-08
 ---
 # Roadmap
 
@@ -45,6 +45,14 @@ snapshot. It saves portable drafts and validates a separate reviewed successor
 without rewriting the original candidate freeze. The product owner still needs
 to review and accept the judgments before future final tuning. See the
 [workflow and limits](../engineering/discovery-pilot.md#human-review-workflow).
+
+The [November 1 development review](../engineering/discovery-pilot.md#november-1-task-review-and-website-handoff)
+adds ten fresh synthetic tasks with returned shortlists and agent hypotheses.
+Human ratings remain blank. Review those cases for task mismatch, weak extra
+results, and unstated platform assumptions, then complete the separate blind
+judgments. Keep the frozen ranker and previous failures unchanged. The website
+handoff now carries the submitted task into its copied review prompt; accepted
+skill activation and original-task improvement still need their own evidence.
 
 ## Completed foundations and open review
 
