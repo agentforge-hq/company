@@ -46,9 +46,13 @@ their material. Prompt discovery and adaptation remain unimplemented proposals.
 
 ## Earlier skill-pilot gates
 
+Canonical coverage is AF-025. Earlier discovery-branch records called it AF-014,
+which main already used for the comparison-feedback task. Both records remain;
+the renumbering changes no acceptance criterion or result.
+
 | Priority | Owner | Outcome | Exit evidence |
 | --- | --- | --- | --- |
-| P1: canonical coverage, AF-014 | Engineering | Broader task coverage with upstream identities, revision pins, aliases, and actual freshness | PRD stage B: at least 500 distinct directories from two source kinds. Record repeat ingestion, changes, removal, extraction failure, and duplicate or fork handling. Publish coverage by task family. |
+| P1: canonical coverage, AF-025 | Engineering | Broader task coverage with upstream identities, revision pins, aliases, and actual freshness | PRD stage B: at least 500 distinct directories from two source kinds. Record repeat ingestion, changes, removal, extraction failure, and duplicate or fork handling. Publish coverage by task family. |
 | P2: representative relevance, AF-015 | Product | Know whether ordinary requests find a useful capability | Freeze the PRD's 100 human-reviewed prompts before final tuning. At least 40 of 50 relevant requests have an approved top-three result. Report no-match behavior and comparisons with lexical retrieval and accessible competing paths. |
 | P3: reliable discovery and adoption, AF-016 | Product and engineering | An ordinary request triggers useful discovery and accepted skills help the original task | In fresh sessions, at least 45 of 50 relevant requests trigger discovery. At most 2 of 25 no-match tasks prompt an inappropriate recommendation. No trivial message triggers a recommendation or search. Record rejection, revision-pinned loading, activation limits, and matched task outcomes separately. |
 | P4: controlled pilot, AF-017 | Operations and product | Operate and describe the service according to observed evidence | Complete the PRD's parity, installation, failure, security, latency, cost, and 48-hour operating checks. Record a launch decision with unmet gates visible. |

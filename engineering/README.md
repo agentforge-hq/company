@@ -1,8 +1,8 @@
 ---
 owner: engineering
 status: active
-reviewed: 2026-10-28
-review_after: 2026-11-04
+reviewed: 2026-11-08
+review_after: 2026-11-15
 ---
 # Engineering
 
@@ -15,7 +15,9 @@ local deterministic core as a native Go executable; see the
 prototype in `scripts/company.py`, its tests, operating configuration and
 commercial planning. The separate proprietary [platform](https://github.com/agentforge-hq/platform)
 contains the deployed Pixeltable Cloud discovery service and Vercel website.
-The [discovery pilot record](discovery-pilot.md) owns implementation evidence and open gates.
+The [discovery pilot record](discovery-pilot.md) owns skill-pilot evidence and open gates.
+The [expertise discovery PRD](../product/discovery-service-prd.md) proposes the next
+prompt, skill, and method scope; it is not implemented by the earlier pilot.
 
 Read [the roadmap](../product/roadmap.md), [contract gaps](../product/v0.1-contract-gaps.md)
 and [worker design](company-workers.md) before proposing architecture changes.
@@ -60,3 +62,6 @@ Do not edit plugin caches or weaken checks to make a report pass.
 The [Devin field follow-up](devin-field-feedback.md) verifies a real filesystem
 cleanup and records the resulting batch-storage, root-discovery and help fixes.
 Its saved audit counts and restore previews do not establish routing or task lift.
+
+The [comparison follow-up](comparison-feedback.md) addresses unexplained
+divergence, managed-copy protection, container linting and issue actionability.

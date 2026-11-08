@@ -97,7 +97,7 @@ database, or public execution service.
 
 | Slice | Work items | Deliverable and limit |
 | --- | --- | --- |
-| A: source meaning and canonical coverage | AF-018, AF-014 | Source-backed capability profiles, upstream identity mapping, and a documented registry connector. Review extraction across the existing task families, then reach the PRD's 500-directory, two-source-kind pilot gate. |
+| A: source meaning and canonical coverage | AF-018, AF-025 | Source-backed capability profiles, upstream identity mapping, and a documented registry connector. Review extraction across the existing task families, then reach the PRD's 500-directory, two-source-kind pilot gate. |
 | B: useful recommendations | AF-019, AF-015 | Constraint-aware matching, grounded fit explanations, and calibrated abstention through the existing endpoint. Prepare development cases and freeze the separate 100-prompt release set before final tuning. Evaluate after the ranker is frozen. |
 | C: discovery through adoption | AF-020, AF-016 | A guided local inspection and adoption path using existing native commands. Record rejection, pinned loading, activation limitations, and matched original-task outcomes in fresh sessions. |
 | D: operating evidence | AF-017 | Complete parity, failure, privacy, latency, cost, and refresh checks, including the 48-hour observation, before the target release claim. |

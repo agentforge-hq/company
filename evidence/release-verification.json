@@ -10,14 +10,14 @@
     "url": "https://github.com/agentforge-hq/agentforge",
     "private": false,
     "license": "Apache-2.0",
-    "tests": 86,
+    "tests": 89,
     "structural_sdqs": 100,
-    "commit": "bfa31f4bc82ce0a70b9380bc0cbc64e90ad76dd1",
-    "ci": "https://github.com/agentforge-hq/agentforge/actions/runs/39161034567",
+    "commit": "c36c6d99d71faa78df635c26239d0b70f9e8e0f3",
+    "ci": "https://github.com/agentforge-hq/agentforge/actions/runs/39196906489",
     "conclusion": "success",
     "runtime": "Go native executable; standard library only",
-    "source_commit": "d0d26bd03f08d2e63dc27a793fec89d87b7387ee",
-    "pull_request": "https://github.com/agentforge-hq/agentforge/pull/2",
+    "source_commit": "7aabbf7b0076e3805275fa5729cc343f52526407",
+    "pull_request": "https://github.com/agentforge-hq/agentforge/pull/3",
     "merge_status": "merged",
     "initial_python_release": {
       "url": "https://github.com/agentforge-hq/agentforge",
@@ -29,8 +29,9 @@
       "ci": "https://github.com/agentforge-hq/agentforge/actions/runs/39155168682",
       "conclusion": "success"
     },
-    "main_ci": "https://github.com/agentforge-hq/agentforge/actions/runs/39166133554",
-    "main_ci_conclusion": "success"
+    "main_ci": "https://github.com/agentforge-hq/agentforge/actions/runs/39197857479",
+    "main_ci_conclusion": "success",
+    "checked_on": "2026-10-19"
   },
   "company": {
     "url": "https://github.com/agentforge-hq/company",
@@ -165,5 +166,12 @@
     "eager_rules_pruned": false,
     "company_license_changed": false,
     "duplicate_pilot_packet": "engineering/duplicate-pilot.md"
+  },
+  "comparison_patch": {
+    "verification": "evidence/comparison-verification.json",
+    "pull_request": "https://github.com/agentforge-hq/agentforge/pull/4",
+    "merge_status": "open",
+    "locally_active": true,
+    "verified_on": "2026-10-24"
   }
 }

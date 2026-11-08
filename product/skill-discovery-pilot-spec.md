@@ -8,7 +8,7 @@ review_after: 2026-11-03
 
 This is the preserved skill-discovery specification from before the November 8
 product revision. Its stages and AC-01 through AC-12 remain the criteria for
-AF-014 through AF-020 and their existing evidence. The current product target is
+AF-025 and AF-015 through AF-020 and their existing evidence. The current product target is
 the [expertise discovery PRD](discovery-service-prd.md). Archiving this scope does
 not pass, cancel, or relabel its unmet gates. Dates and deployment descriptions
 below are historical.

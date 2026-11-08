@@ -182,7 +182,7 @@
     {
       "id": "AF-013",
       "owner": "engineering",
-      "status": "in-review",
+      "status": "done",
       "depends_on": [
         "AF-012"
       ],
@@ -192,33 +192,29 @@
         "engineering/devin-field-feedback.md",
         "evidence/devin-cleanup.json"
       ],
-      "result": "All 45 archive restore previews pass. Skill PR 3 adds batch storage and native roots; 89 native tests pass."
+      "result": "Skill PR 3 merged; 89 tests and cross-platform CI pass. Batch storage, native roots and help fixes are locally active."
     },
     {
       "id": "AF-014",
       "owner": "engineering",
       "status": "in-review",
       "depends_on": [
-        "AF-018"
+        "AF-013"
       ],
-      "task": "Expand canonical discovery coverage with a documented registry connector and upstream revision mapping.",
-      "acceptance": "PRD stage B passes at 500 distinct directories across two source kinds. Record changes, removals, repeated ingestion, extraction failure, fork handling, freshness, and task-family coverage.",
+      "task": "Explain duplicate differences and protect managed packages while fixing container linting.",
+      "acceptance": "Read-only comparison explains bytes, metadata and executable differences; normalized paths never authorize dedupe. Managed copies are protected. Container lint checks children and all codes have actions.",
       "evidence": [
-        "product/roadmap.md",
-        "product/discovery-service-prd.md",
-        "product/skill-discovery-pilot-spec.md",
-        "product/competitive-landscape.md",
-        "product/capability-plan.md",
-        "engineering/discovery-pilot.md"
+        "engineering/comparison-feedback.md",
+        "evidence/comparison-verification.json"
       ],
-      "result": "A complete 570-directory snapshot covers nine upstream repositories and two discovery source kinds. Canonical identity, source revisions, bounded manifests, repeat ingestion and failure refusal are implemented. Full operational coverage gate remains in review."
+      "result": "Skill PR 4 implements the six field requests. 105 native regressions pass; independent fixture inspection and cleanup preview preserve all source data."
     },
     {
       "id": "AF-015",
       "owner": "product",
       "status": "in-review",
       "depends_on": [
-        "AF-014",
+        "AF-025",
         "AF-019"
       ],
       "task": "Freeze and run a representative relevance evaluation against lexical retrieval and accessible competing discovery paths.",
@@ -239,7 +235,7 @@
       "owner": "engineering",
       "status": "in-review",
       "depends_on": [
-        "AF-014",
+        "AF-025",
         "AF-015",
         "AF-020"
       ],
@@ -385,6 +381,26 @@
         "product/discovery-service-prd.md",
         "product/roadmap.md"
       ]
+    },
+    {
+      "id": "AF-025",
+      "owner": "engineering",
+      "status": "in-review",
+      "depends_on": [
+        "AF-018"
+      ],
+      "task": "Expand canonical discovery coverage with a documented registry connector and upstream revision mapping.",
+      "acceptance": "PRD stage B passes at 500 distinct directories across two source kinds. Record changes, removals, repeated ingestion, extraction failure, fork handling, freshness, and task-family coverage.",
+      "evidence": [
+        "product/roadmap.md",
+        "product/discovery-service-prd.md",
+        "product/skill-discovery-pilot-spec.md",
+        "product/competitive-landscape.md",
+        "product/capability-plan.md",
+        "engineering/discovery-pilot.md"
+      ],
+      "result": "A complete 570-directory snapshot covers nine upstream repositories and two discovery source kinds. Canonical identity, source revisions, bounded manifests, repeat ingestion and failure refusal are implemented. Full operational coverage gate remains in review.",
+      "previous_branch_id": "AF-014 on codex/discovery-search-prd before reconciliation with the main branch on 2026-11-08"
     }
   ]
 }
