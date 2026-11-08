@@ -6,7 +6,10 @@ review_after: 2026-11-09
 ---
 # Discovery pilot implementation
 
-The implementation follows the founder-approved [capability plan](../product/capability-plan.md).
+This record covers the earlier [skill-pilot specification](../product/skill-discovery-pilot-spec.md)
+and [capability plan](../product/capability-plan.md). Its AC references retain
+their original meaning. The November 8 [expertise discovery proposal](../product/discovery-service-prd.md)
+has separate scope and ED criteria; the results below do not pass those criteria.
 The platform remains proprietary. The separate native skill and CLI remain Apache-2.0.
 
 ## Implemented behavior

@@ -1,19 +1,19 @@
 ---
 owner: product
 status: active
-reviewed: 2026-11-02
-review_after: 2026-11-09
+reviewed: 2026-11-08
+review_after: 2026-11-15
 ---
 # Roadmap
 
-The founder accepted the discovery-first product direction and the next
-priorities on October 27. AgentForge should connect an ordinary request to a
-useful capability and help the agent apply it to the original task. The
-[competitive review](competitive-landscape.md) shows that discovery skills,
-semantic registries, and conversational installation already exist. Our
-advantage must come from measured usefulness.
+On November 8, the founder expanded AgentForge's direction to prompts, skills,
+and reasoning methods discovered during the work. Source scouting and the
+founder's own successful finds feed a reviewed catalog. The product must help
+apply a useful approach to the original task and show whether the result improves.
 
-The [discovery service PRD](discovery-service-prd.md) defines the pilot gates.
+The [expertise discovery PRD](discovery-service-prd.md) defines the proposed v0.2
+scope. The [earlier pilot specification](skill-discovery-pilot-spec.md) preserves
+the previous stages and AC-01 through AC-12 without changing their outcomes.
 The [website](https://lordoftheskill.com/) and shared search service
 are deployed previews. The complete October 28 snapshot contains 570 upstream directories from nine
 repositories, discovered directly and through a registry. The
@@ -21,12 +21,30 @@ repositories, discovered directly and through a registry. The
 relevance, invocation, and task-outcome evidence. Deployment alone passes none
 of those gates.
 
-The [capability plan](capability-plan.md) specifies the approved functionality and
+The [earlier capability plan](capability-plan.md) records the skill pilot's
 implementation slices. Profiles, constrained search, source-backed fit, canonical
 browsing, and guided native adoption are implemented in the pilot. Work items
 remain in review while their behavioral and operating acceptance checks are open.
 
-## Active priorities
+## Next implementation sequence
+
+These are proposed bounded steps. They do not authorize recurring scouts or pass
+the existing pilot. The new evaluation uses ED identifiers and a separately
+sealed corpus, preserving the old ranker, evaluation material, and failures.
+
+| Priority | Work item and owner | Deliverable |
+| --- | --- | --- |
+| Review the first version | AF-021, product and founder | Review the PRD's source policy, three task families, adaptation journey, and proposed outcome gates. |
+| Build a small reviewed catalog | AF-022, engineering with product review | A bounded importer and queue for founder-saved links, GitHub, and permitted web sources. Review 30 entries across prompts, skills, and methods. Social links can remain link-only. |
+| Prove the full interaction | AF-023, engineering with design review | One versioned endpoint for both clients. Demonstrate a prompt, method, and skill from ordinary task through acceptance and application, with rejection and no-match behavior. |
+| Decide from measured outcomes | AF-024, product with operations | Separate development and sealed evaluation cases; compare with the ordinary agent and generic reflection. Record relevance, interruptions, actual application, task outcomes, and usage before expanding. |
+
+The first version targets Codex. The website offers the same search and a
+task-aware review handoff. X access, broader crawling, personal accounts, and a
+second harness follow evidence of need. Upstream authors retain ownership of
+their material. Prompt discovery and adaptation remain unimplemented proposals.
+
+## Earlier skill-pilot gates
 
 | Priority | Owner | Outcome | Exit evidence |
 | --- | --- | --- | --- |
@@ -78,9 +96,10 @@ remains in the [work queue](../.company/work-items.json),
 [contract review](v0.1-contract-gaps.md), and
 [Devin follow-up](../engineering/devin-field-feedback.md).
 
-Do not add authoring tools, repair third-party skills, accounts, billing, a
-social marketplace, or a larger worker system to satisfy the discovery pilot.
-Upstream authors maintain their own skills.
+Prompt editing as a standalone product, third-party repairs, accounts, billing,
+a social marketplace, and a larger worker system remain outside v0.2. Adapting
+one selected instruction inside the current task is included. Preserve the
+original source and distinguish the agent's adaptation from the author's text.
 
 ## Company operating experiments
 

@@ -78,7 +78,7 @@ the publisher's reported assessment, not an independent guarantee.
 ## Product decisions and evidence needed
 
 The founder accepted these priorities on October 27. The [roadmap](roadmap.md)
-orders them. The [PRD](discovery-service-prd.md#11-release-sequence-and-acceptance)
+orders them. The [earlier PRD](skill-discovery-pilot-spec.md#11-release-sequence-and-acceptance)
 defines the existing pilot gates.
 
 1. Expand canonical coverage. Resolve listings to upstream directories and

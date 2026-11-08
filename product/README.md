@@ -1,23 +1,26 @@
 ---
 owner: product
 status: active
-reviewed: 2026-10-27
-review_after: 2026-11-03
+reviewed: 2026-11-08
+review_after: 2026-11-15
 ---
 # Product
 
 Product owns the definition of the user's job, the smallest useful scope and
 the evidence that determines whether we continue, change or stop.
 
-Current direction: connect an ordinary agent request to useful skills the person
-does not know exist. The [discovery service PRD](discovery-service-prd.md) defines
-the shared search endpoint, Pixeltable Cloud catalog, automatic harness journey,
-and single-page website. A deployed preview exists. The founder accepted the
-coverage, relevance, and harness-adoption priorities on October 27. The
-[competitive review](competitive-landscape.md) records existing alternatives
-and the evidence needed before claiming an advantage. The
-[capability plan](capability-plan.md) turns those priorities into proposed user
-behavior and bounded implementation slices.
+Current direction: discover useful prompts, skills, and reasoning methods while
+someone works with an agent, including expertise they do not know to ask for.
+The founder requested this expansion on November 8. The
+[expertise discovery PRD](discovery-service-prd.md) proposes a bounded source
+scout, a reviewed catalog, contextual suggestions, and task-outcome comparisons.
+Its first-version scope and numerical gates remain proposals for review.
+
+The deployed preview covers skill search. Its
+[earlier specification](skill-discovery-pilot-spec.md) and
+[capability plan](capability-plan.md) retain the previous pilot's scope and open
+gates. The [competitive review](competitive-landscape.md) is an October 27 review
+of skill discovery; it does not establish prompt-discovery differentiation.
 
 Read [the vision](../vision.md), [roadmap](roadmap.md),
 [v0.1 contract gaps](v0.1-contract-gaps.md) and [evidence register](../evidence/claims.json).

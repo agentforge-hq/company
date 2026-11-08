@@ -25,6 +25,7 @@
         "product/v0.1-contract-gaps.md",
         "product/source-brief.md",
         "product/discovery-service-prd.md",
+        "product/skill-discovery-pilot-spec.md",
         "product/competitive-landscape.md"
       ],
       "result": "Local contract remains in review. The founder accepted discovery-first coverage, relevance evaluation, and harness-adoption priorities on 2026-10-27. A deployed preview does not establish full PRD acceptance."
@@ -205,6 +206,7 @@
       "evidence": [
         "product/roadmap.md",
         "product/discovery-service-prd.md",
+        "product/skill-discovery-pilot-spec.md",
         "product/competitive-landscape.md",
         "product/capability-plan.md",
         "engineering/discovery-pilot.md"
@@ -224,6 +226,7 @@
       "evidence": [
         "product/roadmap.md",
         "product/discovery-service-prd.md",
+        "product/skill-discovery-pilot-spec.md",
         "product/competitive-landscape.md",
         "product/capability-plan.md",
         "engineering/discovery-pilot.md"
@@ -245,6 +248,7 @@
       "evidence": [
         "product/roadmap.md",
         "product/discovery-service-prd.md",
+        "product/skill-discovery-pilot-spec.md",
         "product/competitive-landscape.md",
         "product/capability-plan.md",
         "engineering/discovery-pilot.md"
@@ -264,6 +268,7 @@
       "evidence": [
         "product/roadmap.md",
         "product/discovery-service-prd.md",
+        "product/skill-discovery-pilot-spec.md",
         "product/competitive-landscape.md",
         "product/capability-plan.md",
         "engineering/discovery-pilot.md"
@@ -280,6 +285,7 @@
       "evidence": [
         "product/capability-plan.md",
         "product/discovery-service-prd.md",
+        "product/skill-discovery-pilot-spec.md",
         "product/roadmap.md",
         "engineering/discovery-pilot.md"
       ],
@@ -297,6 +303,7 @@
       "evidence": [
         "product/capability-plan.md",
         "product/discovery-service-prd.md",
+        "product/skill-discovery-pilot-spec.md",
         "product/roadmap.md",
         "engineering/discovery-pilot.md"
       ],
@@ -314,10 +321,70 @@
       "evidence": [
         "product/capability-plan.md",
         "product/discovery-service-prd.md",
+        "product/skill-discovery-pilot-spec.md",
         "product/roadmap.md",
         "engineering/discovery-pilot.md"
       ],
       "result": "Pinned prepare/promotion binds source, bytes, destination, harness and recovery state; preserves installs; archive/restore verified with eleven real package files in temporary storage. Actual accepted harness activation remains open."
+    },
+    {
+      "id": "AF-021",
+      "owner": "product",
+      "status": "in-review",
+      "depends_on": [],
+      "task": "Define the first expertise-discovery pilot for prompts, skills, and reasoning methods during the work.",
+      "acceptance": "Founder and product review the bounded catalog, source and evidence policy, task journey, and proposed ED-01 through ED-06 gates. Preserve the earlier AC gates and results.",
+      "evidence": [
+        "product/discovery-service-prd.md",
+        "product/roadmap.md",
+        "product/skill-discovery-pilot-spec.md"
+      ],
+      "result": "The founder requested this direction on 2026-11-08. The PRD proposes 30 reviewed entries, bounded scouting and founder-saved links, Codex application, and comparisons with ordinary work and generic reflection. Numerical gates and implementation scope remain in review."
+    },
+    {
+      "id": "AF-022",
+      "owner": "engineering",
+      "status": "planned",
+      "depends_on": [
+        "AF-021"
+      ],
+      "task": "Build a bounded source importer and review queue for prompts, skills, and methods.",
+      "acceptance": "Demonstrate ED-01 with 30 reviewed entries across the three task families. Preserve source versions, rights, private curator notes, failed fetches, and duplicate lineage. Two manual scout runs precede recurring work. Unsupported social sources remain link-only.",
+      "evidence": [
+        "product/discovery-service-prd.md",
+        "product/roadmap.md"
+      ]
+    },
+    {
+      "id": "AF-023",
+      "owner": "engineering",
+      "status": "planned",
+      "depends_on": [
+        "AF-021",
+        "AF-022"
+      ],
+      "task": "Implement contextual expertise discovery and application through a versioned service contract and both clients.",
+      "acceptance": "Demonstrate a prompt, method, and skill through the section 3 journey, preserve original-task constraints, and exercise ED-03, ED-04, and client parity. Keep v1 search and the frozen ranker unchanged; distinguish acceptance, application, and outcome.",
+      "evidence": [
+        "product/discovery-service-prd.md",
+        "product/roadmap.md"
+      ]
+    },
+    {
+      "id": "AF-024",
+      "owner": "product",
+      "status": "planned",
+      "depends_on": [
+        "AF-022",
+        "AF-023"
+      ],
+      "task": "Evaluate the expertise pilot against ordinary agent work and generic reflection, then record a release or stop decision.",
+      "acceptance": "Seal new human-reviewed cases before final tuning and execute ED-02 through ED-06 with frozen settings. Retain no-match and application failures, paired outcomes, interruptions, operating evidence, and available attributable usage. No failed old gate is relabeled passed.",
+      "dependency_scope": "Dependencies gate final execution. Product prepares and seals the new evaluation separately from development before AF-023 final tuning.",
+      "evidence": [
+        "product/discovery-service-prd.md",
+        "product/roadmap.md"
+      ]
     }
   ]
 }

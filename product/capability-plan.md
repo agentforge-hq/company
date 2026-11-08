@@ -1,10 +1,16 @@
 ---
 owner: product
-status: active
+status: source-snapshot
 reviewed: 2026-10-30
 review_after: 2026-11-06
 ---
 # Capabilities for the discovery pilot
+
+This records the earlier skill pilot and its AC criteria. Its requirements and
+open results remain linked to the [preserved specification](skill-discovery-pilot-spec.md).
+The November 8 [expertise discovery PRD](discovery-service-prd.md) defines the
+new prompt, skill, and method scope. The implementation state below is a dated
+record; it does not establish that the new scope is built or accepted.
 
 AgentForge should help someone describe a task, discover useful expertise, and
 bring a suitable skill into the agent's work. The person should not need a skill

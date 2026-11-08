@@ -1,503 +1,360 @@
 ---
 owner: product
 status: draft
-reviewed: 2026-10-27
-review_after: 2026-11-03
+reviewed: 2026-11-08
+review_after: 2026-11-15
 ---
-# AgentForge discovery service PRD
-
-AgentForge connects a person's ordinary request to useful skills they did not
-know existed. A small skill in the harness queries a continuously refreshed
-catalog, explains relevant capabilities, and offers to use a suitable skill.
-A single-page website searches the same catalog through the same public endpoint.
-
-This PRD specifies the target service release. A
-[deployed preview](https://agentforge-five-sandy.vercel.app/) and
-[platform implementation](https://github.com/agentforge-hq/platform) now exist.
-Their availability does not establish that all acceptance criteria below pass.
-The founder selected discovery and Pixeltable Cloud on October 24, then accepted
-the coverage, relevance, and harness-adoption priorities on October 27. The
-[roadmap](roadmap.md) replaces the earlier maintenance-first sequence. The
-[competitive review](competitive-landscape.md) records substantial overlap with
-existing products. Local audit commands remain available. Company vision changes
-and a release claim still require founder review.
-
-## 1. Problem and outcome
-
-People can describe what they want without knowing the techniques, workflows,
-or skills that would help. Requiring them to ask for a skill assumes the
-knowledge the product should supply.
-
-The first beneficiary is someone already working with an agent who lacks
-specialist experience in the current task. Developers using Codex are the first
-integration cohort. The catalog can include other kinds of work, with explicit
-requirements and compatibility information.
-
-Success means that an ordinary request leads to a relevant, understandable
-capability recommendation and, when accepted, the agent uses the selected skill
-on the original task. Search results alone establish retrieval behavior.
-Improved task outcomes require separate observation.
-
-AgentForge maintains source coverage, metadata, indexing, and retrieval.
-Upstream authors own their skills. Editing third-party skills, autonomous
-repairs, and a skill-authoring platform are outside this release.
-
-## 2. Release scope
-
-| Included | Deferred |
-| --- | --- |
-| Public-source discovery and refresh, starting with GitHub and a documented registry connector | A claim to have indexed every skill on the internet |
-| Pixeltable Cloud tables, computed enrichment, and an embedding index | A separate vector database or search cluster |
-| Hybrid retrieval through one public search endpoint | A hosted agent that performs the user's whole task |
-| Automatic discovery in one tested harness integration | Guaranteed automatic invocation in every harness |
-| A thin Go search client and a compact discovery skill | A rewrite of the existing local maintenance CLI |
-| A single-page website with AgentForge installation and catalog search | Accounts, billing, dashboards, public submissions, and social rankings |
-| Source-pinned adoption with the existing inspection and quarantine path | Automatic execution or silent installation of third-party packages |
-
-Native inclusion by harness vendors is a distribution goal. The initial release
-must work through a supported installation and demonstrate automatic discovery
-without the person naming AgentForge.
-
-## 3. Harness journey
-
-The following interaction is proposed copy, not a recorded test:
-
-> User: Help me prepare a product launch.
->
-> Agent: I found a positioning skill that could help define the audience and
-> sharpen the message, and a launch-planning skill that could turn that into a
-> sequence of activities. Would you like to use either?
-
-The integration follows this sequence:
-
-1. On a new substantive task, the agent forms a short capability query from the
-   user's goal. It does not ask the user to authorize a search or name a skill.
-2. The installed client calls the shared search endpoint with that query and
-   the harness identifier. Local paths, repository contents, and the transcript
-   stay local. Setup explains that task-derived search text goes to the service
-   and may reach the configured embedding provider.
-3. The agent considers the returned capabilities and requirements against the
-   user's task. It presents at most two useful options, describing what each
-   would enable. It does not paste a ranked directory into the conversation.
-4. The person can accept, refine the task, or continue without a skill. A weak
-   match, an already covered capability, or a repeated rejected suggestion
-   produces no interruption.
-5. After acceptance, the client fetches the exact source revision and skill
-   directory, inspects the package, and shows any required adoption decision.
-   Existing user authorization can cover adoption. A recommendation alone does
-   not authorize running downloaded scripts or adding credentials.
-6. The agent uses the skill through the harness's supported activation path and
-   returns to the original task. If a new session is required, the agent states
-   that limitation and provides the task handoff. Writing a file is not proof
-   that the current session loaded it.
-
-Routine acknowledgments and follow-up messages within an unchanged task do not
-cause another network search. A changed goal can start a new search. Suppress
-repeated recommendations within a conversation. If an adequate skill is already
-available locally, the agent can use it without another installation.
-
-The first integration targets Codex. Skill metadata can support implicit
-invocation, but installation alone does not guarantee invocation. Test the
-chosen package and trigger instructions before claiming support. If they miss
-the release criteria, investigate a supported hook or harness integration.
-Do not substitute an instruction that claims universal execution. OpenAI
-currently documents distribution restrictions for plugins containing hooks.
-[Skill activation](https://developers.openai.com/plugins/concepts/skills) and
-[plugin packaging](https://developers.openai.com/plugins/build/plugins) define
-the current integration constraints.
-
-## 4. Single-page website
-
-The website is part of the first service release. It serves two jobs: installing
-AgentForge and exploring the same recommendations outside a harness.
-
-The page contains these elements in order:
-
-| Element | Required behavior |
-| --- | --- |
-| Introduction | Explain that AgentForge helps an agent discover useful skills from an ordinary request. Avoid claims of universal coverage or proven task improvement. |
-| Install AgentForge | A harness selector, the tested installation method, a copy button, and a short first-use example that does not mention skill discovery. Show supported status and platform requirements. |
-| Search | A labeled field asking "What are you trying to do?", a Search button, an optional harness selector, and example requests. |
-| Results | Show the skill name, what it helps accomplish, an example prompt, its source, compatibility evidence, license status, and last source check. |
-| Expanded result | Open in the same page. Show applicability, exclusions, requirements, pinned source details, and an adoption action. |
-| Footer | Link to source coverage, privacy information, the public skill repository, and the company record. |
-
-Searching requires no account. Submit with Enter or the Search button. Example
-requests populate the field and use the same submission path. Do not send a
-request on each keystroke. Cancel or ignore an older response when a newer
-request starts. Retain the entered query after a failure.
-
-The page distinguishes the initial state, loading, results, no suitable match,
-service failure, and rate limiting. A failure must not look like an empty
-catalog. A no-match result can suggest a more specific goal. It must not invent
-skills. Result text is rendered as untrusted plain text or sanitized Markdown.
-
-The installation card uses commands and release URLs from a verified release
-manifest. Validate a clean installation on each advertised platform before
-publishing its command. The current native bundles and the proposed cloud search
-client are different releases. Do not show an install command for an unbuilt
-client, or advertise a generic command as native support for every harness.
-
-The primary install action installs AgentForge. A result's adoption action
-refers to that particular third-party skill and preserves its revision and
-subdirectory. The website cannot claim to install into an unrelated local
-agent without a supported integration.
-
-At a 360-pixel viewport, the page has no horizontal scrolling. Search, installation,
-and results work by keyboard. Fields have labels, loading and result counts have
-accessible announcements, and copy actions show success or failure. Search text
-does not enter the URL or analytics by default.
-
-## 5. One search contract for both clients
-
-Both the website and installed client call `POST /api/v1/search` on the configured
-AgentForge public origin. The production hostname is a deployment setting.
-There is one ranking implementation. Client identity cannot change eligibility,
-ordering, or result content for the same request and catalog revision.
-
-The proposed request is:
-
-```json
-{
-	"query": "Review an authentication change for permission bugs",
-	"harness": "codex",
-	"limit": 5
-}
-```
-
-| Field | Contract |
-| --- | --- |
-| `query` | Required nonempty text after trimming. Maximum 2,048 UTF-8 bytes. This is a capability query, not a full conversation. |
-| `harness` | Optional documented identifier. Omission permits all harnesses. An unknown identifier is a validation error. |
-| `limit` | Integer from 1 through 20. Default 5. The skill requests at most 3 candidates and presents at most 2. |
-
-Requests accept JSON only, with an 8 KiB body limit. Reject unknown fields rather
-than accepting accidental transcript uploads. Search reads the catalog and does
-not persist a query row or start ingestion, enrichment, or installation.
-
-The following response is illustrative fixture data. Its source is a placeholder:
-
-```json
-{
-	"rows": [
-		{
-			"skill_id": "fixture/auth-review",
-			"name": "auth-review",
-			"summary": "Review permission checks and authentication failure paths.",
-			"capabilities": ["Permission checks", "Authentication failure analysis"],
-			"example_prompts": ["Review this change for missing permission checks."],
-			"requirements": ["Repository access"],
-			"exclusions": ["Penetration testing of a deployed service"],
-			"match_evidence": {"terms": ["permission"], "example_prompt_index": 0},
-			"compatibility": {"harness": "codex", "status": "declared"},
-			"license": {"identifier": null, "status": "unknown"},
-			"source": {
-				"url": "https://example.com/skills/auth-review",
-				"revision": "<immutable upstream revision>",
-				"skill_path": "skills/auth-review",
-				"package_sha256": "<reviewed package digest>",
-				"checked_at": "2026-10-24T12:00:00Z"
-			},
-			"adoption_status": "metadata_only"
-		}
-	],
-	"meta": {
-		"status": "matches",
-		"retrieval_mode": "hybrid",
-		"catalog_revision": "<published catalog revision>",
-		"ranking_version": "hybrid-v1",
-		"request_id": "<opaque request identifier>"
-	}
-}
-```
-
-`meta.status` is `matches` or `no_match`. `rows` is empty for `no_match`.
-`retrieval_mode` is `hybrid` or `lexical_only`. A request can succeed with
-lexical-only results during an embedding-provider outage, but must identify that
-mode. Apply a separately evaluated lexical-only relevance threshold. If the
-catalog itself is unavailable, return a service error.
-
-Compatibility status is `tested`, `declared`, `inferred`, or `unknown`. A tested
-claim also carries the harness version, check date, and evidence reference.
-Known incompatibility excludes a result for that harness. Unknown support is
-visible and cannot become a positive compatibility claim. `adoption_status` is
-`review_required`, `metadata_only`, or `unavailable`. Missing license information
-defaults to metadata-only discovery with an upstream link.
-
-Results contain bounded metadata, not the full `SKILL.md`, script bodies, or
-commands copied from an upstream description. The agent explains relevance from
-the returned facts. The service does not call a generative model to write a
-custom recommendation on every search. Ranking scores are internal diagnostics,
-not probabilities of task success.
-
-Both clients consume the checked-in OpenAPI contract. A shared fixture must
-produce the same ordered skill IDs, revisions, metadata, and retrieval mode in
-each client. Opaque request IDs can differ. The website has no separate search
-route, embedding model, or ranking formula.
-
-| Condition | HTTP behavior |
-| --- | --- |
-| Suitable results or no suitable match | 200 with the envelope above |
-| Body exceeds limit | 413 |
-| Unsupported content type | 415 |
-| Invalid fields, query, or limit | 422 with field errors |
-| Public request limit exceeded | 429 with `Retry-After` |
-| Search deadline exceeded | 504 with a stable error code |
-| Catalog unavailable | 503 with a stable error code |
-
-Error bodies contain `error.code`, a safe `error.message`, and `request_id`.
-They must not expose Cloud credentials, internal URLs, or upstream tracebacks.
-Set an 8-second public request deadline and a shorter upstream deadline. Neither
-client retries automatically during an interactive task. Honor `Retry-After`
-before a later attempt.
-
-## 6. Pixeltable Cloud architecture
-
-Pixeltable Cloud is the system of record for source records, immutable skill
-versions, derived search documents, and crawl runs. Computed columns produce
-normalized metadata and prompt examples from a source version. A model-declared
-embedding index covers the search text. No second database stores embeddings.
-Pixeltable documents automatic embedding-index maintenance as table data changes.
-[Embedding indexes](https://docs.pixeltable.com/platform/embedding-indexes).
-
-The platform's `app.py` declares `TableModel` classes, indexes under `__indexes__`,
-and the service routes. Named `@pxt.query` functions retrieve candidates. The
-semantic query uses `.similarity(string=query)`. A synchronous service handler
-in the same application fuses bounded lexical and semantic candidates and
-returns the search envelope. Simple single-query routes can use
-`FastAPIRouter.add_query_route()`. The hybrid route must not assume that an
-arbitrary Python fusion function can be passed as an `@pxt.query`.
-[HTTP serving](https://docs.pixeltable.com/howto/deployment/serving) and
-[synchronous handlers](https://docs.pixeltable.com/howto/deployment/operations)
-describe the supported serving patterns.
-
-The network path is:
-
-```mermaid
-flowchart LR
-    Harness["Installed skill and Go client"] --> Public["AgentForge POST /api/v1/search"]
-    Web["Single-page website"] --> Public
-    Public --> Route["Pixeltable Cloud search route"]
-    Route --> Tables["Published catalog and embedding index"]
-    Worker["Source refresh worker"] --> Tables
-```
-
-The public endpoint is a small forwarding layer. It accepts the public request,
-enforces request bounds, rate limits, and deadlines, and forwards to a fixed
-Pixeltable service URL with a server-held Cloud key. It returns the search
-response without reranking. It cannot proxy arbitrary URLs or expose ingestion
-routes. The website can be served from the same origin, avoiding cross-origin
-browser setup. The Go client calls that same public origin.
-
-Hosted Pixeltable HTTP services use a Cloud credential. Browsers and distributed
-skill bundles must not contain that credential. The forwarding layer retains it
-server-side and adds `X-api-key`. A direct public Cloud route is an alternative
-only after an explicitly supported credential-free or suitably scoped public
-access mechanism is verified. [Cloud service authentication](https://docs.pixeltable.com/cloud#call-the-hosted-service).
-
-At implementation time, pin the Pixeltable release and dependencies. Provision
-the project runtime with `pxt db update`, apply tables with `pxt schema update`,
-then start HTTP with `pxt service update`. All commands target the selected
-`pxt://` database. Discover service URLs from the platform rather than guessing
-hosts. A successful schema update does not prove HTTP availability.
-[Cloud deployment](https://docs.pixeltable.com/cloud#first-deployment).
-The preview demonstrates a hosted route. Its current implementation and limits
-are in the [platform README](https://github.com/agentforge-hq/platform#current-limits).
-The model above describes target behavior, including work still to be verified.
-
-## 7. Data and indexing
-
-| Record | Required data and purpose |
-| --- | --- |
-| `sources` | Stable skill identity, source kind, repository or registry URL, repository-relative skill directory, aliases, refresh cursor, observed revision, and published revision pointer. |
-| `skill_versions` | Immutable revision and content digest, source manifest, permitted source snapshot, author-provided fields, extraction result, model and extraction versions, compatibility evidence, license information, and readiness status. |
-| `search_documents` | Version ID, document kind, normalized search text, lexical fields, generated example prompts, and embedding-index coverage. |
-| `crawl_runs` | Source, start and finish times, cursor, status, retry information, discovered and changed counts, and safe error classifications. |
-
-Identity includes the source and skill subdirectory. A repository containing
-ten skills yields ten identities. A name alone cannot identify a skill. Track
-duplicate content and declared aliases without collapsing divergent forks or
-harness variants into one interchangeable package.
-
-Keep author-provided metadata separate from AgentForge's inferred capabilities
-and generated examples. Each generated field has an extraction version and
-source revision. Failed extraction remains visible as an indexing error.
-Invented requirements or compatibility claims must not enter published metadata.
-
-The first enrichment produces a concise purpose, capabilities, requirements,
-exclusions, and several natural-language example requests. Index the summary and
-examples so a request can match without sharing the author's terminology. Treat
-source instructions as untrusted input during extraction. Never execute a
-downloaded script to index a skill.
-
-Source updates create a new immutable version. Publish the source's revision
-pointer only after its required metadata and search documents are ready. Until
-then, continue serving the previous complete version with its real freshness
-date. A query captures a catalog revision and must not mix document versions
-for one skill. Repeating a crawl or insert does not duplicate an identity,
-version, or search document. Changing an extraction or embedding model requires
-an explicit backfill and release check before switching serving traffic.
-
-## 8. Retrieval behavior
-
-The first ranker has two candidate paths over the same published catalog:
-
-1. Lexical retrieval matches normalized names, publishers, capability terms,
-   and example text. Exact identifiers retain a useful route into the results.
-2. Semantic retrieval embeds the query and searches the Pixeltable index over
-   purpose and example documents.
-3. Apply publication, withdrawal, and known harness-incompatibility filters
-   within each candidate path before its candidate limit. Collapse multiple
-   matching documents into one candidate per skill in each path.
-4. Fuse the two bounded lists using reciprocal rank fusion. A skill's score is
-   the sum of `1 / (60 + rank)` for the paths where it appears. Use stable skill
-   IDs to break ties. Start with at most 50 candidates from each path.
-5. Apply the evaluated relevance rule and return at most the requested limit.
-   The service can return fewer results or none. A high rank within a poor list
-   is insufficient evidence of relevance.
-
-The release does not assume a built-in BM25 index in Pixeltable. Begin with
-lexical predicates and scoring supported by the pinned SDK. The retrieval spike
-must establish execution behavior and cost at the pilot catalog size. A full
-table scan that misses the latency or cost target blocks launch and requires a
-reviewed indexing change. Do not silently add another search database or describe
-substring matching as BM25.
-
-Enrichment runs when indexed content changes. An uncached semantic search still
-requires a query embedding. Record that dependency and its cost. Repeated queries
-may use a short-lived cache keyed by normalized request, catalog revision, and
-ranking version. User query text is not stored in an analytics table by default.
-Operational logs retain request IDs, timing, retrieval mode, and catalog revision.
-Exclude raw request bodies and queries from application and forwarding logs.
-Document the chosen embedding provider's data handling during setup.
-
-Calibrate hybrid and lexical-only relevance rules on separate development cases.
-Freeze those rules before the held-out release evaluation. Generated prompt
-examples used for indexing are not independent evaluation evidence.
-
-## 9. Source refresh and continuous operation
-
-Start with explicit seed repositories and a registry connector that resolves
-entries to an upstream skill directory. Registry listings are discovery hints.
-Pin the upstream revision and verify that the skill actually exists there.
-Prefer documented APIs, feeds, or permitted retrieval mechanisms for each source.
-
-Run an initial manual crawl before enabling recurring refresh. Persist cursors
-and conditional-fetch information. Retry transient failures with backoff and
-respect source rate limits. Bound download sizes, extracted files, linked
-resources, redirects, and the crawl frontier. Crawl workers do not share the
-public search route's runtime budget.
-
-For the pilot, recheck registered sources at least daily and attempt new-source
-discovery daily. This is a proposed operating target. Publish coverage counts
-and actual last-check times. A missed check or temporary authorization failure
-does not prove deletion. Mark a confirmed removed source withdrawn and exclude
-it from adoption. A temporary failure preserves the last good record and marks
-its freshness accurately. An operator can withdraw a harmful listing immediately.
-
-Continuous service means an available read path plus recurring bounded indexing
-jobs. It does not require an LLM agent to run continuously. Monitor search
-availability, latency, provider failures, pending indexing work, freshness, and
-withdrawal propagation. Alert on actionable failures. Keep indexing and search
-spend caps configurable, with further paid deployment requiring founder approval.
-
-## 10. Repository and release boundaries
-
-Use `agentforge-hq/platform` for the Cloud application,
-refresh code, shared API schema, single-page website, and small public forwarding
-handler. The target module layout below is a proposal. See the platform
-repository for its current file structure:
-
-```text
-platform/
-  app.py
-  pyproject.toml
-  pixeltable.toml
-  ingest/
-  web/
-  gateway/
-  contracts/search.openapi.json
-  tests/
-  LICENSE
-```
-
-Keep the Go client and harness skill in `agentforge-hq/agentforge`. Add a proposed
-`agentforge search` command for the service. Preserve the existing GitHub
-repository search behavior under its existing command. Cloud failures must not
-silently fall back to another provider and disclose a query elsewhere.
-
-The skill and client remain Apache-2.0. Original platform code, website code,
-and company documents remain proprietary with all rights reserved. Public
-visibility does not grant an open-source license. Upstream skill licenses are
-recorded separately. Do not apply AgentForge's license to upstream packages.
-
-## 11. Release sequence and acceptance
-
-The figures below are proposed pilot gates, not measured performance or demand.
-
-| Stage | Owner | Observable completion |
+# AgentForge expertise discovery PRD
+
+AgentForge helps an agent discover useful prompts, skills, and reasoning methods
+while a person works. It identifies a missing approach, explains how that approach
+could help the current task, and offers to apply it. The person should not need
+the expert vocabulary, the name of a skill, or a separate search session.
+
+The founder requested this direction on November 8. This document defines the
+first expertise-discovery pilot, called v0.2 here to distinguish it from the
+existing local tool and skill-search preview. The scope and numerical gates below
+are proposals. Prompt discovery, web scouting, and adaptation are not shipped
+capabilities. The existing [website](https://lordoftheskill.com/) and skill-search
+service are foundations. Their [implementation record](../engineering/discovery-pilot.md)
+does not establish the broader product's usefulness.
+
+The [earlier pilot specification](skill-discovery-pilot-spec.md) preserves its
+acceptance criteria. Its frozen ranker, evaluation cases, failures, and open human
+review remain intact. The [roadmap](roadmap.md) separates that work from this pilot.
+
+## 1. Problem, beneficiary, and outcome
+
+People can describe a desired result without knowing which investigation,
+question, constraint, or workflow would produce it. A repository of prompts is
+useful when someone knows what to look for. AgentForge must also help when they
+do not recognize the missing expertise.
+
+The first cohort is builders working in Codex on software diagnosis, product
+experience, and written analysis. These are three bounded task families for
+testing the idea. Broad professional coverage remains a longer-term goal.
+
+Success is a better completed task with acceptable user effort. Record discovery,
+suggestion, acceptance, actual application, and outcome separately. Downloads,
+more elaborate prompts, and a growing catalog are insufficient outcome measures.
+The hypothesis fails if suggestions add interruptions without improving the work,
+or if a generic instruction to question assumptions performs just as well.
+
+## 2. What the first version includes
+
+One installed AgentForge skill and its Go client connect to the existing cloud
+service. A single-page website searches the same catalog and shows source details.
+The pilot adds three kinds of reusable material:
+
+| Kind | What the person receives | Application |
 | --- | --- | --- |
-| A: retrieval spike | Engineering | A pinned Pixeltable release stores fixture versions, updates an embedding index, runs both retrieval paths, and serves their fused results. Cloud authentication and the public forwarding path are demonstrated. |
-| B: initial catalog | Engineering | At least 500 distinct skill directories from at least two source kinds are indexed. Source changes, duplicate names, extraction failure, removal, and repeat ingestion have recorded outcomes. |
-| C: both clients | Engineering and design | The Go client and single-page website use the same endpoint and pass contract parity checks. Tested AgentForge installation is available for the advertised harness and platforms. |
-| D: automatic discovery | Product and engineering | Fresh-session prompts trigger search without mentioning AgentForge, and accepted adoption demonstrably loads or hands off the selected pinned skill. |
-| E: controlled pilot | Product and operations | Held-out relevance and interruption gates pass. A 48-hour refresh and availability observation completes before a public launch decision. |
+| Prompt | A bounded instruction with its required inputs, expected output, and limits | The agent offers an adaptation for the current task and uses it after acceptance. |
+| Skill | An upstream package with instructions and possibly supporting resources | The existing inspection and revision-pinned adoption flow applies. |
+| Method | A short procedure or set of questions, such as generating competing explanations and testing what would distinguish them | The agent explains the procedure in ordinary language and applies the accepted steps. |
 
-Release acceptance includes these checks:
+A method can be packaged as a prompt or skill. Store its canonical source once
+and link alternate forms. Do not fill a shortlist with the same approach three
+times. Use `kind` for the primary application form and tags for the reasoning
+technique. A technical name such as "abductive reasoning" is optional metadata,
+not vocabulary the user must learn.
+
+Start with 30 human-reviewed entries, assigned to one primary task family each,
+ten per family, including at least eight prompts, eight skills, and four methods
+across the set. These are proposed scope bounds, not quality claims.
+Select skills from the existing catalog and add
+prompts and methods from sources with sufficient reuse rights. The wider skill
+catalog remains searchable through the existing preview. It does not become
+approved for automatic v0.2 suggestions merely by being indexed.
+
+The pilot includes bounded scouting, an operator review queue, provenance,
+contextual retrieval, a suggestion inside the conversation, and a private outcome
+record. It excludes a prompt editor product, public submissions, accounts,
+payments, social rankings, arbitrary autonomous browsing, hosted task execution,
+and automatic rewriting of third-party material. No new paid connector or plan
+upgrade is part of this scope.
+
+## 3. Discovery during the work
+
+The following is an illustrative interaction, not a test result:
+
+> User: Make this onboarding better.
+>
+> AgentForge: A first-time-user walkthrough could reveal missing steps before
+> we change the screens. I found a method for following one person through one
+> task. Want me to use it on this flow?
+
+After acceptance, the agent retains the original objective and applies the
+selected method. It can adapt a prompt to the task without claiming the adapted
+wording came from the source author.
+
+1. At the start of a substantive task, the harness considers whether a useful
+   approach is missing. The person does not need to ask for prompt discovery.
+2. The agent sends a short task summary and optional bounded context to discovery.
+   Local files, transcripts, private paths, and the installed-skill inventory stay
+   local. Setup explains the disclosure of task-derived text and its embedding.
+3. Retrieval returns at most three eligible candidates. The harness compares them
+   with the current work, available capabilities, and explicit constraints.
+4. The agent normally offers one approach, with an alternative only when there
+   is a meaningful choice. It states the contribution, required inputs, source,
+   and material limitation. Similar vocabulary alone is not a reason to suggest.
+5. The person accepts, edits the proposed approach, or declines. Existing explicit
+   authorization can cover its use. A decline resumes the task and suppresses the
+   same approach for that task. A selection is not permission to run downloaded
+   code, send messages, purchase access, or disclose additional data.
+6. Accepted prompts and methods are adapted by the current harness model, without
+   a separate AgentForge model call.
+   Preserve the user's objective and constraints, show the proposed instruction,
+   and keep its source version and adaptation distinct. Missing essential inputs
+   cause one focused clarification rather than an invented requirement.
+   If the adaptation changes the agreed scope, show that change before using it.
+7. For a skill, inspect the pinned package and use the supported activation path.
+   State any new-session requirement and carry the original task into the handoff.
+   Installing files is not proof that the skill influenced the current session.
+
+The local integration can reconsider discovery when the goal or constraint
+materially changes, or when an observed failure suggests a different approach.
+Ordinary follow-ups, every edit, and every model response do not trigger searches.
+Allow at most one automatic search at task start and one reconsideration per task
+in the pilot. Explicit requests may search again. Keep this state local and offer
+at most one visible suggestion message per search. An unresolved suggestion is
+never replaced with a stream of alternatives.
+
+If existing instructions cover the approach, continue without a recommendation.
+If a source is unsuitable, no result is a valid outcome. An outage must leave the
+original work able to continue. Dynamic discovery through a skill is a behavior
+to demonstrate in fresh Codex sessions, not a guarantee that all harnesses invoke
+it on every relevant turn.
+
+An illustrative diagnostic method could ask for three plausible explanations,
+the observation that would distinguish them, and the cheapest next test. Its
+value would be measured against premature commitment to one cause. The pilot
+does not assume that adding this instruction improves every task.
+
+## 4. Scout sources and review what was found
+
+Source collection has two entry paths: the founder saves something promising,
+or a bounded scout finds a candidate. Both enter the same review queue.
+
+| Source | First-version collection | Later expansion |
+| --- | --- | --- |
+| GitHub | Reuse canonical repository discovery. Add allowlisted prompt collections and method documents, pinned to commits and file locations. | Expand repositories using reviewed search queries and source-quality evidence. |
+| Author websites and documentation | Fetch selected public pages or feeds after checking their permitted access. Extract a candidate with its author, location, retrieval time, and content digest. | Bounded link discovery within approved domains, then more domains after review. |
+| X/Twitter and other social sources | Save a post URL, author, and the founder's note. Follow a linked canonical repository or page when available. Unsupported access leaves a link-only candidate. | A supported connector after access, retention rules, budget, and deletion handling are verified. |
+| Founder-supplied material | Import a URL or text the founder is authorized to provide, with optional context about where it helped. | Opt-in personal or team collections after the shared pilot proves useful. |
+
+The first importer is an operator command and a reviewable queue file, not an
+admin website. The founder can mark "worth testing" or "worked for me", add the
+task category, model if known, outcome, and failure conditions, and keep the note
+private. A bookmark without outcome evidence remains an endorsement, not a test.
+Only a separately approved public summary enters the shared catalog.
+
+The scout follows: discover, resolve source, extract, deduplicate, inspect rights
+and content, review applicability, then publish an immutable version. Unreviewed
+finds remain outside automatic suggestions. Exact copies can share a source;
+adaptations and materially different variants retain their lineage and identity.
+
+Start each manual scout run with at most 10 seed sources, 100 fetches, 2 MiB per
+document, and one level of outbound links on approved domains. These are initial
+engineering bounds; source-specific limits can be lower. Reject private-network
+destinations and unsafe redirects, bound extraction, and execute no fetched code.
+Respect access rules and rate limits. Preserve retry cursors and distinguish
+failure from removal. Enable daily runs only after two manual runs prove useful
+and stay within the approved usage. Existing skill refresh jobs keep their
+separate operating policy.
+
+GitHub documents conditional requests and rate-limit backoff in its
+[REST API guidance](https://docs.github.com/en/rest/using-the-rest-api/best-practices-for-using-the-rest-api).
+X documents [post-search endpoints](https://docs.x.com/x-api/posts/search/introduction)
+with differing access requirements. These establish possible collection paths;
+they do not establish that AgentForge has access or redistribution permission.
+No general X crawler is a dependency for the pilot.
+
+## 5. Evidence, rights, and freshness
+
+Every published entry needs its source, author when available, canonical identity,
+immutable version or captured content digest, last check, intended outcome,
+requirements, exclusions, ordinary-task examples, and primary application kind.
+Record the model or environment used in an example when known. Unknowns remain
+visible. Generated examples are indexing aids and never count as independent
+evidence of effectiveness.
+
+Keep evidence as separate records rather than one quality badge:
+
+| Evidence | What it establishes |
+| --- | --- |
+| Author claim | The author says it helps. Preserve the claim and attribution. |
+| Curator endorsement | A named reviewer found it worth testing, with a reason. |
+| Reported use | Someone reports an outcome in a stated task and environment. |
+| Observed trial | A retained test records the inputs, version, model, rubric, result, and failures. |
+
+The founder's judgment helps prioritize review. It does not automatically raise
+an item above a more suitable candidate or establish that it works for everyone.
+Likes, reposts, and stars may help scouting; they are not effectiveness scores.
+
+Store and serve reusable content only when the recorded rights permit it.
+Unknown rights permit a source link and allowed metadata, not a full prompt copy,
+embedding of restricted text, or an adapted copy presented as original. Preserve
+attribution when adapting. Treat source text as untrusted material during both
+extraction and use; it cannot change application rules or authorize tools.
+
+Recheck the pilot's published sources daily once manual operation is validated.
+Publish a new version only after extraction, rights review, and applicability
+review succeed. A failure retains the previous complete version with its real
+check date. Confirmed withdrawal removes the item from new suggestions and
+detail delivery at the next successful publication. Retain identifiers and safe
+audit metadata as permitted; do not promise to retain deleted source text forever.
+Effectiveness evidence stays attached to the version tested. It does not transfer
+automatically to a changed prompt or model.
+
+## 6. Retrieval and adaptation
+
+Use hybrid lexical and semantic retrieval over purpose, expected output,
+requirements, exclusions, and ordinary-language examples. Query the reviewed
+v0.2 publication set. Filter known incompatibility and missing mandatory
+requirements before forming the bounded shortlist. Group copies and alternate
+forms of the same approach. Unknown requirements must remain explicit.
+
+The retrieval experiment must distinguish topical similarity from task fit.
+The previous [semantic-admission experiment](../engineering/discovery-pilot.md#november-2-retrieval-diagnosis)
+retained semantic mismatches and removed plausible alternatives. Requiring a
+semantic match alone is not an accepted suitability rule.
+
+The cloud returns sourced metadata and match evidence. The harness decides
+whether a candidate adds something to the current work and adapts the chosen
+instruction. The first version does not add a cloud model call to rewrite every
+query or synthesize a custom prompt. If no item fits, the harness continues the
+task normally. Generic reasoning can be part of its normal work; it must not be
+represented as a retrieved or tested source.
+
+Adaptation preserves the original objective, explicit constraints, and required
+inputs. Record which parts were sourced and which the agent changed. Do not
+silently add a platform dependency or turn a request to analyze into a request
+to act. Prompt length and sophisticated terminology are not ranking objectives.
+
+## 7. Website and shared service
+
+The landing page keeps the founder's tagline and the question "What are you
+trying to do?". Explain that AgentForge can suggest a useful prompt, skill, or
+method. Keep installation prominent. Results show the contribution to the task,
+kind, source, requirements, evidence, and last check. An optional kind filter
+helps exploration; knowing a kind is not required for a search.
+
+Use "Review this approach" for prompts and methods and retain the skill's
+inspection action. The review view shows permitted content and a task-aware
+handoff, preserving source identity, version, and user constraints. Copying that
+handoff is not activation. The website does not upload a local conversation or
+claim to install into an unrelated agent. Preserve keyboard, mobile, loading,
+no-match, error, and stale-response behavior. Queries stay out of URLs and
+analytics by default.
+
+The proposed shared contract is `POST /api/v2/discover`. It is a future version,
+not a live endpoint. Keep `POST /api/v1/search`, its clients, and its frozen
+ranking behavior unchanged during development. Define v0.2 in OpenAPI before
+implementation and update website and Go-client parity fixtures together.
+
+| Contract part | Required behavior |
+| --- | --- |
+| Request | `query` up to 2,048 UTF-8 bytes, optional `harness`, optional `kind` filter, and `limit` from 1 to 3. Optional `context` contains a stage, desired output, and concise explicit constraints. The complete JSON body is capped at 8 KiB and rejects unknown fields. No raw files, transcript, secrets, or local paths. |
+| Candidate | Stable `capability_id`, kind, title, purpose, expected contribution, prerequisites, exclusions, source and version, evidence summaries, rights, and permitted next action. Unknown compatibility is visible. No executable commands taken from unreviewed descriptions. |
+| Envelope | Ordered candidates, `matches` or `no_match`, catalog revision, ranking version, retrieval mode, and request ID. Scores are diagnostics, not probabilities of success. |
+| Detail | A version-pinned read returns only reviewed content permitted for delivery. Revalidate publication and withdrawal at read time; unknown rights return source metadata only. Skills retain package review before adoption. |
+| Failure | Distinguish no match, rate limiting, timeout, and unavailable service. Keep an 8-second public request deadline and no automatic interactive retry. A lexical fallback requires its own evaluated fit rule and a visible retrieval-mode label. |
+
+Search performs no crawl, adoption, or query-history write. Both clients must
+receive identical candidates and metadata for the same request, catalog revision,
+and ranker. Display explanations and local adaptation can differ because the
+harness has more task context; server ranking cannot depend on client identity.
+Application and forwarding logs exclude raw queries and request bodies. Keep
+request IDs, timing, retrieval mode, and catalog revision for diagnosis. Outcome
+evidence is an explicit private pilot record, with separate approval for any
+public examples.
+
+## 8. Pixeltable and implementation boundaries
+
+Keep Pixeltable Cloud as the catalog, computed-enrichment, embedding-index, and
+query service. Reuse the existing fixed Vercel forwarding path with server-held
+credentials. Browsers and distributed skills receive no Cloud credentials.
+
+The proposed data model extends the existing implementation:
+
+| Record | Purpose |
+| --- | --- |
+| Source and scout run | Acquisition method, canonical location, access and rights decisions, crawl cursor, bounded-run counts, actual check time, and errors. |
+| Capability version | Immutable source version, kind, permitted content, source metadata, derived applicability fields, extraction version, and linked alternate forms. |
+| Evidence | Author claims, curator notes, and trial results tied to a capability version, environment, visibility, and reviewer. Private notes are excluded from public queries and embeddings. |
+| Published search document | Reviewed purpose and examples with lexical fields and the Pixeltable embedding index; publication points only to complete approved versions. |
+
+Reuse `sources` and `skill_versions` where compatible. Keep the existing rows and
+publication path readable; choose the additive schema migration after a small
+fixture proves prompt, method, and skill behavior. No separate vector database or
+search cluster is needed for the pilot. Preserve source metadata separately from
+inferred fields, and version any enrichment model or extraction change.
+
+The platform repository owns collection, serving, shared contracts, and the
+website. The native repository owns the Go client and discovery skill. The
+company repository owns this product specification and the pilot decision.
+The native skill and CLI remain Apache-2.0. Original platform and company code
+and documents remain proprietary. Upstream licenses remain separate.
+
+Existing MoS Vercel and Pixeltable usage authorization applies. No new paid access
+or plan change is implied. Record bounded collection and search usage; uncertain
+organization-level spend must not become a claim of AgentForge-only cost.
+
+## 9. Pilot evaluation and stop conditions
+
+Use separate development tasks for catalog curation, prompt adaptation, and
+ranking changes. Product prepares and seals a new human-reviewed v0.2 evaluation
+before final tuning. The ranking author cannot inspect the held-out tasks or
+judgments. Do not reuse the old held-out outcomes as development examples. Freeze
+catalog, ranker, instructions, model, harness settings, and rubrics for the run.
+
+The proposed release checks below are not achieved results:
 
 | ID | Check |
 | --- | --- |
-| AC-01 | On a fixed catalog revision, identical website and CLI requests return the same ordered identities, revisions, metadata, and retrieval mode. |
-| AC-02 | Name matches, terminology-free outcome requests, multi-skill repositories, duplicate names, and harness incompatibility each have a recorded retrieval case. |
-| AC-03 | Freeze 100 human-reviewed prompts before final tuning: 50 skill-relevant requests, 25 substantive requests with no useful catalog match, and 25 trivial messages. At least 40 of the 50 relevant requests have an approved result in the top three. |
-| AC-04 | In fresh sessions, at least 45 of the 50 relevant requests trigger discovery without naming AgentForge. At most 2 of the 25 no-match tasks produce an inappropriate recommendation. None of the 25 trivial messages causes a skill recommendation or network search. Record search calls separately from visible suggestions. |
-| AC-05 | A user can reject a recommendation, continue the original job, and avoid a repeated interruption. Accepted adoption uses the returned revision and directory, and states any activation limitation. |
-| AC-06 | A clean install reaches its first automatic discovery in the advertised harness. Removing AgentForge does not remove unrelated skills or rules. |
-| AC-07 | No-match, rate-limit, deadline, catalog failure, stale source, and lexical-only operation are distinguishable in both clients. A search outage leaves the original task able to continue. |
-| AC-08 | Changing one upstream skill updates that identity and dependent search documents without duplicate records. A failed refresh leaves the previous complete revision available. A confirmed withdrawal disappears from adoption results within the next successful refresh. |
-| AC-09 | A credential scan and browser network inspection find no Cloud or model-provider secret in static assets, public responses, logs, or distributed bundles. Public requests cannot reach ingestion routes. |
-| AC-10 | At 500 published skills and 5 search requests per second, measured warm end-to-end search p95 is at most 2 seconds over a 10-minute run, including query embedding. Record cold starts, errors, provider, resource settings, and cost separately. Cache hits cannot stand in for uncached measurements. |
-| AC-11 | The website passes the keyboard, mobile layout, loading, stale-response, and copy-action checks in section 4. A failed request retains the query. |
-| AC-12 | The 48-hour observation records source-check freshness, search probes, failed jobs, and actual provider spend. A failed availability or spend check has an owner and a resolution before launch. |
+| ED-01: source readiness | All 30 entries have required provenance, rights, applicability, exclusions, two ordinary-task examples, and a human review. Exercise changed content, duplicate forms, withdrawal, and failed fetch. Personal endorsements remain distinct from tests. |
+| ED-02: relevance | On 60 new held-out requests, use 30 relevant tasks, ten per family, 15 substantive no-match tasks, and 15 trivial messages. At least 24 of 30 relevant tasks have a human-approved result in the top three. At most one no-match task receives an unsuitable visible suggestion. No trivial message causes a search or suggestion. |
+| ED-03: timely discovery | At least 27 of the 30 relevant tasks trigger discovery in fresh Codex sessions without naming AgentForge. Additional disjoint fixtures cover changed goals, a useful approach already present, failure-triggered reconsideration, rejection, and the per-task search limit. Search and visible suggestion counts are separate. |
+| ED-04: application | Six separately recorded accepted sessions, two per kind, preserve the task and source version, demonstrate application, and capture the result. Include one rejection and one new-session skill handoff as separate checks. Unknown activation is not a pass. |
+| ED-05: outcome | Compare three conditions on 12 held-out relevant tasks, four per family: ordinary agent, agent with a generic instruction to question assumptions, and AgentForge discovery. Keep inputs, model, tools, settings, and run budget matched. A human reviewer blind to condition scores accuracy, usefulness, constraint adherence, and required rework. AgentForge must win at least eight paired tasks against each control, with no critical regression. Report ties, failures, added time, suggestions, and user interventions. This is a pilot decision threshold, not proof of general superiority. |
+| ED-06: operation | Both clients pass parity, privacy, mobile, keyboard, no-match, timeout, and rate-limit checks. Two bounded scout runs retain failures and budgets. A new bounded observation of the changed path records latency, availability, freshness, and attributable usage before release; the earlier 48-hour report does not certify new routes. |
 
-Product owns the prompt labels and usefulness judgments. Engineering owns
-repeatable fixtures and execution records. Design owns the observed installation
-and website journey. Operations owns refresh and availability evidence.
-Marketing can use only demonstrated coverage and behavior in launch claims.
-Record the harness version, model, settings, installed instructions, and catalog
-revision for each evaluation. Keep the evaluator's labels outside the tested
-agent's context. Task-quality comparisons use the same inputs and model settings.
+For ED-06, propose 25 hourly observations over at least 24 actual hours, with no
+gap over 75 minutes and all scheduled discovery requests succeeding. Record
+retry-free latency separately from a bounded, uncached development check of
+100 searches at one request per second, with a proposed p95 at most two seconds.
+This measures a small pilot, not production capacity. A usage report without
+verifiable AgentForge attribution is unavailable, and the usage gate remains
+open. Confirm resource limits before running these checks; this PRD schedules
+no new monitoring or paid workload.
 
-## 12. Deployment decisions and remaining checks
+Choose the 12 outcome tasks and task-specific rubrics before inspecting results.
+Predeclare win, tie, and critical-regression rules, and randomize the order of
+outputs shown to the reviewer. Labels refer to the frozen v0.2 publication set.
+Use one predeclared run per condition and retain failed runs. For this controlled
+comparison, an evaluator accepts the first suggestion when present; no suggestion
+or failed application still counts as that condition's result. This measures
+assisted usefulness under an acceptance policy. The six separately accepted
+sessions record voluntary acceptance and cannot establish broad adoption demand.
 
-The founder authorized the existing MoS Vercel workspace within included usage
-and the AgentForge database in the Pixeltable Pro organization. This authority
-does not cover plan upgrades, paid add-ons, or unlimited spend.
+If retrieval improves but outcomes do not, investigate applicability and the
+adaptation before expanding the catalog. If generic reflection matches the
+benefit, reconsider whether retrieval adds enough value. A failed held-out gate
+stays failed. Further development requires new cases and a separately frozen
+evaluation, with earlier failures retained. Product and the founder decide
+whether the evidence supports a wider pilot.
 
-| Decision | Preview state and remaining evidence |
-| --- | --- |
-| Storage and public host | The dedicated Pixeltable Cloud database and Vercel website are deployed. The current origin is linked above. |
-| Codex invocation mechanism | Discovery preview bundles exist. Fresh-session AC-04 and clean-install AC-06 remain necessary to establish automatic behavior. |
-| Embedding and enrichment models | The implementation pins FastEmbed with BAAI/bge-small-en-v1.5. Representative retrieval quality and generated enrichment remain evaluation work. |
-| Lexical execution strategy | The preview scores metadata over the bounded catalog. Demonstrate acceptable latency and cost at the stage B size before claiming scale. |
-| Anonymous request quota | The gateway uses a best-effort per-instance limit. A shared global quota and a billing guarantee are not established. Test actual behavior and cost in the pilot. |
-| Refresh and availability | The elapsed 48-hour observation is recorded, including a sampled freshness lapse and expected legacy-job failures. Actual attributable provider spend is unavailable, so AC-12 remains open. The default-branch workflow still needs human review and merge. |
+## 10. Build sequence
 
-Current implementation details do not silently weaken the acceptance criteria.
-Record each gap and resolve or explicitly revise it before declaring the target
-release complete.
+| Step | Owner | Deliverable |
+| --- | --- | --- |
+| 1. Review the scope | Product and founder | Review this v0.2 proposal, the three task families, evidence policy, and evaluation bounds. No existing acceptance gate is marked passed. |
+| 2. Seed and inspect | Product and engineering | Import founder-saved links and selected GitHub or web material into the bounded queue. Review the first 30 entries and develop disjoint example tasks. |
+| 3. Prove one complete journey | Engineering and design | Ship the versioned fixture-backed contract, then a prompt, a method, and a skill through contextual search, explanation, acceptance, and application in Codex and the website handoff. |
+| 4. Evaluate before expanding | Product and operations | Run the sealed relevance and matched-outcome checks, inspect operating usage, and record a release or stop decision. Broader crawling follows demonstrated useful additions. |
 
-## 13. Evidence and limits
-
-The founder's October 24 direction establishes the product intent and Pixeltable
-choice. The linked public documentation establishes available storage, indexing,
-serving, and integration primitives. It does not establish AgentForge service
-performance, complete source coverage, or automatic invocation reliability.
-
-The existing [v0.1 contract](v0.1-contract-gaps.md) describes the local maintenance
-release. Its structural scores and lexical checks remain engineering tools.
-The service's adoption, relevance, and task outcomes require the pilot evidence
-specified here. The [competitive review](competitive-landscape.md) is based on
-primary-source documentation and selected public interfaces. It does not prove
-AgentForge beats competing discovery paths. Record the live preview separately
-from acceptance and comparative outcome evidence.
+The [work queue](../.company/work-items.json) tracks this proposal separately from
+the existing pilot. A second harness, supported social APIs, wider web scouting,
+personal libraries, and learned personalization are later decisions based on
+observed need. Continuous source refresh maintains the index; upstream authors
+continue to own and maintain their prompts and skills.
