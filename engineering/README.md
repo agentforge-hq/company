@@ -1,8 +1,8 @@
 ---
 owner: engineering
 status: active
-reviewed: 2026-10-24
-review_after: 2026-10-31
+reviewed: 2026-11-08
+review_after: 2026-11-15
 ---
 # Engineering
 
@@ -13,7 +13,11 @@ The [public skill](https://github.com/agentforge-hq/agentforge) contains the
 local deterministic core as a native Go executable; see the
 [runtime decision](../decisions/0003-native-go-runtime.md). This public repository contains the company worker
 prototype in `scripts/company.py`, its tests, operating configuration and
-commercial planning. A hosted commercial service has not been built.
+commercial planning. The separate proprietary [platform](https://github.com/agentforge-hq/platform)
+contains the deployed Pixeltable Cloud discovery service and Vercel website.
+The [discovery pilot record](discovery-pilot.md) owns skill-pilot evidence and open gates.
+The [expertise discovery PRD](../product/discovery-service-prd.md) proposes the next
+prompt, skill, and method scope; it is not implemented by the earlier pilot.
 
 Read [the roadmap](../product/roadmap.md), [contract gaps](../product/v0.1-contract-gaps.md)
 and [worker design](company-workers.md) before proposing architecture changes.
@@ -45,7 +49,7 @@ regression tests, cross-platform CI and all 12 saved lexical smoke cases.
 Passing structural checks does not establish better
 model routing or completed tasks.
 
-Next, run AF-011's controlled duplicate-disable comparison in fresh Codex chats.
+AF-011's controlled duplicate-disable comparison is deferred behind discovery validation.
 The [pilot packet](duplicate-pilot.md) owns the raw cases, catalog checks,
 evaluator rubric and recovery steps. Keep the rubric outside evaluated prompts.
 Leave task outcomes unmeasured until that comparison runs. No Codex setting has
